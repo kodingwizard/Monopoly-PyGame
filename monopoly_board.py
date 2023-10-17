@@ -77,4 +77,19 @@ t.shape("square")
 t.shapesize(10,5)
 t.tilt(0)
 t.fillcolor("blue")
+
+t.clone()
+#Center Monopoly Banner
+t.goto(0,0)
+t.shape("square")
+t.shapesize(33,5)
+t.tilt(0)
+t.fillcolor("red")
 t.mainloop()
+
+t.clone()
+t.down()
+#Center Title
+t.goto(0,0)
+t.write("MONOPOLY", font = ("RifficFree-Bold", 30, "normal"))
+t.tilt(-135)
