@@ -102,4 +102,5 @@ t.goto(0,0)
 t.write("MONOPOLY", font = ("RifficFree-Bold", 30, "normal"))
 
 
+
 t.mainloop()
