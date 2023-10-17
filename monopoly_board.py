@@ -11,12 +11,12 @@ t.goto(-455, -455)
 #    t.forward(500)
 #    t.left(90)
 width = 70
-run = 1
+run = 0
 t.goto(-455, 315)
 for i in range(4):
-   width = width*2
+   run = run + 1
    #t.up()
-   t.goto(-455, 300-width)\
+   t.goto(-455,300-(width*run))\
    #t.down()
    t.forward(70)
 '''
