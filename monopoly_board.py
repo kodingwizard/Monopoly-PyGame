@@ -68,6 +68,8 @@ t.goto(190, -190)
 t.shape("square")
 t.shapesize(10,5)
 t.tilt(-135)
+
+t.clone()
 #chance cards area on board
 t.goto(-190, 190)
 t.shape("square")
