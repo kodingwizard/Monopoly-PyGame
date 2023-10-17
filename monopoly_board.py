@@ -62,4 +62,15 @@ t.down()
 for i in range(4):
    t.left(-90)
    t.forward(630)
+t.up()
+#community chest cards area on board
+t.goto(190, -190)
+t.shape("square")
+t.shapesize(10,5)
+t.tilt(-135)
+#chance cards area on board
+t.goto(-190, 190)
+t.shape("square")
+t.shapesize(10,5)
+t.tilt(-135)
 t.mainloop()
