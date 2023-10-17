@@ -63,20 +63,29 @@ for i in range(4):
    t.left(-90)
    t.forward(630)
 t.up()
-#community chest cards area on board
+
+#background square
+t.goto(0,0)
+t.shape("square")
+t.shapesize(31,31)
+t.fillcolor("turquoise")
+
+t.clone()
+#chance cards area on board
 t.goto(190, -190)
 t.shape("square")
 t.shapesize(10,5)
 t.tilt(-135)
 t.fillcolor("orange")
 
+t.up()
 t.clone()
-#chance cards area on board
+#community chest area on board
 t.goto(-190, 190)
 t.shape("square")
 t.shapesize(10,5)
 t.tilt(0)
-t.fillcolor("blue")
+t.fillcolor("skyblue")
 
 t.clone()
 #Center Monopoly Banner
@@ -85,11 +94,12 @@ t.shape("square")
 t.shapesize(33,5)
 t.tilt(0)
 t.fillcolor("red")
-t.mainloop()
 
 t.clone()
-t.down()
+#t.down()
 #Center Title
 t.goto(0,0)
 t.write("MONOPOLY", font = ("RifficFree-Bold", 30, "normal"))
-t.tilt(-135)
+
+
+t.mainloop()
