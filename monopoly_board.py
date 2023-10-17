@@ -56,4 +56,10 @@ for i in range(9):
    t.goto(-315+(width*run), -455)
    t.down()
    t.forward(140)
+t.up()
+t.goto(-315, 315)
+t.down()
+for i in range(4):
+   t.left(-90)
+   t.forward(630)
 t.mainloop()
