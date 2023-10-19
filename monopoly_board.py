@@ -87,7 +87,8 @@ t.shapesize(10,5)
 t.tilt(0)
 t.fillcolor("skyblue")
 
-
+#center banner
+t.shape("monopoly-center.gif")
 
 
 t.mainloop()
