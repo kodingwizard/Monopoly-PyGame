@@ -86,9 +86,15 @@ t.shape("square")
 t.shapesize(10,5)
 t.tilt(0)
 t.fillcolor("skyblue")
+t.stamp()
+t.hideturtle()
+t.clone()
 
-#center banner
-t.addshape("/Images/monopoly-center.gif")
+t.showturtle()
+wn = t.Screen()
+
+wn.addshape("monopolycenter.gif")
+t.shape("monopolycenter.gif")
 #yes
 
 
