@@ -88,7 +88,7 @@ t.tilt(0)
 t.fillcolor("skyblue")
 
 #center banner
-t.shape("monopoly-center.gif")
+t.addshape("/Images/monopoly-center.gif")
 #yes
 
 
