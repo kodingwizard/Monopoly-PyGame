@@ -69,8 +69,11 @@ t.goto(0,0)
 t.shape("square")
 t.shapesize(31,31)
 t.fillcolor("turquoise")
+t.stamp()
+t.hideturtle()
 
 t.clone()
+t.showturtle()
 #chance cards area on board
 t.goto(190, -190)
 t.shape("square")
