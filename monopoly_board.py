@@ -88,14 +88,14 @@ t.tilt(0)
 t.fillcolor("skyblue")
 t.stamp()
 t.hideturtle()
-t.clone()
 
-t.showturtle()
+banner = t.Turtle()
+
 wn = t.Screen()
 
 wn.addshape("monopolycenter.gif")
-t.shape("monopolycenter.gif")
-#yes
+banner.shape("monopolycenter.gif")
+wn.setup(startx=0, starty=0)
 
 
 t.mainloop()
