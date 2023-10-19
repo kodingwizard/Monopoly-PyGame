@@ -89,6 +89,7 @@ t.fillcolor("skyblue")
 
 #center banner
 t.shape("monopoly-center.gif")
+#yes
 
 
 t.mainloop()
