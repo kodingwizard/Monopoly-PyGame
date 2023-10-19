@@ -95,10 +95,10 @@ t.hideturtle()
 banner = t.Turtle()
 
 wn = t.Screen()
-
-wn.addshape("monopolycenter.gif")
-banner.shape("monopolycenter.gif")
-wn.setup(startx=0, starty=0)
+banner.penup()
+wn.addshape("monopolycenter1.gif")
+banner.shape("monopolycenter1.gif")
+banner.setpos(0, -20)
 
 
 t.mainloop()
