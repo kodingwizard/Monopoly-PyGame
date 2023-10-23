@@ -42,6 +42,13 @@ def board():
     mply_scale = py.transform.scale(monopolyIMG, (monopolyIMG.get_width()*0.875, monopolyIMG.get_height()*0.875))
     screen.blit(mply_scale, (140, 210))
 
+
+
+
+
+    chance_card = py.image.load('chance_card.png')
+    screen.blit(chance_card, (500, 490))
+
 run = True
 while run:
     screen.fill((255, 255, 255))
