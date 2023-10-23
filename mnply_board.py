@@ -12,6 +12,7 @@ screen = py.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), py.RESIZABLE)
 
 
 def board():
+    '''
     py.draw.rect(screen, (175, 225, 175), (100, 50, 910, 910))
     py.draw.rect(screen, (0, 0 , 0), (100, 50, 140, 140), 2)
     run = 0
@@ -47,8 +48,9 @@ def board():
     commchest = py.image.load("communitychest.png")
     #commchest_scale = py.transform.scale (commchest,(commchest.get_width()*0.875, commchest.get_height()*0.875))
     screen.blit(commchest, (195, 180))
+    '''
     full_board = py.image.load("Streets.png")
-    screen.blit(full_board, (-88, 40))
+    screen.blit(full_board, (-88, 20))
 run = True
 while run:
     screen.fill((255, 255, 255))
