@@ -37,8 +37,9 @@ def board():
         width = 70
         py.draw.rect(screen, (0, 0, 0), (240+(width*run), 50, 70, 140), 2)
         run = run + 1
-   
-monopolyIMG = py.image.load('monopolycenter.gif')
+    monopolyIMG = py.image.load('monopolycenter.gif')
+    screen.blit(monopolyIMG, (0, 0))
+
 
 
 run = True
