@@ -4,7 +4,7 @@ import pygame as py
 py.init()
 
 
-SCREEN_WIDTH = 1925
+SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 1000
 
 
@@ -47,7 +47,8 @@ def board():
     commchest = py.image.load("communitychest.png")
     #commchest_scale = py.transform.scale (commchest,(commchest.get_width()*0.875, commchest.get_height()*0.875))
     screen.blit(commchest, (195, 180))
-
+    full_board = py.image.load("Streets.png")
+    screen.blit(full_board, (-88, 40))
 run = True
 while run:
     screen.fill((255, 255, 255))
