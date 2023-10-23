@@ -38,9 +38,9 @@ def board():
         py.draw.rect(screen, (0, 0, 0), (240+(width*run), 50, 70, 140), 2)
         run = run + 1
     monopolyIMG = py.image.load('monopolycenter.gif')
-    screen.blit(monopolyIMG, (0, 0))
-
-
+    #screen.blit(monopolyIMG, (0, 0))
+    mply_scale = py.transform.scale(monopolyIMG, (monopolyIMG.get_width()*0.875, monopolyIMG.get_height()*0.875))
+    screen.blit(mply_scale, (140, 210))
 
 run = True
 while run:
