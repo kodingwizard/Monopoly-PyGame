@@ -42,12 +42,11 @@ def board():
     mply_scale = py.transform.scale(monopolyIMG, (monopolyIMG.get_width()*0.875, monopolyIMG.get_height()*0.875))
     screen.blit(mply_scale, (140, 210))
 
-
-
-
-
     chance_card = py.image.load('chance_card.png')
     screen.blit(chance_card, (500, 490))
+    commchest = py.image.load("communitychest.png")
+    #commchest_scale = py.transform.scale (commchest,(commchest.get_width()*0.875, commchest.get_height()*0.875))
+    screen.blit(commchest, (195, 180))
 
 run = True
 while run:
