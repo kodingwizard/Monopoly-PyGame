@@ -1,5 +1,5 @@
 import pygame as py
-import dice_roll_test
+import random
 
 py.init()
 
@@ -65,9 +65,32 @@ class player():
     def draw(self, win):
         py.draw.rect(win, self.color, self.rect)
 
+def diceroll():
+
+	Diceroll = [ ]
+	for i in range (1):
+		global N
+		N = random.randint(1,6)
+		global A
+		A = random.randint(1,6)
+
+		Diceroll.append(N)
+		Diceroll.append(A)
+	print(Diceroll)
+	dice_sum = N + A
+	print("You rolled a total of  %s" %dice_sum)
+	if dice_sum < 10:
+		print("yay no taxes")
+
+	else:
+		print("boooo taxes")
+          
+diceroll()
+          
 font = py.font.Font('freesansbold.ttf', 32)
-text = font.render('', True, (0, 0, 0), (255, 255, 255))
+text = font.render(str(N), True, (0, 0, 0), (255, 255, 255))
 textRect = py.draw.rect(screen, (0, 0, 0), (1000, 50, 140, 140), 2)
+
 
 player1 = player(923, 843, 35, 35, (255, 0, 0))
 player2 = player(923, 897, 35, 35, (0, 255, 0))
@@ -88,7 +111,7 @@ while run:
 
     py.display.update()
 
-dice_roll()
+
 
 py.quit()
 
