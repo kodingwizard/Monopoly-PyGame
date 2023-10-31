@@ -65,6 +65,9 @@ class player():
     def draw(self, win):
         py.draw.rect(win, self.color, self.rect)
 
+font = py.font.Font('freesansbold.ttf', 32)
+text = font.render('', True, (0, 0, 0), (255, 255, 255))
+textRect = py.draw.rect(screen, (0, 0, 0), (1000, 50, 140, 140), 2)
 
 player1 = player(923, 843, 35, 35, (255, 0, 0))
 player2 = player(923, 897, 35, 35, (0, 255, 0))
@@ -74,7 +77,7 @@ run = True
 while run:
     screen.fill((255, 255, 255))
     board()
-
+    screen.blit(text, textRect)
 
     for event in py.event.get():
         if event.type == py.QUIT:
