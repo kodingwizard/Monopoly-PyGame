@@ -1,5 +1,5 @@
 import pygame as py
-
+import dice_roll_test
 
 py.init()
 
@@ -85,6 +85,7 @@ while run:
 
     py.display.update()
 
+dice_roll()
 
 py.quit()
 
