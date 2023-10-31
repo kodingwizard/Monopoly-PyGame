@@ -77,6 +77,7 @@ def diceroll():
 		Diceroll.append(N)
 		Diceroll.append(A)
 	print(Diceroll)
+	global dice_sum
 	dice_sum = N + A
 	print("You rolled a total of  %s" %dice_sum)
 	if dice_sum < 10:
@@ -84,12 +85,15 @@ def diceroll():
 
 	else:
 		print("boooo taxes")
-          
 diceroll()
           
 font = py.font.Font('freesansbold.ttf', 32)
 text = font.render(str(N), True, (0, 0, 0), (255, 255, 255))
-textRect = py.draw.rect(screen, (0, 0, 0), (1000, 50, 140, 140), 2)
+textRect = py.draw.rect(screen, (0, 0, 0), (1100, 50, 140, 140), 2)
+text1 = font.render(str(A), True, (0, 0, 0), (255, 255, 255))
+textRect1 = py.draw.rect(screen, (0, 0, 0), (1150, 50, 140, 140), 2)
+text2 = font.render('You rolled a total of ' + str(dice_sum), True, (0, 0, 0), (255, 255, 255))
+textRect2 = py.draw.rect(screen, (0, 0, 0), (950, 150, 140, 140), 2)
 
 
 player1 = player(923, 843, 35, 35, (255, 0, 0))
@@ -101,6 +105,8 @@ while run:
     screen.fill((255, 255, 255))
     board()
     screen.blit(text, textRect)
+    screen.blit(text1, textRect1)
+    screen.blit(text2, textRect2)
 
     for event in py.event.get():
         if event.type == py.QUIT:
