@@ -51,6 +51,25 @@ def board():
     '''
     full_board = py.image.load("Streets.png")
     screen.blit(full_board, (-88, 20))
+
+class player():
+    def __init__(self, x, y, width, height, color):
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.color = color
+        self.rect = (x,y,width,height)
+
+
+    def draw(self, win):
+        py.draw.rect(win, self.color, self.rect)
+
+
+player1 = player(923, 843, 35, 35, (255, 0, 0))
+player2 = player(923, 897, 35, 35, (0, 255, 0))
+
+
 run = True
 while run:
     screen.fill((255, 255, 255))
@@ -60,7 +79,9 @@ while run:
     for event in py.event.get():
         if event.type == py.QUIT:
             run = False
-
+        
+    player1.draw(screen)
+    player2.draw(screen)
 
     py.display.update()
 
