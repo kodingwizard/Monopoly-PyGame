@@ -115,7 +115,8 @@ class button():
         self.clicked = False
 
 
-
+    dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
+    dbt_Rect = py.draw.rect(screen, (215, 215, 215), (950, 830, 140, 140))
 
     def draw(self, win):
         action = False
@@ -137,8 +138,7 @@ player1 = player(923, 843, 35, 35, (255, 0, 0))
 player2 = player(923, 897, 35, 35, (0, 255, 0))
 dicebutton = button(950, 800, 200, 100, (215, 215, 215))
 font = py.font.Font('freesansbold.ttf', 32)
-dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
-dbt_Rect = py.draw.rect(screen, (215, 215, 215), (950, 830, 140, 140))
+
 
 
 stamp = False
@@ -148,7 +148,6 @@ while run:
     board()
 
 
-
     for event in py.event.get():
         if event.type == py.QUIT:
             run = False
@@ -156,11 +155,12 @@ while run:
     player1.draw(screen)
     player2.draw(screen)
     
-
     if dicebutton.draw(screen):
         diceroll()
         dicetext()
         stamp = True
+           
+
     if stamp == True:
         screen.blit(text, textRect)
         screen.blit(text1, textRect1)
