@@ -101,11 +101,38 @@ else:
     text3 = font.render('boooo taxes', True, (0, 0, 0), (255, 255, 255))
     textRect3 = py.draw.rect(screen, (0, 0, 0), (950, 200, 140, 140), 2)
 
+class button():
+    def __init__(self, x, y, width, height, color):
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.color = color
+        self.rect = (x,y,width,height)
+        self.clicked = False
+
+
+
+
+    def draw(self, win):
+        action = False
+        py.draw.rect(win, self.color, self.rect)
+        posx, posy = py.mouse.get_pos()
+        click = py.mouse.get_pressed()
+        if (950 < posx < 1150) and (800 < posy < 900):
+            if (click[0] == 1) and (self.clicked == False):
+                self.clicked = True
+                action = True
+            if click[0] == 0:
+                self.clicked = False
+
+
+        return action
 
 
 player1 = player(923, 843, 35, 35, (255, 0, 0))
 player2 = player(923, 897, 35, 35, (0, 255, 0))
-
+dicebutton = button(950, 800, 200, 100, (215, 215, 215))
 
 run = True
 while run:
@@ -123,6 +150,8 @@ while run:
         
     player1.draw(screen)
     player2.draw(screen)
+    if dicebutton.draw(screen):
+        diceroll()
 
     py.display.update()
 
