@@ -79,12 +79,12 @@ def diceroll():
 	print(Diceroll)
 	global dice_sum
 	dice_sum = N + A
-	print("You rolled a total of  %s" %dice_sum)
+	print("Total: %s" %dice_sum)
 	if dice_sum < 10:
 		print("yay no taxes")
 
 	else:
-		print("boooo taxes")
+		print("rip taxes")
 diceroll()
 
 
@@ -92,17 +92,17 @@ def dicetext():
     global font, text, textRect, text1, textRect1, text2, textRect2, text3, textRect3
     font = py.font.Font('freesansbold.ttf', 32)
     text = font.render(str(N), True, (0, 0, 0), (255, 255, 255))
-    textRect = py.draw.rect(screen, (0, 0, 0), (1100, 50, 140, 140), 2)
+    textRect = py.draw.rect(screen, (255,255,255), (1160, 50, 140, 140))
     text1 = font.render(str(A), True, (0, 0, 0), (255, 255, 255))
-    textRect1 = py.draw.rect(screen, (0, 0, 0), (1150, 50, 140, 140), 2)
-    text2 = font.render('You rolled a total of ' + str(dice_sum), True, (0, 0, 0), (255, 255, 255))
-    textRect2 = py.draw.rect(screen, (0, 0, 0), (950, 150, 140, 140), 2)
+    textRect1 = py.draw.rect(screen, (255,255,255), (1100, 50, 140, 140))
+    text2 = font.render('Total: ' + str(dice_sum), True, (0, 0, 0), (255, 255, 255))
+    textRect2 = py.draw.rect(screen, (255,255,255), (1050, 150, 140, 140))
     if dice_sum < 10:
         text3 = font.render('yay no taxes', True, (0, 0, 0), (255, 255, 255))
-        textRect3 = py.draw.rect(screen, (0, 0, 0), (950, 200, 140, 140), 2)
+        textRect3 = py.draw.rect(screen, (255,255,255), (1050, 200, 140, 140))
     else:
-        text3 = font.render('boooo taxes', True, (0, 0, 0), (255, 255, 255))
-        textRect3 = py.draw.rect(screen, (0, 0, 0), (950, 200, 140, 140), 2)
+        text3 = font.render('rip taxes', True, (0, 0, 0), (255, 255, 255))
+        textRect3 = py.draw.rect(screen, (255,255,255), (1050, 200, 140, 140))
 
 class button():
     def __init__(self, x, y, width, height, color):
@@ -131,11 +131,14 @@ class button():
 
 
         return action
-
+         
 
 player1 = player(923, 843, 35, 35, (255, 0, 0))
 player2 = player(923, 897, 35, 35, (0, 255, 0))
 dicebutton = button(950, 800, 200, 100, (215, 215, 215))
+font = py.font.Font('freesansbold.ttf', 32)
+dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
+dbt_Rect = py.draw.rect(screen, (215, 215, 215), (950, 830, 140, 140))
 
 
 stamp = False
@@ -163,6 +166,7 @@ while run:
         screen.blit(text1, textRect1)
         screen.blit(text2, textRect2)
         screen.blit(text3, textRect3)
+        screen.blit(dice_button_text, dbt_Rect)
     py.display.update()
 
 
