@@ -86,20 +86,21 @@ def diceroll():
 	else:
 		print("boooo taxes")
 diceroll()
-          
-font = py.font.Font('freesansbold.ttf', 32)
-text = font.render(str(N), True, (0, 0, 0), (255, 255, 255))
-textRect = py.draw.rect(screen, (0, 0, 0), (1100, 50, 140, 140), 2)
-text1 = font.render(str(A), True, (0, 0, 0), (255, 255, 255))
-textRect1 = py.draw.rect(screen, (0, 0, 0), (1150, 50, 140, 140), 2)
-text2 = font.render('You rolled a total of ' + str(dice_sum), True, (0, 0, 0), (255, 255, 255))
-textRect2 = py.draw.rect(screen, (0, 0, 0), (950, 150, 140, 140), 2)
-if dice_sum < 10:
-    text3 = font.render('yay no taxes', True, (0, 0, 0), (255, 255, 255))
-    textRect3 = py.draw.rect(screen, (0, 0, 0), (950, 200, 140, 140), 2)
-else:
-    text3 = font.render('boooo taxes', True, (0, 0, 0), (255, 255, 255))
-    textRect3 = py.draw.rect(screen, (0, 0, 0), (950, 200, 140, 140), 2)
+def dicetext():      
+    global font, text, textRect, text1, textRect1, text2, textRect2, text3, textRect3
+    font = py.font.Font('freesansbold.ttf', 32)
+    text = font.render(str(N), True, (0, 0, 0), (255, 255, 255))
+    textRect = py.draw.rect(screen, (0, 0, 0), (1100, 50, 140, 140), 2)
+    text1 = font.render(str(A), True, (0, 0, 0), (255, 255, 255))
+    textRect1 = py.draw.rect(screen, (0, 0, 0), (1150, 50, 140, 140), 2)
+    text2 = font.render('You rolled a total of ' + str(dice_sum), True, (0, 0, 0), (255, 255, 255))
+    textRect2 = py.draw.rect(screen, (0, 0, 0), (950, 150, 140, 140), 2)
+    if dice_sum < 10:
+        text3 = font.render('yay no taxes', True, (0, 0, 0), (255, 255, 255))
+        textRect3 = py.draw.rect(screen, (0, 0, 0), (950, 200, 140, 140), 2)
+    else:
+        text3 = font.render('boooo taxes', True, (0, 0, 0), (255, 255, 255))
+        textRect3 = py.draw.rect(screen, (0, 0, 0), (950, 200, 140, 140), 2)
 
 class button():
     def __init__(self, x, y, width, height, color):
@@ -138,10 +139,7 @@ run = True
 while run:
     screen.fill((255, 255, 255))
     board()
-    screen.blit(text, textRect)
-    screen.blit(text1, textRect1)
-    screen.blit(text2, textRect2)
-    screen.blit(text3, textRect3)
+
 
 
     for event in py.event.get():
@@ -152,7 +150,11 @@ while run:
     player2.draw(screen)
     if dicebutton.draw(screen):
         diceroll()
-
+        dicetext()
+        screen.blit(text, textRect)
+        screen.blit(text1, textRect1)
+        screen.blit(text2, textRect2)
+        screen.blit(text3, textRect3)
     py.display.update()
 
 
