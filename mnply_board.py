@@ -99,10 +99,10 @@ def dicetext():
     textRect2 = py.draw.rect(screen, (255,255,255), (1050, 150, 140, 140))
     if dice_sum < 10:
         text3 = font.render('yay no taxes', True, (0, 0, 0), (255, 255, 255))
-        textRect3 = py.draw.rect(screen, (255,255,255), (1050, 200, 140, 140))
+        textRect3 = py.draw.rect(screen, (255,255,255), (1050, 200, 140, 100))
     else:
         text3 = font.render('rip taxes', True, (0, 0, 0), (255, 255, 255))
-        textRect3 = py.draw.rect(screen, (255,255,255), (1050, 200, 140, 140))
+        textRect3 = py.draw.rect(screen, (255,255,255), (1050, 200, 140, 100))
 
 class button():
     def __init__(self, x, y, width, height, color):
@@ -114,16 +114,12 @@ class button():
         self.rect = (x,y,width,height)
         self.clicked = False
 
-
-    dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
-    dbt_Rect = py.draw.rect(screen, (215, 215, 215), (950, 830, 140, 140))
-
     def draw(self, win):
         action = False
         py.draw.rect(win, self.color, self.rect)
         posx, posy = py.mouse.get_pos()
         click = py.mouse.get_pressed()
-        if (950 < posx < 1150) and (800 < posy < 900):
+        if (self.x < posx < self.x+200) and (self.y < posy < self.y+200):
             if (click[0] == 1) and (self.clicked == False):
                 self.clicked = True
                 action = True
@@ -133,11 +129,17 @@ class button():
 
         return action
          
-
-player1 = player(923, 843, 35, 35, (255, 0, 0))
-player2 = player(923, 897, 35, 35, (0, 255, 0))
-dicebutton = button(950, 800, 200, 100, (215, 215, 215))
+player1posx = 923
+player2posx = 923
+player1posy = 843
+player2posy = 897
+player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
+player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
 font = py.font.Font('freesansbold.ttf', 32)
+dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
+dbt_Rect = py.draw.rect(screen, (215, 215, 215), (1050, 330, 140, 140))
+dicebutton = button(1050, 300, 200, 100, (215, 215, 215))
+
 
 
 
@@ -166,7 +168,7 @@ while run:
         screen.blit(text1, textRect1)
         screen.blit(text2, textRect2)
         screen.blit(text3, textRect3)
-        screen.blit(dice_button_text, dbt_Rect)
+    screen.blit(dice_button_text, dbt_Rect)
     py.display.update()
 
 
