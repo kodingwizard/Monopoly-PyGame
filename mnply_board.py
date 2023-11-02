@@ -86,6 +86,8 @@ def diceroll():
 	else:
 		print("boooo taxes")
 diceroll()
+
+
 def dicetext():      
     global font, text, textRect, text1, textRect1, text2, textRect2, text3, textRect3
     font = py.font.Font('freesansbold.ttf', 32)
@@ -135,6 +137,8 @@ player1 = player(923, 843, 35, 35, (255, 0, 0))
 player2 = player(923, 897, 35, 35, (0, 255, 0))
 dicebutton = button(950, 800, 200, 100, (215, 215, 215))
 
+
+stamp = False
 run = True
 while run:
     screen.fill((255, 255, 255))
@@ -148,9 +152,13 @@ while run:
         
     player1.draw(screen)
     player2.draw(screen)
+    
+
     if dicebutton.draw(screen):
         diceroll()
         dicetext()
+        stamp = True
+    if stamp == True:
         screen.blit(text, textRect)
         screen.blit(text1, textRect1)
         screen.blit(text2, textRect2)
