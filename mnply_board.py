@@ -49,9 +49,9 @@ def board():
     #commchest_scale = py.transform.scale (commchest,(commchest.get_width()*0.875, commchest.get_height()*0.875))
     #screen.blit(commchest, (195, 180))
     '''
-    global full_board
     full_board = py.image.load("Streets.png")
-    screen.blit(full_board, (-88, 20))
+    full_board_scale = py.transform.scale(full_board, (full_board.get_width()*1, full_board.get_height()*0.99))
+    screen.blit(full_board_scale, (-88, 50))
 
 class player(): 
     def __init__(self, x, y, width, height, color):
@@ -165,7 +165,6 @@ while run:
         diceroll()
         dicetext()
         stamp = True
-        print(str(full_board.get_height), str(full_board.get_width))
         if turn % 2 == 1:#see if it is player one's turn
             if (188 < player1posx <= 888) and (player1posy == 843):#bottom right to bottom left
                 player1posx -= (70*dice_sum)
@@ -200,9 +199,8 @@ while run:
                 else:#normal movement
                     player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
             turn += 1 #next person's turn
-            print(str(player1posx), str(player1posy))
         else:
-            if (188 < player2posx <= 888) and (player2posy == 897):#bottom right to bottom left
+            if (188 < player2posx <= 888) and (840 <= player2posy <= 960):#bottom right to bottom left
                 player2posx -= (70*dice_sum)
                 if player2posx < 188:#if going around bottom left corner
                     player2posy = 843
@@ -215,7 +213,7 @@ while run:
                     player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
                 else: #normal movement
                     player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-            elif (player2posx == 118) and (197 < player2posy <= 897):#bottom left to top left
+            elif (100 <= player2posx <= 240) and (197 < player2posy <= 897):#bottom left to top left
                 player2posy -= (70*dice_sum)
                 if player2posy < 143:#if going around top left corner
                     player2posx = 188
@@ -228,7 +226,7 @@ while run:
                     player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
                 else:#normal movement
                     player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-            elif (118 <= player2posx < 888) and (player2posy == 73):#top left to top right
+            elif (118 <= player2posx < 888) and (50 <= player2posy <= 190):#top left to top right
                 player2posx += (70*dice_sum)
                 if player2posx > 888:#if going around top right corner
                     player2posy = 143
@@ -241,7 +239,7 @@ while run:
                     player2 = player(player2posx, player2posy, 35, 35,(0, 255, 0))
                 else:
                     player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-            elif (player2posx == 958) and (143 <= player2posy < 897):#top right to bottom right
+            elif (870 <= player2posx <= 1010) and (143 <= player2posy < 897):#top right to bottom right
                 player2posy += (70*dice_sum)
                 if player2posy > 843:#if going around bottom right corner
                     player2posx = 888
