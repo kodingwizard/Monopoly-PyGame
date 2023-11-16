@@ -217,7 +217,7 @@ while run:
                 player2posy -= (70*dice_sum)
                 if player2posy < 143:#if going around top left corner
                     player2posx = 188
-                    player2posx += 197 - player2posy
+                    player2posx += 143 - player2posy
                     player2posy = 73
                     player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
                 if (100 <= player2posx <= 240)and (50 <= player2posy <= 190):#if reaching top left corner
@@ -243,7 +243,7 @@ while run:
                 player2posy += (70*dice_sum)
                 if player2posy > 843:#if going around bottom right corner
                     player2posx = 888
-                    player2posx -= player2posy - 897
+                    player2posx -= player2posy - 843
                     player2posy = 897
                     player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
                 if (870 <= player2posx <= 1010) and (820 <= player2posy <= 960):#if reaching bottom right corner
@@ -267,6 +267,7 @@ while run:
     player1.draw(screen)
     player2.draw(screen)
     py.display.update()
+
 
 
 
