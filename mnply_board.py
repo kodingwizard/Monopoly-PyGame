@@ -150,7 +150,7 @@ etb_text = font.render("End Turn", True, (0, 0, 0), (215, 215, 215))
 turn = 1
 stamp = False
 run = True
-turn = 0
+end_turn = 0
 while run:
     screen.fill((255, 255, 255))
     board()
@@ -165,11 +165,11 @@ while run:
             run = False
        
    
-    if dicebutton.draw(screen) and (turn == 0):
+    if dicebutton.draw(screen) and (end_turn == 0):
         diceroll()
         dicetext()
         stamp = True
-        turn = 1
+        end_turn = 1
         if turn % 2 == 1:#see if it is player one's turn
             if (188 < player1posx <= 888) and (player1posy == 843):#bottom right to bottom left
                 player1posx -= (70*dice_sum)
@@ -260,7 +260,7 @@ while run:
             turn += 1#making it next person's turn
 
     if endturn.draw(screen):
-        turn = 0
+        end_turn = 0
 
 
     if stamp == True:
