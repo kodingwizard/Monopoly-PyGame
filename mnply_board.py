@@ -140,6 +140,9 @@ font = py.font.Font('freesansbold.ttf', 32)
 dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
 dbt_Rect = py.draw.rect(screen, (215, 215, 215), (1050, 330, 140, 140))
 dicebutton = button(1050, 300, 200, 100, (215, 215, 215))
+endturn = button(1050, 500, 200, 100, (215, 215, 215))
+etb_rect = py.draw.rect(screen, (215, 215, 215), (1050, 530, 140, 140))
+etb_text = font.render("End Turn", True, (0, 0, 0), (215, 215, 215))
 
 
 
@@ -147,6 +150,7 @@ dicebutton = button(1050, 300, 200, 100, (215, 215, 215))
 turn = 1
 stamp = False
 run = True
+turn = 0
 while run:
     screen.fill((255, 255, 255))
     board()
@@ -161,10 +165,11 @@ while run:
             run = False
        
    
-    if dicebutton.draw(screen):
+    if dicebutton.draw(screen) and (turn == 0):
         diceroll()
         dicetext()
         stamp = True
+        turn = 1
         if turn % 2 == 1:#see if it is player one's turn
             if (188 < player1posx <= 888) and (player1posy == 843):#bottom right to bottom left
                 player1posx -= (70*dice_sum)
@@ -253,7 +258,9 @@ while run:
                 else:#normal movement
                     player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
             turn += 1#making it next person's turn
-           
+
+    if endturn.draw(screen):
+        turn = 0
 
 
     if stamp == True:
@@ -262,7 +269,7 @@ while run:
         screen.blit(text2, textRect2)
         screen.blit(text3, textRect3)
     screen.blit(dice_button_text, dbt_Rect)
-
+    screen.blit(etb_text, etb_rect)
 
     player1.draw(screen)
     player2.draw(screen)
