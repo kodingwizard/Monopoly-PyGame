@@ -61,6 +61,8 @@ class player():
         self.height = height
         self.color = color
         self.rect = (x,y,width,height)
+        self.jail = 0
+
 
 
     def draw(self, win):
@@ -151,6 +153,7 @@ turn = 1
 stamp = False
 run = True
 end_turn = 0
+jailchecker = 0
 while run:
     screen.fill((255, 255, 255))
     board()
@@ -164,100 +167,145 @@ while run:
         if event.type == py.QUIT:
             run = False
        
-   
+
     if dicebutton.draw(screen) and (end_turn == 0):
         diceroll()
         dicetext()
         stamp = True
         end_turn = 1
-        if turn % 2 == 1:#see if it is player one's turn
-            if (188 < player1posx <= 888) and (player1posy == 843):#bottom right to bottom left
-                player1posx -= (70*dice_sum)
-                if player1posx < 188:#if going around bottom left corner
-                    player1posy -= 188 - player1posx
-                    player1posx = 188
-                    player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
-                else:#normal movement
-                    player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
-            elif (player1posx == 188) and (143 < player1posy <= 843):#bottom left to top left
-                player1posy -= (70*dice_sum)
-                if player1posy < 143:#if going around top left corner
-                    player1posx += 143 - player1posy
-                    player1posy = 143
-                    player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
-                else:#normal movement
-                    player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
-            elif (188 <= player1posx < 888) and (player1posy == 143):#top left to top right
-                player1posx += (70*dice_sum)
-                if player1posx > 888:#if going around top right corner
-                    player1posy += player1posx - 888
-                    player1posx = 888
-                    player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
-                else:#normal movement
-                    player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
-            elif (player1posx == 888) and (143 <= player1posy < 843):#top right to bottom right
-                player1posy += (70*dice_sum)
-                if player1posy > 843:#if going around bottom right corner
-                    player1posx -= player1posy - 843
-                    player1posy = 843
-                    player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
-                else:#normal movement
-                    player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
-            turn += 1 #next person's turn
+        if (turn % 2 == 1):#see if it is player one's turn
+            if (player1.jail == 0):
+                if (188 < player1posx <= 888) and (player1posy == 843):#bottom right to bottom left
+                    player1posx -= (70*dice_sum)
+                    if player1posx < 188:#if going around bottom left corner
+                        player1posy -= 188 - player1posx
+                        player1posx = 188
+                        player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
+                    else:#normal movement
+                        player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
+                elif (player1posx == 188) and (143 < player1posy <= 843):#bottom left to top left
+                    player1posy -= (70*dice_sum)
+                    if player1posy < 143:#if going around top left corner
+                        player1posx += 143 - player1posy
+                        player1posy = 143
+                        player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
+                    else:#normal movement
+                        player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
+                elif (188 <= player1posx < 888) and (player1posy == 143):#top left to top right
+                    player1posx += (70*dice_sum)
+                    if player1posx > 888:#if going around top right corner
+                        player1posy += player1posx - 888
+                        player1posx = 888
+                        player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
+                    else:#normal movement
+                        player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
+                elif (player1posx == 888) and (143 <= player1posy < 843):#top right to bottom right
+                    player1posy += (70*dice_sum)
+                    if player1posy > 843:#if going around bottom right corner
+                        player1posx -= player1posy - 843
+                        player1posy = 843
+                        player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
+                    else:#normal movement
+                        player1 = player(player1posx, player1posy, 35, 35, (255, 0, 0))
+                turn += 1#making it next person's turn
+            else:
+                turn += 1 #next person's turn
         else:
-            if (188 < player2posx <= 888) and (840 <= player2posy <= 960):#bottom right to bottom left
-                player2posx -= (70*dice_sum)
-                if player2posx < 188:#if going around bottom left corner
-                    player2posy = 843
-                    player2posy -= 188 - player2posx
-                    player2posx = 118
-                    player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-                if (100 <= player2posx <= 240) and (820 <= player2posy <= 960):#if reaching bottom left corner
-                    player2posx = 118
-                    player2posy = 843
-                    player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-                else: #normal movement
-                    player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-            elif (100 <= player2posx <= 240) and (197 < player2posy <= 897):#bottom left to top left
-                player2posy -= (70*dice_sum)
-                if player2posy < 143:#if going around top left corner
-                    player2posx = 188
-                    player2posx += 143 - player2posy
-                    player2posy = 73
-                    player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-                if (100 <= player2posx <= 240)and (50 <= player2posy <= 190):#if reaching top left corner
-                    player2posx = 188
-                    player2posy = 73
-                    player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-                else:#normal movement
-                    player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-            elif (118 <= player2posx < 888) and (50 <= player2posy <= 190):#top left to top right
-                player2posx += (70*dice_sum)
-                if player2posx > 888:#if going around top right corner
-                    player2posy = 143
-                    player2posy += player2posx - 888
-                    player2posx = 958
-                    player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-                if (870 <= player2posx <= 1010) and (50 <= player2posy <= 290):#if reaching top right corner
-                    player2posx = 958
-                    player2posy = 143
-                    player2 = player(player2posx, player2posy, 35, 35,(0, 255, 0))
-                else:
-                    player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-            elif (870 <= player2posx <= 1010) and (143 <= player2posy < 897):#top right to bottom right
-                player2posy += (70*dice_sum)
-                if player2posy > 843:#if going around bottom right corner
-                    player2posx = 888
-                    player2posx -= player2posy - 843
-                    player2posy = 897
-                    player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-                if (870 <= player2posx <= 1010) and (820 <= player2posy <= 960):#if reaching bottom right corner
-                    player2posx = 888
-                    player2posy = 897
-                    player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-                else:#normal movement
-                    player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
-            turn += 1#making it next person's turn
+            if (player2.jail == 0):
+                if (188 < player2posx <= 888) and (840 <= player2posy <= 960):#bottom right to bottom left
+                    player2posx -= (70*dice_sum)
+                    if player2posx < 188:#if going around bottom left corner
+                        player2posy = 843
+                        player2posy -= 188 - player2posx
+                        player2posx = 118
+                        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+                    if (100 <= player2posx <= 240) and (820 <= player2posy <= 960):#if reaching bottom left corner
+                        player2posx = 118
+                        player2posy = 843
+                        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+                    else: #normal movement
+                        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+                elif (100 <= player2posx <= 240) and (197 < player2posy <= 897):#bottom left to top left
+                    player2posy -= (70*dice_sum)
+                    if player2posy < 143:#if going around top left corner
+                        player2posx = 188
+                        player2posx += 143 - player2posy
+                        player2posy = 73
+                        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+                    if (100 <= player2posx <= 240)and (50 <= player2posy <= 190):#if reaching top left corner
+                        player2posx = 188
+                        player2posy = 73
+                        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+                    else:#normal movement
+                        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+                elif (118 <= player2posx < 888) and (50 <= player2posy <= 190):#top left to top right
+                    player2posx += (70*dice_sum)
+                    if player2posx > 888:#if going around top right corner
+                        player2posy = 143
+                        player2posy += player2posx - 888
+                        player2posx = 958
+                        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+                    if (870 <= player2posx <= 1010) and (50 <= player2posy <= 290):#if reaching top right corner
+                        player2posx = 958
+                        player2posy = 143
+                        player2 = player(player2posx, player2posy, 35, 35,(0, 255, 0))
+                    else:
+                        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+                elif (870 <= player2posx <= 1010) and (143 <= player2posy < 897):#top right to bottom right
+                    player2posy += (70*dice_sum)
+                    if player2posy > 843:#if going around bottom right corner
+                        player2posx = 888
+                        player2posx -= player2posy - 843
+                        player2posy = 897
+                        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+                    if (870 <= player2posx <= 1010) and (820 <= player2posy <= 960):#if reaching bottom right corner
+                        player2posx = 888
+                        player2posy = 897
+                        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+                    else:#normal movement
+                        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+                turn += 1#making it next person's turn
+            else:
+                turn += 1#making it next person's turn
+        print(player1.jail)
+        print(player2.jail)
+
+    if (870 < player1posx < 1010) and (50< player1posy <190):
+        player1.jail == 1
+        player1posx = 188
+        player1posy = 843
+        player1 = player(player1posx, player2posx, 35, 35, (255, 0, 0))
+    if (870 < player2posx < 1010) and (50< player2posy <190):
+        player2.jail == 1
+        player2posx = 118
+        player2posy = 843
+        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+        
+    if (player1.jail != 0):
+        if (jailchecker == 0):
+            jailchecker += 1
+        if (jailchecker == 4):
+            player1.jail = 0
+            jailchecker = 0
+        else:
+            if N == A:
+                player1.jail = 0
+                jailchecker = 0
+            else:
+                jailchecker += 1
+        
+    if (player2.jail != 0):
+        if (jailchecker == 0):
+            jailchecker += 1
+        if (jailchecker == 4):
+            player2.jail = 0
+            jailchecker = 0
+        else:
+            if N == A:
+                player2.jail = 0
+                jailchecker = 0
+            else:
+                jailchecker += 1
 
     if endturn.draw(screen):
         end_turn = 0
