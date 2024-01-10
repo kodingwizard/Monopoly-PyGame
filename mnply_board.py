@@ -153,7 +153,8 @@ turn = 1
 stamp = False
 run = True
 end_turn = 0
-jailchecker = 0
+jailcheckerp1 = 0
+jailcheckerp2 = 0
 while run:
     screen.fill((255, 255, 255))
     board()
@@ -174,7 +175,7 @@ while run:
         stamp = True
         end_turn = 1
         if (turn % 2 == 1):#see if it is player one's turn
-            if (player1.jail == 0):
+            if (jailcheckerp1 == 0):
                 if (188 < player1posx <= 888) and (player1posy == 843):#bottom right to bottom left
                     player1posx -= (70*dice_sum)
                     if player1posx < 188:#if going around bottom left corner
@@ -211,7 +212,7 @@ while run:
             else:
                 turn += 1 #next person's turn
         else:
-            if (player2.jail == 0):
+            if (jailcheckerp2 == 0):
                 if (188 < player2posx <= 888) and (840 <= player2posy <= 960):#bottom right to bottom left
                     player2posx -= (70*dice_sum)
                     if player2posx < 188:#if going around bottom left corner
@@ -267,48 +268,44 @@ while run:
                 turn += 1#making it next person's turn
             else:
                 turn += 1#making it next person's turn
-        print(player1.jail)
-        print(player2.jail)
+        print(jailcheckerp1)
+        print(jailcheckerp2)
 
-    if (870 < player1posx < 1010) and (50< player1posy <190):
-        player1.jail == 1
-        player1posx = 188
-        player1posy = 843
-        player1 = player(player1posx, player2posx, 35, 35, (255, 0, 0))
-    if (870 < player2posx < 1010) and (50< player2posy <190):
-        player2.jail == 1
-        player2posx = 118
-        player2posy = 843
-        player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
+        if (870 < player1posx < 1010) and (50< player1posy <190):
+            jailcheckerp1 = 1
+            player1posx = 188
+            player1posy = 843
+            player1 = player(player1posx, player2posx, 35, 35, (255, 0, 0))
+        if (870 < player2posx < 1010) and (50< player2posy <190):
+            jailcheckerp2 = 1
+            player2posx = 118
+            player2posy = 843
+            player2 = player(player2posx, player2posy, 35, 35, (0, 255, 0))
         
-    if (player1.jail != 0):
-        if (jailchecker == 0):
-            jailchecker += 1
-        if (jailchecker == 4):
-            player1.jail = 0
-            jailchecker = 0
-        else:
-            if N == A:
-                player1.jail = 0
-                jailchecker = 0
-            else:
-                jailchecker += 1
-        
-    if (player2.jail != 0):
-        if (jailchecker == 0):
-            jailchecker += 1
-        if (jailchecker == 4):
-            player2.jail = 0
-            jailchecker = 0
-        else:
-            if N == A:
-                player2.jail = 0
-                jailchecker = 0
-            else:
-                jailchecker += 1
 
     if endturn.draw(screen):
         end_turn = 0
+        if (jailcheckerp1 != 0) and (turn & 2 == 0):
+            if (jailcheckerp1 == 1):
+                jailcheckerp1 += 1         
+            if (jailcheckerp1 == 5):
+                jailcheckerp1 = 0
+            else:
+                if N == A:
+                    jailcheckerp1 = 0
+                else:
+                    jailcheckerp1 += 1
+        
+        if (jailcheckerp2 != 0) and (turn % 2 == 1):
+            if (jailcheckerp2 == 1):
+                jailcheckerp2 += 1
+            if (jailcheckerp2 == 5):
+                jailcheckerp2 = 0
+            else:   
+                if N == A:
+                    jailcheckerp2 = 0
+                else:
+                    jailcheckerp2 += 1
 
 
     if stamp == True:
