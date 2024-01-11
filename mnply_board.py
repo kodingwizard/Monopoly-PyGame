@@ -268,8 +268,8 @@ while run:
                 turn += 1#making it next person's turn
             else:
                 turn += 1#making it next person's turn
-        print(jailcheckerp1)
-        print(jailcheckerp2)
+        #print(jailcheckerp1)
+        #print(jailcheckerp2)
 
         if (870 < player1posx < 1010) and (50< player1posy <190):
             jailcheckerp1 = 1
