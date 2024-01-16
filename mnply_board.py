@@ -5,17 +5,11 @@ import random
 py.init()
 
 
-
-
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 1000
 
 
-
-
 screen = py.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), py.RESIZABLE)
-
-
 
 
 def board():
@@ -72,11 +66,6 @@ class player():
         self.rect = (x,y,width,height)
         self.jail = jail
 
-
-
-
-
-
     def draw(self, win):
         py.draw.rect(win, self.color, self.rect)
 
@@ -105,8 +94,6 @@ def diceroll():
     else:
         print("rip taxes")
 diceroll()
-
-
 
 
 def dicetext():      
@@ -148,10 +135,6 @@ class button():
                 action = True
             if click[0] == 0:
                 self.clicked = False
-
-
-
-
         return action
          
 player1 = player(888, 843, 35, 35, (255, 0, 0), 0)
@@ -163,12 +146,6 @@ dicebutton = button(1050, 300, 200, 100, (215, 215, 215))
 endturn = button(1050, 500, 200, 100, (215, 215, 215))
 etb_rect = py.draw.rect(screen, (215, 215, 215), (1050, 530, 140, 140))
 etb_text = font.render("End Turn", True, (0, 0, 0), (215, 215, 215))
-
-
-
-
-
-
 
 
 turn = 1
@@ -185,14 +162,10 @@ while run:
         player2.draw(screen)
 
 
-
-
-
     for event in py.event.get():
         if event.type == py.QUIT:
             run = False
        
-
 
     if dicebutton.draw(screen) and (end_turn == 0):
         diceroll()
@@ -268,7 +241,6 @@ while run:
             else:
                 turn += 1#making it next person's turn
 
-
         if (870 < player1.x < 1010) and (50< player1.y <190):
             player1.jail = 1
             player1.x = 188
@@ -279,8 +251,6 @@ while run:
             player2.x = 118
             player2.y = 843
             player2 = player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail)
-           
-       
 
 
     if endturn.draw(screen):
@@ -307,9 +277,6 @@ while run:
                 else:
                     player2.jail += 1
 
-
-
-
     if stamp == True:
         screen.blit(text, textRect)
         screen.blit(text1, textRect1)
@@ -322,7 +289,6 @@ while run:
     player1.draw(screen)
     player2.draw(screen)
     py.display.update()
-
 
 
 py.quit()
