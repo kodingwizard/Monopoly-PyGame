@@ -252,7 +252,12 @@ while run:
             player2.x = 118
             player2.y = 843
             player2 = player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail)
+    if(((380 < player1.x < 450) and (820 < player1.y < 960)) or ((310 < player1.x < 380) and (50 < player1.y < 190)) or ((870 < player1.x < 1100) and (520 < player1.y < 590))) and (end_turn == 1):
+        chance_test = py.image.load("ChanceCards/chancecard.png")
+        screen.blit(chance_test, (100,100))
+  
 
+<<<<<<< Updated upstream
     if (((800 < player1.x < 870) and (820 < player1.y < 960)) or ((100 < player1.x < 240) and (50 < player1.y < 120)) or ((870 < player1.x < 1010) and (330 < player1.y < 470))) and (end_turn == 1):
         comcard = py.image.load("ComCard/comone.png")
         screen.blit(comcard, (400, 500))
@@ -260,6 +265,11 @@ while run:
     if (((800 < player2.x < 870) and (820 < player2.y < 960)) or ((100 < player2.x < 240) and (50 < player2.y < 120)) or ((870 < player2.x < 1010) and (330 < player2.y < 470))) and (end_turn == 1):
         comcard = py.image.load("ComCard/comone.png")
         screen.blit(comcard, (400, 500))
+=======
+    if(((380 < player2.x < 450) and (820 < player2.y < 960)) or ((310 < player2.x < 380) and (50 < player2.y < 190)) or ((870 < player2.x < 1100) and (520 < player2.y < 590))) and (end_turn == 1):
+        chance_test = py.image.load("ChanceCards/chancecard.png")
+        screen.blit(chance_test, (100,100))
+>>>>>>> Stashed changes
 
     if endturn.draw(screen):
         end_turn = 0
