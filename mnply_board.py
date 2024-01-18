@@ -1,5 +1,6 @@
 import pygame as py
 import random
+from comcard import *
 
 
 py.init()
@@ -252,6 +253,13 @@ while run:
             player2.y = 843
             player2 = player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail)
 
+    if (((800 < player1.x < 870) and (820 < player1.y < 960)) or ((100 < player1.x < 240) and (50 < player1.y < 120)) or ((870 < player1.x < 1010) and (330 < player1.y < 470))) and (end_turn == 1):
+        comcard = py.image.load("ComCard/comone.png")
+        screen.blit(comcard, (400, 500))
+    
+    if (((800 < player2.x < 870) and (820 < player2.y < 960)) or ((100 < player2.x < 240) and (50 < player2.y < 120)) or ((870 < player2.x < 1010) and (330 < player2.y < 470))) and (end_turn == 1):
+        comcard = py.image.load("ComCard/comone.png")
+        screen.blit(comcard, (400, 500))
 
     if endturn.draw(screen):
         end_turn = 0
@@ -276,6 +284,7 @@ while run:
                     player2.jail = 0
                 else:
                     player2.jail += 1
+
 
     if stamp == True:
         screen.blit(text, textRect)
