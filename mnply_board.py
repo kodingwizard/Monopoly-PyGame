@@ -251,7 +251,7 @@ while run:
             player2.y = 843
             player2 = player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail)
     
-    from comcard import *    
+    from communitycard import *    
     from chancecard import *
     comcardp1()
     comcardp2()
