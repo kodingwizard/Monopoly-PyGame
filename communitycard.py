@@ -15,6 +15,16 @@ comcounterp2 = 0
 def com1():
     global comcard
     comcard = py.image.load("ComCard/comone.png")
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
+    if (turn % 2 == 0):
+        player1.money -= 150
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money)
+    else:
+        player2.money -= 150
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money)
    
 
 def com2():

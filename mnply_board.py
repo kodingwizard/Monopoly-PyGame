@@ -56,7 +56,7 @@ def board():
 
 
 class player():
-    def __init__(self, x, y, width, height, color, jail):
+    def __init__(self, x, y, width, height, color, jail, money):
         self.x = x
         self.y = y
         self.width = width
@@ -64,6 +64,7 @@ class player():
         self.color = color
         self.rect = (x,y,width,height)
         self.jail = jail
+        self.money = money
 
     def draw(self, win):
         py.draw.rect(win, self.color, self.rect)
@@ -136,8 +137,8 @@ class button():
                 self.clicked = False
         return action
          
-player1 = player(888, 843, 35, 35, (255, 0, 0), 0)
-player2 = player(888, 897, 35, 35, (0, 255, 0), 0)
+player1 = player(888, 843, 35, 35, (255, 0, 0), 0, 1500)
+player2 = player(888, 897, 35, 35, (0, 255, 0), 0, 1500)
 font = py.font.Font('freesansbold.ttf', 32)
 dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
 dbt_Rect = py.draw.rect(screen, (215, 215, 215), (1050, 330, 140, 140))
@@ -193,7 +194,7 @@ while run:
                     if player1.y > 843:#if going around bottom right corner
                         player1.x -= player1.y - 843
                         player1.y = 843
-                player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail)
+                player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money)
                 turn += 1#making it next person's turn
             else:
                 turn += 1 #next person's turn
@@ -235,7 +236,7 @@ while run:
                     if (870 <= player2.x <= 1010) and (820 <= player2.y <= 960):#if reaching bottom right corner
                         player2.x = 888
                         player2.y = 897
-                player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail)
+                player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money)
                 turn += 1#making it next person's turn
             else:
                 turn += 1#making it next person's turn
@@ -244,12 +245,12 @@ while run:
             player1.jail = 1
             player1.x = 188
             player1.y = 843
-            player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail)
+            player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money)
         if (870 < player2.x < 1010) and (50< player2.y <190):
             player2.jail = 1
             player2.x = 118
             player2.y = 843
-            player2 = player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail)
+            player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money)
     
     from communitycard import *    
     from chancecard import *
