@@ -56,7 +56,7 @@ def board():
 
 
 class player():
-    def __init__(self, x, y, width, height, color, jail, money):
+    def __init__(self, x, y, width, height, color, jail, money, jailfree):
         self.x = x
         self.y = y
         self.width = width
@@ -65,6 +65,7 @@ class player():
         self.rect = (x,y,width,height)
         self.jail = jail
         self.money = money
+        self.jailfree = jailfree
 
     def draw(self, win):
         py.draw.rect(win, self.color, self.rect)
@@ -112,6 +113,15 @@ def dicetext():
         text3 = font.render('rip taxes', True, (0, 0, 0), (255, 255, 255))
         textRect3 = py.draw.rect(screen, (255,255,255), (1050, 200, 140, 100))
 
+def player1_info():
+    p1font = py.font.Font('freesansbold.ttf', 32)
+    p1text = font.render("Player 1's Money: " + player1.money, True, (0, 0, 0), (255, 255, 255))
+    p1textRect = py.draw.rect(screen, (255,255,255), (1160, 800, 140, 140))
+    p1text1 = font.render("Player 1's Jail Free Cards: " + player1.jailfree, True, (0, 0, 0), (255, 255, 255))
+    p1textRect1 = py.draw.rect(screen, (255,255,255), (1100, 900, 140, 140))
+    
+
+
 
 class button():
     def __init__(self, x, y, width, height, color):
@@ -137,8 +147,8 @@ class button():
                 self.clicked = False
         return action
          
-player1 = player(888, 843, 35, 35, (255, 0, 0), 0, 1500)
-player2 = player(888, 897, 35, 35, (0, 255, 0), 0, 1500)
+player1 = player(888, 843, 35, 35, (255, 0, 0), 0, 1500, 0)
+player2 = player(888, 897, 35, 35, (0, 255, 0), 0, 1500, 0)
 font = py.font.Font('freesansbold.ttf', 32)
 dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
 dbt_Rect = py.draw.rect(screen, (215, 215, 215), (1050, 330, 140, 140))
@@ -194,7 +204,7 @@ while run:
                     if player1.y > 843:#if going around bottom right corner
                         player1.x -= player1.y - 843
                         player1.y = 843
-                player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money)
+                player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
                 turn += 1#making it next person's turn
             else:
                 turn += 1 #next person's turn
@@ -236,7 +246,7 @@ while run:
                     if (870 <= player2.x <= 1010) and (820 <= player2.y <= 960):#if reaching bottom right corner
                         player2.x = 888
                         player2.y = 897
-                player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money)
+                player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
                 turn += 1#making it next person's turn
             else:
                 turn += 1#making it next person's turn
@@ -245,12 +255,12 @@ while run:
             player1.jail = 1
             player1.x = 188
             player1.y = 843
-            player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money)
+            player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
         if (870 < player2.x < 1010) and (50< player2.y <190):
             player2.jail = 1
             player2.x = 118
             player2.y = 843
-            player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money)
+            player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
     
     from communitycard import *    
     from chancecard import *

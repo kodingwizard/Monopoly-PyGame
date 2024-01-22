@@ -21,39 +21,122 @@ def com1():
     from mnply_board import turn
     if (turn % 2 == 0):
         player1.money -= 150
-        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
     else:
         player2.money -= 150
-        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
    
 
 def com2():
     global comcard
     comcard = py.image.load("ComCard/comtwo.png")
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
+    if (turn % 2 == 0):
+        player1.money += 200
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+    else:
+        player2.money += 200
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 
 def com3():
     global comcard
     comcard = py.image.load("ComCard/comthree.png")
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
+    if (turn % 2 == 0):
+        player1.money -= 25
+        player1.jailfree += 1
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+    else:
+        player2.money -= 25
+        player2.jailfree += 1
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 
 def com4():
     global comcard
     comcard = py.image.load("ComCard/comfour.png")
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
+    if (turn % 2 == 0):
+        player1.money += 100
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+    else:
+        player2.money += 100
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 
 def com5():
     global comcard
     comcard = py.image.load("ComCard/comfive.png")
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
+    if (turn % 2 == 0):
+        player1.money -= 200
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+    else:
+        player2.money -= 200
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 
 def com6():
     global comcard
     comcard = py.image.load("ComCard/comsix.png")
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
+    if (turn % 2 == 0):
+        player1.money -= 35
+        player2.money += 35
+        player1.jailfree += 1
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+    else:
+        player2.money -= 35
+        player1.money += 35
+        player2.jailfree += 1
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+
 
 def com7():
     global comcard
     comcard = py.image.load("ComCard/comseven.png")
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
+    if (turn % 2 == 0):
+        player1.money += 100
+        player2.money -= 100
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+    else:
+        player2.money += 100
+        player1.money -= 100
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
 
 def com8():
     global comcard
     comcard = py.image.load("ComCard/comeight.png")
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
+    if (turn % 2 == 0):
+        player1.jailfree += 1
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+    else:
+        player2.jailfree += 1
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 
 comlist = [com1, com2, com3, com4, com5, com6, com7, com8]
 
