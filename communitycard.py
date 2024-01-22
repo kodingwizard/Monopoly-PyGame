@@ -57,7 +57,7 @@ def comcardp1():
             random.choice(comlist)()
             comcounterp1 = 1
         comcard_scale = py.transform.scale(comcard, (comcard.get_width()*0.5, comcard.get_height()*0.5))
-        screen.blit(comcard_scale, (400, 500))
+        screen.blit(comcard_scale, (350, 450))
     else:
         comcounterp1 = 0
 def comcardp2():
@@ -70,7 +70,7 @@ def comcardp2():
             random.choice(comlist)()
             comcounterp2 = 1
         comcard_scale = py.transform.scale(comcard, (comcard.get_width()*0.5, comcard.get_height()*0.5))
-        screen.blit(comcard_scale, (400, 500))
+        screen.blit(comcard_scale, (350, 450))
     else:
         comcounterp2 = 0
 

@@ -50,7 +50,8 @@ def chancecardp1():
         if chancecounterp1 == 0:
             random.choice(chancelist)()
             chancecounterp1 = 1
-        screen.blit(chancecard, (400, 500))
+        chancecard_scale = py.transform.scale(chancecard, (chancecard.get_width()*0.5, chancecard.get_height()*0.5))
+        screen.blit(chancecard_scale, (325, 375))
     else:
         chancecounterp1 = 0
 
@@ -63,7 +64,8 @@ def chancecardp2():
         if chancecounterp2 == 0:
             random.choice(chancelist)()
             chancecounterp2 = 1
-        screen.blit(chancecard, (400, 500))
+        chancecard_scale = py.transform.scale(chancecard, (chancecard.get_width()*0.5, chancecard.get_height()*0.5))
+        screen.blit(chancecard_scale, (325, 375))
     else:
         chancecounterp2 = 0
 
