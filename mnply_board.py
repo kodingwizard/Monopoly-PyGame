@@ -112,6 +112,18 @@ def dicetext():
     else:
         text3 = font.render('rip taxes', True, (0, 0, 0), (255, 255, 255))
         textRect3 = py.draw.rect(screen, (255,255,255), (1050, 200, 140, 100))
+
+def playerinfo():
+    global font1, p1text, p1textRect, p1text1, p1textRect1, p2text, p2textRect, p2text1, p2textRect1
+    font1 = py.font.Font('freesansbold.ttf', 16)
+    p1text = font1.render("Player 1's Money: " + str(player1.money), True, (0, 0, 0), (255, 255, 255))
+    p1textRect = py.draw.rect(screen, (255,255,255), (1040, 700, 140, 140))
+    p1text1 = font1.render("Player 1's Jail Free Cards: " + str(player1.jailfree), True, (0, 0, 0), (255, 255, 255))
+    p1textRect1 = py.draw.rect(screen, (255,255,255), (1040, 750, 140, 140))
+    p2text = font1.render("Player 2's Money: " + str(player2.money), True, (0, 0, 0), (255, 255, 255))
+    p2textRect = py.draw.rect(screen, (255,255,255), (1040, 800, 140, 140))
+    p2text1 = font1.render("Player 2's Jail Free Cards: " + str(player2.jailfree), True, (0, 0, 0), (255, 255, 255))
+    p2textRect1 = py.draw.rect(screen, (255,255,255), (1040, 850, 140, 140))
     
 
 
@@ -304,6 +316,7 @@ while run:
         screen.blit(text3, textRect3)
     screen.blit(dice_button_text, dbt_Rect)
     screen.blit(etb_text, etb_rect)
+    playerinfo()
     screen.blit(p1text, p1textRect)
     screen.blit(p1text1, p1textRect1)
     screen.blit(p2text, p2textRect)
