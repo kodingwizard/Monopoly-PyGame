@@ -112,13 +112,6 @@ def dicetext():
     else:
         text3 = font.render('rip taxes', True, (0, 0, 0), (255, 255, 255))
         textRect3 = py.draw.rect(screen, (255,255,255), (1050, 200, 140, 100))
-
-def player1_info():
-    p1font = py.font.Font('freesansbold.ttf', 32)
-    p1text = font.render("Player 1's Money: " + player1.money, True, (0, 0, 0), (255, 255, 255))
-    p1textRect = py.draw.rect(screen, (255,255,255), (1160, 800, 140, 140))
-    p1text1 = font.render("Player 1's Jail Free Cards: " + player1.jailfree, True, (0, 0, 0), (255, 255, 255))
-    p1textRect1 = py.draw.rect(screen, (255,255,255), (1100, 900, 140, 140))
     
 
 
@@ -156,6 +149,15 @@ dicebutton = button(1050, 300, 200, 100, (215, 215, 215))
 endturn = button(1050, 500, 200, 100, (215, 215, 215))
 etb_rect = py.draw.rect(screen, (215, 215, 215), (1050, 530, 140, 140))
 etb_text = font.render("End Turn", True, (0, 0, 0), (215, 215, 215))
+font1 = py.font.Font('freesansbold.ttf', 16)
+p1text = font1.render("Player 1's Money: " + str(player1.money), True, (0, 0, 0), (255, 255, 255))
+p1textRect = py.draw.rect(screen, (255,255,255), (1040, 700, 140, 140))
+p1text1 = font1.render("Player 1's Jail Free Cards: " + str(player1.jailfree), True, (0, 0, 0), (255, 255, 255))
+p1textRect1 = py.draw.rect(screen, (255,255,255), (1040, 750, 140, 140))
+p2text = font1.render("Player 2's Money: " + str(player2.money), True, (0, 0, 0), (255, 255, 255))
+p2textRect = py.draw.rect(screen, (255,255,255), (1040, 800, 140, 140))
+p2text1 = font1.render("Player 2's Jail Free Cards: " + str(player2.jailfree), True, (0, 0, 0), (255, 255, 255))
+p2textRect1 = py.draw.rect(screen, (255,255,255), (1040, 850, 140, 140))
 
 
 turn = 1
@@ -262,10 +264,10 @@ while run:
             player2.y = 843
             player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
     
-    from communitycard import *    
-    from chancecard import *
+    from communitycard import * 
     comcardp1()
     comcardp2()
+    from chancecard import *
     chancecardp1()
     chancecardp2()
 
@@ -302,6 +304,10 @@ while run:
         screen.blit(text3, textRect3)
     screen.blit(dice_button_text, dbt_Rect)
     screen.blit(etb_text, etb_rect)
+    screen.blit(p1text, p1textRect)
+    screen.blit(p1text1, p1textRect1)
+    screen.blit(p2text, p2textRect)
+    screen.blit(p2text1, p2textRect1)
 
 
     player1.draw(screen)
