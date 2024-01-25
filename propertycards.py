@@ -7,3 +7,6 @@ SCREEN_HEIGHT = 1000
 
 screen = py.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), py.RESIZABLE)
 
+def propcardsp1():
+
+def propcardsp2():
