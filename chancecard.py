@@ -1,8 +1,5 @@
 import pygame as py
 import random
-from mnply_board import player1
-from mnply_board import player2
-from mnply_board import turn
 
 py.init()
 
@@ -15,37 +12,63 @@ chancecounterp1 = 0
 chancecounterp2 = 0
 
 def chance1():
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
     global chancecard
     chancecard = py.image.load("ChanceCards/chancecardone.png")
     if (turn % 2 == 1):
         player1.x = 888
         player1.y = 843
         player1.money += 200
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
     elif (turn % 2 == 0):
         player2.x = 888
         player2.y = 897
         player2.money += 200
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 
 def chance2():
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
     global chancecard
     chancecard = py.image.load("ChanceCards/chancecardtwo.png")
     if (turn % 2 == 1):
         player1.money -= 100
         player2.money += 100
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
     elif (turn % 2 == 0):
         player2.money -= 100
         player1.money += 100
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 def chance3():
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
     global chancecard
     chancecard = py.image.load("ChanceCards/chancecardthree.png")
     if (turn % 2 == 1):
         player1.money -= 25
         player2.money += 25
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
     elif (turn % 2 == 0):
         player2.money -= 25
         player1.money += 25
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 
 def chance4():
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
     global chancecard
     chancecard = py.image.load("ChanceCards/chancecardfour.png")
     if (turn % 2 == 1):
@@ -56,40 +79,64 @@ def chance4():
         if ((310 < player1.x < 380) and (50 < player1.y < 190)):
             player1.x = 170
             player1.y = 225
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
     if (turn % 2 == 0):
-         if ((870 < player2.x < 1100) and (520 < player2.y < 590)):
+        if ((870 < player2.x < 1100) and (520 < player2.y < 590)):
             player2.y -= 210
         if ((380 < player2.x < 450) and (820 < player2.y < 960)):
             player2.x += 210
         if ((310 < player2.x < 380) and (50 < player2.y < 190)):
             player2.x = 170
             player2.y = 225
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 def chance5():
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
     global chancecard
     chancecard = py.image.load("ChanceCards/chancecardfive.png")
     if (turn % 2 == 1):
         player1.money -= 25
         player2.money += 25
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
     elif (turn % 2 == 0):
         player2.money -= 25
         player1.money += 25
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 def chance6():
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
     global chancecard
     chancecard = py.image.load("ChanceCards/chancecardsix.png")
     if (turn % 2 == 1):
         player1.money -= 15
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
     elif (turn % 2 == 0):
         player2.money -= 15
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 
 def chance7():
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
     global chancecard
     chancecard = py.image.load("ChanceCards/chancecardseven.png")
     if (turn % 2 == 1):
         player1.money -= 50
         player2.money += 50
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
     elif (turn % 2 == 0):
         player2.money -= 50
         player1.money += 50
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 
 chancelist = [chance1, chance2, chance3, chance4, chance5, chance6, chance7]
 
