@@ -13,10 +13,10 @@ def propcardsp1():
     from mnply_board import player
     from mnply_board import turn
     from mnply_board import end_turn
-    if ((800 < player1.x < 870) and (820 < player1.y < 960) and (turn % 2 == 1) and (end_turn == 1)):
+    if ((800 < player1.x < 870) and (820 < player1.y < 960) and (turn % 2 == 0) and (end_turn == 1)):
         med_ave = py.image.load("PropertyCards/Mediterranean_Ave.png")
         screen.blit(med_ave, (325, 375))
-    elif ((660 <player1.x < 730) and (820 < player1.y < 960) and (turn % 2 == 1) and (end_turn == 1)):
+    elif ((660 <player1.x < 730) and (820 < player1.y < 960) and (turn % 2 == 0) and (end_turn == 1)):
         baltic_ave = py.image.load("PropertyCards/Baltic_Ave.png")
         screen.blit(baltic_ave, (325, 375))
     
