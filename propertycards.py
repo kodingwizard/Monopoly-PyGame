@@ -8,8 +8,107 @@ SCREEN_HEIGHT = 1000
 screen = py.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), py.RESIZABLE)
 
 def propcardsp1():
+    from mnply_board import player1
+    from mnply_board import player2
+    from mnply_board import player
+    from mnply_board import turn
+    if turn % 2 == 1:
+        if ((800 < player1.x < 870) and (820 < player1.y < 960)):
+            med_ave = py.image.load("PropertyCards/Mediterranean_Ave.png")
+            screen.blit(med_ave, (325, 375))
+        elif ((660 <player1.x < 730) and (820 < player1.y < 960)):
+            baltic_ave = py.image.load("PropertyCards/Baltic_Ave.png")
+            screen.blit(baltic_ave, (325, 375))
+    
+        #elif ((590 < player1.x < 660) and (820 < player1.y < 960)):
+            #font = py.font.Font('freesansbold.ttf', 32)
+            #incometaxtext = font.render("Income Tax!", True, (0, 0, 0), (215, 215, 215))
+            #tax_Rect = py.draw.rect(screen, (215, 215, 215), (1050, 330, 140, 140))
+            #player1.money -= 200
+            #player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+            #player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+    
+        elif ((520 < player1.x < 590) and (820 < player1.y < 960)):
+            reading_railroad = py.image.load("PropertyCards/Reading_Railroad.png")
+            screen.blit(reading_railroad, (325, 375))
+        elif ((450 < player1.x < 520) and (820 < player1.y < 960)):
+            oriental_ave = py.image.load("PropertyCards/Oriental_Ave.png")
+            screen.blit(oriental_ave, (325, 375))
+        elif ((310 < player1.x < 380) and (820 < player1.y < 960)):
+            vermont_ave = py.image.load("PropertyCards/Vermont_Ave.png")
+            screen.blit(vermont_ave, (325, 375))
+        elif ((240 < player1.x < 310) and (820 < player1.y < 960)):
+            conn_ave = py.image.load("PropertyCards/Connecticut_Ave.png")
+            screen.blit(conn_ave, (325, 375))
+        elif ((100 < player1.x < 240) and (750 < player1.y < 820)):
+            stcharles = py.image.load("PropertyCards/St. Charles Pl.png")
+            screen.blit(stcharles, (325, 375))
+        elif ((100 < player1.x < 240) and (680 < player1.y < 750)):
+            elec_comp = py.image.load("PropertyCards/Electric_Company.png")
+            screen.blit(elec_comp, (325, 375))
+        elif ((100 < player1.x < 240) and (610 < player1.y < 680)):
+            states_ave = py.image.load("PropertyCards/States_Ave.png")
+            screen.blit(states_ave, (325, 375))
+        elif((100 < player1.x < 240) and (540 < player1.y < 610)):
+            virginia_ave = py.image.load("PropertyCards/Virginia_Ave.png")
+            screen.blit(virginia_ave, (325, 375))
+        elif ((100 < player1.x < 240) and (470 < player1.y < 540)):
+            penn_railroad = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
+            screen.blit(penn_railroad, (325, 375))
+        elif ((100 < player1.x < 240) and (400 < player1.y < 470)):
+            stjames = py.image.load("PropertyCards/St. James Pl.png")
+            screen.blit(stjames, (325, 375))
+        elif ((100 < player1.x < 240) and (260 < player1.y < 330)):
+            tenn_ave = py.image.load("PropertyCards/Tennessee_Ave.png")
+            screen.blit(tenn_ave, (325, 375))
+        elif ((100 < player1.x < 240) and (190 < player1.y < 260)):
+            ny_ave = py.image.load("PropertyCards/New_York_Ave.png")
+            screen.blit(ny_ave, (325, 375))
+        elif ((240 < player1.x  < 310) and (50 < player1.y < 190)):
+            kent_ave = py.image.load("PropertyCards/Kentucky_Ave.png")
+            screen.blit(kent_ave, (325, 375))
+        elif ((380 < player1.x < 450) and (50 < player1.y < 190)):
+            indi_ave = py.image.load("PropertyCards/Indiana_Ave.png")
+            screen.blit(indi_ave, (325, 375))
+        elif ((450 < player1.x < 520) and (50 < player1.y < 190)):
+            ill_ave = py.image.load("PropertyCards/Illinois_Ave.png")
+            screen.blit(ill_ave, (325, 375))
+        elif ((520 < player1.x < 590) and (50 < player1.y < 190)):
+            bo_railroad = py.image.load("PropertyCards/BandO_Railroad.png")
+            screen.blit(bo_railroad, (325, 375))
+        elif ((590 < player1.x < 660) and (50 < player1.y < 190)):
+            atlantic_ave = py.image.load("PropertyCards/Atlantic_Avenue.png")
+            screen.blit(atlantic_ave, (325, 375))
+        elif ((660 < player1.x < 730) and (50 < player1.y < 190)):
+            ventnor_ave = py.image.load("PropertyCards/Ventnor_Ave.png")
+            screen.blit(ventnor_ave, (325, 375))
+        elif ((730 < player1.x < 800) and (50 < player1.y < 190)):
+            water_works = py.image.load("PropertyCards/Water_Works.png")
+            screen.blit(water_works, (325, 375))
+        elif ((800 < player1.x < 870) and (50 < player1.y < 190)):
+            marv_gardens = py.image.load("PropertyCards/Marvin_Gardens.png")
+            screen.blit(marv_gardens, (325, 375))
+        elif ((870 < player1.x < 1010) and (190 < player1.y < 260)):
+            pacific_ave = py.image.load("PropertyCards/Pacific_Avenue.png")
+            screen.blit(pacific_ave, (325, 375))
+        elif ((870 < player1.x < 1010) and (260 < player1.y < 330)):
+            nc_ave= py.image.load("PropertyCards/North_Carolina.png")
+            screen.blit(nc_ave, (325, 375))
+        elif ((870 < player1.x < 1010) and (400 < player1.y < 470)):
+            penn_ave = py.image.load("PropertyCards/Pennsylvania_Avenue.png")
+            screen.blit(penn_ave, (325, 375))
+        elif ((870 < player1.x < 1010) and (470 < player1.y < 540)):
+            short_line = py.image.load("PropertyCards/Short_Line.png")
+            screen.blit(short_line, (325, 375))
+        elif ((870 < player1.x < 1010) and (610 < player1.y < 680)):
+            park_place = py.image.load("PropertyCards/Park_Place.png")
+            screen.blit(park_place, (325, 375))
+        elif ((870 < player1.x < 1010) and (750 < player1.y < 820)):
+            boardwalk = py.image.load("PropertyCards/Boardwalk.png")
+            screen.blit(boardwalk, (325, 375))
 
 def propcardsp2():
+<<<<<<< Updated upstream
     from mnply_board import player2
     from mnply_board import turn
     from mnply_board import end_turn
@@ -125,3 +224,5 @@ def propcardsp2():
     if ((870 < player2.x < 1010) and (750 < player2.y < 820)) and (turn % 2 == 1) and (end_turn == 1):
         boardwalk = py.image.load("PropertyCards/Boardwalk.png")
         screen.blit(boardwalk, (300, 400))
+=======
+>>>>>>> Stashed changes

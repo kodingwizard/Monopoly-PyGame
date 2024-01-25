@@ -282,7 +282,9 @@ while run:
     from chancecard import *
     chancecardp1()
     chancecardp2()
-
+    #from propertycards import *
+    #propcardsp1()
+    #propcardsp2()
 
     if endturn.draw(screen):
         end_turn = 0
