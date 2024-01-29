@@ -197,7 +197,7 @@ def propcardsp2():
         screen.blit(waterWorks, (300, 400))
     #Marvin Gardens
     if ((800 < player2.x < 870) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
-        marvinGardens = py.image.load("PropertyCards/Marving_Gardens.png")
+        marvinGardens = py.image.load("PropertyCards/Marvin_Gardens.png")
         screen.blit(marvinGardens, (300, 400))
     #Pacific Avenue
     if ((870 < player2.x < 1010) and (190 < player2.y < 260)) and (turn % 2 == 1) and (end_turn == 1):
