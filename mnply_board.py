@@ -275,7 +275,7 @@ while run:
             player2.x = 118
             player2.y = 843
             player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
-    
+
     from communitycard import * 
     comcardp1()
     comcardp2()
@@ -286,7 +286,10 @@ while run:
     propcardsp1()
     propcardsp2()
 
+
+
     if endturn.draw(screen):
+        print(end_turn)
         end_turn = 0
         if (player1.jail != 0) and (turn & 2 == 0):
             if (player1.jail == 1):

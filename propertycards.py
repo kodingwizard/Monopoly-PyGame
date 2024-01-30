@@ -7,6 +7,30 @@ SCREEN_HEIGHT = 1000
 
 screen = py.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), py.RESIZABLE)
 
+class button():
+    def __init__(self, x, y, width, height, color):
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.color = color
+        self.rect = (x,y,width,height)
+        self.clicked = False
+
+
+    def draw(self, win):
+        action = False
+        py.draw.rect(win, self.color, self.rect)
+        posx, posy = py.mouse.get_pos()
+        click = py.mouse.get_pressed()
+        if (self.x < posx < self.x+100) and (self.y < posy < self.y+50):
+            if (click[0] == 1) and (self.clicked == False):
+                self.clicked = True
+                action = True
+            if click[0] == 0:
+                self.clicked = False
+        return action
+
 def propcardsp1():
     from mnply_board import player1
     from mnply_board import player2
@@ -321,7 +345,6 @@ def propcardsp2():
     from mnply_board import player2
     from mnply_board import turn
     from mnply_board import end_turn
-    from mnply_board import button
     #Mediterranean Avenue
     if ((800 < player2.x < 870) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
         mediterraneanAvenue = py.image.load("PropertyCards/Mediterranean_Avenue.png")
@@ -329,14 +352,14 @@ def propcardsp2():
         propownerp2 = 0
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = buyButton = button(310, 600, 100, 50, (0, 255, 0))
+            buyButton = button(310, 600, 100, 50, (0, 255, 0))
             buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
             buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
             screen.blit(buy, buy_rect)
             if buyButton.draw(screen):
                 player2.money -= 60
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -346,13 +369,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Baltic Avenue
     if ((660 < player2.x < 730) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
         balticAvenue = py.image.load("PropertyCards/Baltic_Ave.png")
@@ -360,14 +383,14 @@ def propcardsp2():
         propownerp2 = 0
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = buyButton = button(310, 600, 100, 50, (0, 255, 0))
+            buyButton = button(310, 600, 100, 50, (0, 255, 0))
             buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
             buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
             screen.blit(buy, buy_rect)
             if buyButton.draw(screen):
                 player2.money -= 60
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -377,13 +400,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Reading Railroad
     if ((520 < player2.x < 590) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
         readingRailroad = py.image.load("PropertyCards/Reading_Railroad.png")
@@ -402,7 +425,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 100
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -412,13 +435,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Vermont Avenue
     if ((310 < player2.x < 380) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
         vermontAvenue = py.image.load("PropertyCards/Vermont_Ave.png")
@@ -427,14 +450,14 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = buyButton = button(310, 600, 100, 50, (0, 255, 0))
+            buyButton = button(310, 600, 100, 50, (0, 255, 0))
             buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
             buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
             screen.blit(buy, buy_rect)
             if buyButton.draw(screen):
                 player2.money -= 100
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -444,13 +467,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Connecticut Avenue
     if ((240 < player2.x < 310) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
         connecticutAvenue = py.image.load("PropertyCards/Connecticut_Ave.png")
@@ -466,7 +489,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 120
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -476,15 +499,15 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #St. Charles Place
-    if ((100 < player2.x < 240) and (750 < player2.y < 820)) and (turn % 2 == 1) and (end_turn == 1):
+    if ((100 < player2.x < 240) and (750 < player2.y < 820)) and (turn % 2 == 1) and (end_turn != 0 or end_turn != 2):
         stCharlesPlace = py.image.load("PropertyCards/St. Charles Pl.png")
         screen.blit(stCharlesPlace, (300, 400))
         propownerp2 = 0
@@ -498,7 +521,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 140
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -508,13 +531,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Electric Company
     if ((100 < player2.x < 240) and (680 < player2.y < 750)) and (turn % 2 == 1) and (end_turn == 1):
         electricCompany = py.image.load("PropertyCards/Electric_Company.png")
@@ -534,7 +557,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 140
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -544,13 +567,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Virginia Avenue
     if ((100 < player2.x < 240) and (540 < player2.y < 610)) and (turn % 2 == 1) and (end_turn == 1):
         virginiaAvenue = py.image.load("PropertyCards/Virginia_Ave.png")
@@ -566,7 +589,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 160
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -576,13 +599,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Pennsylvania Railroad
     if ((100 < player2.x < 240) and (470 < player2.y < 540)) and (turn % 2 == 1) and (end_turn == 1):
         pennsylaniaRailroad = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
@@ -602,7 +625,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 180
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -612,13 +635,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Tennessee Avenue
     if ((100 < player2.x < 240) and (260 < player2.y < 330)) and (turn % 2 == 1) and (end_turn == 1):
         tennesseeAvenue = py.image.load("PropertyCards/Tennessee_Ave.png")
@@ -634,7 +657,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 180
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -644,13 +667,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))          
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #New York Avenue
     if ((100 < player2.x < 240) and (190 < player2.y < 260)) and (turn % 2 == 1) and (end_turn == 1):
         newYorkAvenue = py.image.load("PropertyCards/New_York_Ave.png")
@@ -665,7 +688,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 200
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -675,13 +698,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))        
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Kentucky Avenue
     if ((240 < player2.x < 310) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         kentuckyAvenue = py.image.load("PropertyCards/Kentucky_Ave.png")
@@ -697,7 +720,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 220
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -707,13 +730,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Indiana Avenue
     if ((380 < player2.x < 450) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         indianaAvenue = py.image.load("PropertyCards/Indiana_Ave.png")
@@ -729,7 +752,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 220
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -739,13 +762,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Illinois Avenue
     if ((450 < player2.x < 520) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         illinoisAvenue = py.image.load("PropertyCards/Illinois_Ave.png")
@@ -761,7 +784,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 240
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -771,13 +794,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #B. & O. Railroad
     if ((520 < player2.x < 590) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         bandoRailroad = py.image.load("PropertyCards/BandO_Railroad.png")
@@ -797,7 +820,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 260
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -807,13 +830,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Ventnor Avenue
     if ((660 < player2.x < 730) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         ventnorAvenue = py.image.load("PropertyCards/Ventnor_Avenue.png")
@@ -829,7 +852,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 260
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -839,13 +862,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Water Works
     if ((730 < player2.x <800) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         waterWorks = py.image.load("PropertyCards/Water_Works.png")
@@ -865,7 +888,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 280
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -875,13 +898,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Pacific Avenue
     if ((870 < player2.x < 1010) and (190 < player2.y < 260)) and (turn % 2 == 1) and (end_turn == 1):
         pacificAvenue = py.image.load("PropertyCards/Pacific_Avenue.png")
@@ -897,7 +920,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 300
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -907,13 +930,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #North Carolina Avenue
     if ((870 < player2.x < 1010) and (260 < player2.y < 330)) and (turn % 2 == 1) and (end_turn == 1):
         northCarolinaAvenue = py.image.load("PropertyCards/North_Carolina.png")
@@ -929,7 +952,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 300
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -939,13 +962,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Pennsylvania Avenue
     if ((870 < player2.x < 1010) and (400 < player2.y < 470)) and (turn % 2 == 1) and (end_turn == 1):
         pennsylvaniaAvenue = py.image.load("PropertyCards/Pennsylvania_Avenue.png")
@@ -961,7 +984,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 320
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -971,13 +994,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #Short Line
     if ((870 < player2.x < 1010) and (470 < player2.y < 540)) and (turn % 2 == 1) and (end_turn == 1):
         shortLine = py.image.load("PropertyCards/Short_Line.png")
@@ -997,7 +1020,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 350
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -1007,13 +1030,13 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
     #BoardWalk
     if ((870 < player2.x < 1010) and (750 < player2.y < 820)) and (turn % 2 == 1) and (end_turn == 1):
         boardwalk = py.image.load("PropertyCards/Boardwalk.png")
@@ -1029,7 +1052,7 @@ def propcardsp2():
             if buyButton.draw(screen):
                 player2.money -= 400
                 propownerp2 = 1
-                end_turn += 1
+                end_turn = 2
         if propownerp2 != 0:
             house = 0
             upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
@@ -1039,10 +1062,10 @@ def propcardsp2():
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
-                end_turn += 1
-        closeButton = button(430, 600, 100, 50, (0, 255, 0))
+                end_turn = 2
+        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
         close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn += 1
+            end_turn = 2
