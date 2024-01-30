@@ -45,14 +45,14 @@ def propcardsp1():
         global medavecount
         medavecount = 1
         global font 
-        font = py.font.Font('freesansbold.ttf', 16)
+        font = py.font.Font('freesansbold.ttf', 40)
         if medavecount == 1:
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (300, 400, 140, 140))
-            buybutton = button(300, 400, 200, 100, (215, 215, 215))
+            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
+            buybutton = button(390, 260, 200, 100, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 140, 140))
+            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 115, 115))
             ignore_button = button(475, 400, 200, 100, (215, 215, 215))
             screen.blit(ignore_text, ignore_rect)
             if buybutton.draw(screen):
@@ -62,7 +62,7 @@ def propcardsp1():
                 turn += 1
         elif medavecount != 1:
             rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 140, 140)))
+            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 115, 115)))
             player1.money -= 2
             player2.money += 2
             turn += 1
@@ -75,11 +75,11 @@ def propcardsp1():
         balticavecount = 1
         if balticavecount == 1:
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (300, 400, 140, 140))
-            buybutton = button(300, 400, 200, 100, (215, 215, 215))
+            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
+            buybutton = button(390, 260, 200, 100, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 140, 140))
+            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 115, 115))
             ignore_button = button(475, 400, 200, 100, (215, 215, 215))
             screen.blit(ignore_text, ignore_rect)
             if buybutton.draw(screen):
@@ -89,7 +89,7 @@ def propcardsp1():
                 turn += 1
         elif balticavecount != 1:
             rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 140, 140)))
+            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 115, 115)))
             player1.money -= 4 
             player2.money += 4
             turn += 1
@@ -109,11 +109,11 @@ def propcardsp1():
         font = py.font.Font('freesansbold.ttf', 16)
         if readingrailroadcount == 1:
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (300, 400, 140, 140))
-            buybutton = button(300, 400, 200, 100, (215, 215, 215))
+            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
+            buybutton = button(390, 260, 200, 100, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 140, 140))
+            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 115, 115))
             ignore_button = button(475, 400, 200, 100, (215, 215, 215))
             screen.blit(ignore_text, ignore_rect)
             if buybutton.draw(screen):
@@ -123,7 +123,7 @@ def propcardsp1():
                 turn += 1
         elif readingrailroadcount != 1:
             rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 140, 140)))
+            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 115, 115)))
             player1.money -= 25 
             player2.money += 25
             turn += 1
@@ -135,11 +135,11 @@ def propcardsp1():
         font = py.font.Font('freesansbold.ttf', 16)
         if orientalavecount == 1:
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (300, 400, 140, 140))
-            buybutton = button(300, 400, 200, 100, (215, 215, 215))
+            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
+            buybutton = button(390, 260, 200, 100, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 140, 140))
+            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 115, 115))
             ignore_button = button(475, 400, 200, 100, (215, 215, 215))
             screen.blit(ignore_text, ignore_rect)
             if buybutton.draw(screen):
@@ -149,7 +149,7 @@ def propcardsp1():
                 turn += 1
         elif orientalavecount != 1:
             rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 140, 140)))
+            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 115, 115)))
             player1.money -= 25 
             player2.money += 25
             turn += 1
@@ -161,11 +161,11 @@ def propcardsp1():
         font = py.font.Font('freesansbold.ttf', 16)
         if vermontavecount == 1:
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (300, 400, 140, 140))
-            buybutton = button(300, 400, 200, 100, (215, 215, 215))
+            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
+            buybutton = button(390, 260, 200, 100, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 140, 140))
+            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 115, 115))
             ignore_button = button(475, 400, 200, 100, (215, 215, 215))
             screen.blit(ignore_text, ignore_rect)
             if buybutton.draw(screen):
@@ -175,7 +175,7 @@ def propcardsp1():
                 turn += 1
         elif vermontavecount != 1:
             rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 140, 140)))
+            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 115, 115)))
             player1.money -= 6 
             player2.money += 6
             turn += 1
@@ -187,11 +187,11 @@ def propcardsp1():
         font = py.font.Font('freesansbold.ttf', 16)
         if connavecount == 1:
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (300, 400, 140, 140))
-            buybutton = button(300, 400, 200, 100, (215, 215, 215))
+            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
+            buybutton = button(390, 260, 200, 100, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (375, 400, 140, 140))
+            ignore_rect = py.draw.rect(screen, (215, 215, 215), (375, 400, 115, 115))
             ignore_button = button(375, 400, 200, 100, (215, 215, 215))
             screen.blit(ignore_text, ignore_rect)
             if buybutton.draw(screen):
@@ -201,7 +201,7 @@ def propcardsp1():
                 turn += 1
         elif connavecount != 1:
             rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 140, 140)))
+            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 115, 115)))
             player1.money -= 8 
             player2.money += 8
             turn += 1
@@ -213,11 +213,11 @@ def propcardsp1():
         font = py.font.Font('freesansbold.ttf', 16)
         if stcharlescount == 1:
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (300, 400, 140, 140))
-            buybutton = button(300, 400, 200, 100, (215, 215, 215))
+            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
+            buybutton = button(390, 260, 200, 100, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 140, 140))
+            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 115, 115))
             ignore_button = button(475, 400, 200, 100, (215, 215, 215))
             screen.blit(ignore_text, ignore_rect)
             if buybutton.draw(screen):
@@ -227,7 +227,7 @@ def propcardsp1():
                 turn += 1
         elif stcharlescount != 1:
             rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 140, 140)))
+            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 115, 115)))
             player1.money -= 10 
             player2.money += 10
             turn += 1
@@ -239,11 +239,11 @@ def propcardsp1():
         font = py.font.Font('freesansbold.ttf', 16)
         if eleccompcount == 1:
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (300, 400, 140, 140))
-            buybutton = button(300, 400, 200, 100, (215, 215, 215))
+            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
+            buybutton = button(390, 260, 200, 100, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 140, 140))
+            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 115, 115))
             ignore_button = button(475, 400, 200, 100, (215, 215, 215))
             screen.blit(ignore_text, ignore_rect)
             if buybutton.draw(screen):
@@ -253,7 +253,7 @@ def propcardsp1():
                 turn += 1
         elif eleccompcount != 1:
             rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 140, 140)))
+            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 115, 115)))
             player1.money -= 4*dice_sum 
             player2.money += 4*dice_sum
             turn += 1
@@ -265,11 +265,11 @@ def propcardsp1():
         font = py.font.Font('freesansbold.ttf', 16)
         if statesavecount == 1:
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (300, 400, 140, 140))
-            buybutton = button(300, 400, 200, 100, (215, 215, 215))
+            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
+            buybutton = button(390, 260, 200, 100, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 140, 140))
+            ignore_rect = py.draw.rect(screen, (215, 215, 215), (475, 400, 115, 115))
             ignore_button = button(475, 400, 200, 100, (215, 215, 215))
             screen.blit(ignore_text, ignore_rect)
             if buybutton.draw(screen):
@@ -279,7 +279,7 @@ def propcardsp1():
                 turn += 1
         elif statesavecount != 1:
             rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 140, 140)))
+            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 115, 115)))
             player1.money -= 10 
             player2.money += 10
             turn += 1
