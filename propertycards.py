@@ -7,8 +7,6 @@ SCREEN_HEIGHT = 1000
 
 screen = py.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), py.RESIZABLE)
 
-<<<<<<< Updated upstream
-=======
 class button():
     def __init__(self, x, y, width, height, color):
         self.x = x
@@ -32,7 +30,6 @@ class button():
             if click[0] == 0:
                 self.clicked = False
         return action
->>>>>>> Stashed changes
 
 def propcardsp1():
     from mnply_board import player1
@@ -50,15 +47,9 @@ def propcardsp1():
         global font
         font = py.font.Font('freesansbold.ttf', 24)
         if medavecount == 1:
-<<<<<<< Updated upstream
-            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
-            buybutton = button(390, 260, 115, 115, (215, 215, 215))
-=======
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
             buybutton = button(450, 785, 100, 30, (215, 215, 215))
->>>>>>> Stashed changes
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
             ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
             ignore_button = button(590, 785, 100, 30, (215, 215, 215))
@@ -84,15 +75,9 @@ def propcardsp1():
         font = py.font.Font('freesansbold.ttf', 24)
         balticavecount = 1
         if balticavecount == 1:
-<<<<<<< Updated upstream
-            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
-            buybutton = button(390, 260, 115, 115, (215, 215, 215))
-=======
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
             buybutton = button(450, 785, 100, 30, (215, 215, 215))
->>>>>>> Stashed changes
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
             ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
             ignore_button = button(590, 785, 100, 30, (215, 215, 215))
@@ -125,15 +110,9 @@ def propcardsp1():
         readingrailroadcount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if readingrailroadcount == 1:
-<<<<<<< Updated upstream
-            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
-            buybutton = button(390, 260, 115, 115, (215, 215, 215))
-=======
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
             buybutton = button(450, 785, 100, 30, (215, 215, 215))
->>>>>>> Stashed changes
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
             ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
@@ -160,15 +139,9 @@ def propcardsp1():
         orientalavecount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if orientalavecount == 1:
-<<<<<<< Updated upstream
-            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
-            buybutton = button(390, 260, 115, 115, (215, 215, 215))
-=======
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
             buybutton = button(450, 785, 100, 30, (215, 215, 215))
->>>>>>> Stashed changes
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
             ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
@@ -195,15 +168,9 @@ def propcardsp1():
         vermontavecount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if vermontavecount == 1:
-<<<<<<< Updated upstream
-            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
-            buybutton = button(390, 260, 115, 115, (215, 215, 215))
-=======
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
             buybutton = button(450, 785, 100, 30, (215, 215, 215))
->>>>>>> Stashed changes
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
             ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
@@ -230,15 +197,9 @@ def propcardsp1():
         connavecount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if connavecount == 1:
-<<<<<<< Updated upstream
-            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
-            buybutton = button(390, 260, 115, 115, (215, 215, 215))
-=======
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
             buybutton = button(450, 785, 100, 30, (215, 215, 215))
->>>>>>> Stashed changes
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
             ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
@@ -265,15 +226,9 @@ def propcardsp1():
         stcharlescount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if stcharlescount == 1:
-<<<<<<< Updated upstream
-            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
-            buybutton = button(390, 260, 115, 115, (215, 215, 215))
-=======
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
             buybutton = button(450, 785, 100, 30, (215, 215, 215))
->>>>>>> Stashed changes
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
             ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
@@ -300,15 +255,9 @@ def propcardsp1():
         eleccompcount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if eleccompcount == 1:
-<<<<<<< Updated upstream
-            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
-            buybutton = button(390, 260, 115, 115, (215, 215, 215))
-=======
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
             buybutton = button(450, 785, 100, 30, (215, 215, 215))
->>>>>>> Stashed changes
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
             ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
@@ -335,15 +284,9 @@ def propcardsp1():
         statesavecount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if statesavecount == 1:
-<<<<<<< Updated upstream
-            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
-            buybutton = button(390, 260, 115, 115, (215, 215, 215))
-=======
             buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
             buybutton = button(450, 785, 100, 30, (215, 215, 215))
->>>>>>> Stashed changes
             screen.blit(buy_text, buy_Rect)
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
             ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
