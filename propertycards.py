@@ -349,7 +349,7 @@ def propcardsp2():
     from mnply_board import end_turn
     #Mediterranean Avenue
     if ((800 < player2.x < 870) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
-        mediterraneanAvenue = py.image.load("PropertyCards/Mediterranean_Avenue.png")
+        mediterraneanAvenue = py.image.load("PropertyCards/Mediterranean_Ave.png")
         screen.blit(mediterraneanAvenue, (300, 400))
         propownerp2 = 0
         font = py.font.Font('freesansbold.ttf', 24)
