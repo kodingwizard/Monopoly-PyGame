@@ -292,7 +292,17 @@ while run:
         end_turn = 0
         if (player1.jail != 0) and (turn & 2 == 0):
             if (player1.jail == 1):
-                player1.jail += 1        
+                if (player1.jailfree != 0):
+                    font = py.font.Font('freesansbold.ttf', 32)
+                    jailfreetext = font.render("Use JAILFREECARD", True, (0, 0, 0), (215, 215, 215))
+                    jf_Rect = py.draw.rect(screen, (215, 215, 215), (325, 375, 200, 60))
+                    jailfreebutton = button(325, 375, 200, 60, (215, 215, 215))
+                    if jailfreebutton.draw(screen):
+                        player1.jail = 0
+                        player1.jailfree -= 1
+                    screen.blit(jailfreetext, jf_Rect)
+                else:
+                    player1.jail += 1        
             if (player1.jail == 5):
                 player1.jail = 0
             else:
@@ -303,6 +313,17 @@ while run:
 
         if (player2.jail != 0) and (turn % 2 == 1):
             if (player2.jail == 1):
+                if (player1.jailfree != 0):
+                    font = py.font.Font('freesansbold.ttf', 32)
+                    jailfreetext = font.render("Use JAILFREECARD", True, (0, 0, 0), (215, 215, 215))
+                    jf_Rect = py.draw.rect(screen, (215, 215, 215), (325, 375, 200, 60))
+                    jailfreebutton = button(325, 375, 200, 60, (215, 215, 215))
+                    if jailfreebutton.draw(screen):
+                        player2.jail = 0
+                        player2.jailfree -= 1
+                    screen.blit(jailfreetext, jf_Rect)
+                else:
+                    player2.jail += 1    
                 player2.jail += 1
             if (player2.jail == 5):
                 player2.jail = 0

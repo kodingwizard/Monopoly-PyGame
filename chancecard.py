@@ -80,7 +80,7 @@ def chance4():
             player1.x = 170
             player1.y = 225
         player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
-    if (turn % 2 == 0):
+    if (turn % 2 == 1):
         if ((870 < player2.x < 1100) and (520 < player2.y < 590)):
             player2.y -= 210
         if ((380 < player2.x < 450) and (820 < player2.y < 960)):
@@ -98,12 +98,10 @@ def chance5():
     chancecard = py.image.load("ChanceCards/chancecardfive.png")
     if (turn % 2 == 0):
         player1.money -= 25
-        player2.money += 25
         player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
         player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
     elif (turn % 2 == 1):
         player2.money -= 25
-        player1.money += 25
         player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
         player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
 def chance6():
