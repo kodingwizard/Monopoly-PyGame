@@ -287,7 +287,6 @@ while run:
     propcardsp2()
 
 
-
     if endturn.draw(screen):
         print(end_turn)
         end_turn = 0
@@ -301,7 +300,7 @@ while run:
                     player1.jail = 0
                 else:
                     player1.jail += 1
-       
+
         if (player2.jail != 0) and (turn % 2 == 1):
             if (player2.jail == 1):
                 player2.jail += 1

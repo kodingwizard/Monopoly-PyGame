@@ -19,7 +19,7 @@ def com1():
     from mnply_board import player2
     from mnply_board import player
     from mnply_board import turn
-    if (turn % 2 == 0):
+    if (turn % 2 == 1):
         player1.money -= 150
         player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
     else:
@@ -34,7 +34,7 @@ def com2():
     from mnply_board import player2
     from mnply_board import player
     from mnply_board import turn
-    if (turn % 2 == 0):
+    if (turn % 2 == 1):
         player1.money += 200
         player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
     else:
@@ -48,7 +48,7 @@ def com3():
     from mnply_board import player2
     from mnply_board import player
     from mnply_board import turn
-    if (turn % 2 == 0):
+    if (turn % 2 == 1):
         player1.money -= 25
         player1.jailfree += 1
         player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
@@ -64,7 +64,7 @@ def com4():
     from mnply_board import player2
     from mnply_board import player
     from mnply_board import turn
-    if (turn % 2 == 0):
+    if (turn % 2 == 1):
         player1.money += 100
         player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
     else:
@@ -78,7 +78,7 @@ def com5():
     from mnply_board import player2
     from mnply_board import player
     from mnply_board import turn
-    if (turn % 2 == 0):
+    if (turn % 2 == 1):
         player1.money -= 200
         player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
     else:
@@ -92,7 +92,7 @@ def com6():
     from mnply_board import player2
     from mnply_board import player
     from mnply_board import turn
-    if (turn % 2 == 0):
+    if (turn % 2 == 1):
         player1.money -= 35
         player2.money += 35
         player1.jailfree += 1
@@ -113,7 +113,7 @@ def com7():
     from mnply_board import player2
     from mnply_board import player
     from mnply_board import turn
-    if (turn % 2 == 0):
+    if (turn % 2 == 1):
         player1.money += 100
         player2.money -= 100
         player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
@@ -131,7 +131,7 @@ def com8():
     from mnply_board import player2
     from mnply_board import player
     from mnply_board import turn
-    if (turn % 2 == 0):
+    if (turn % 2 == 1):
         player1.jailfree += 1
         player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
     else:
@@ -145,7 +145,7 @@ def comcardp1():
     from mnply_board import end_turn
     from mnply_board import turn
     global comcounterp1
-    if (((730 < player1.x < 800) and (820 < player1.y < 960)) or ((100 < player1.x < 240) and (330 < player1.y < 400)) or ((870 < player1.x < 1010) and (330 < player1.y < 400))) and (end_turn == 1) and (turn % 2 == 0):
+    if (((730 < player1.x < 800) and (820 < player1.y < 960)) or ((100 < player1.x < 240) and (330 < player1.y < 400)) or ((870 < player1.x < 1010) and (330 < player1.y < 400))) and (end_turn == 1) and (turn % 2 == 1):
         if comcounterp1 == 0:
             random.choice(comlist)()
             comcounterp1 = 1

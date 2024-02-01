@@ -7,29 +7,6 @@ SCREEN_HEIGHT = 1000
 
 screen = py.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), py.RESIZABLE)
 
-class button():
-    def __init__(self, x, y, width, height, color):
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-        self.color = color
-        self.rect = (x,y,width,height)
-        self.clicked = False
-
-
-    def draw(self, win):
-        action = False
-        py.draw.rect(win, self.color, self.rect)
-        posx, posy = py.mouse.get_pos()
-        click = py.mouse.get_pressed()
-        if (self.x < posx < self.x+140) and (self.y < posy < self.y+140):
-            if (click[0] == 1) and (self.clicked == False):
-                self.clicked = True
-                action = True
-            if click[0] == 0:
-                self.clicked = False
-        return action
 
 def propcardsp1():
     from mnply_board import player1
@@ -47,7 +24,7 @@ def propcardsp1():
         global font 
         font = py.font.Font('freesansbold.ttf', 24)
         if medavecount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
+            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
             buybutton = button(390, 260, 115, 115, (215, 215, 215))
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
@@ -74,7 +51,7 @@ def propcardsp1():
         font = py.font.Font('freesansbold.ttf', 24)
         balticavecount = 1
         if balticavecount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
+            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
             buybutton = button(390, 260, 115, 115, (215, 215, 215))
             ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
@@ -108,7 +85,7 @@ def propcardsp1():
         readingrailroadcount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if readingrailroadcount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
+            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
             buybutton = button(390, 260, 115, 115, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
@@ -136,7 +113,7 @@ def propcardsp1():
         orientalavecount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if orientalavecount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
+            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
             buybutton = button(390, 260, 115, 115, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
@@ -164,7 +141,7 @@ def propcardsp1():
         vermontavecount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if vermontavecount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
+            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
             buybutton = button(390, 260, 115, 115, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
@@ -192,7 +169,7 @@ def propcardsp1():
         connavecount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if connavecount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
+            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
             buybutton = button(390, 260, 115, 115, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
@@ -220,7 +197,7 @@ def propcardsp1():
         stcharlescount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if stcharlescount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
+            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
             buybutton = button(390, 260, 115, 115, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
@@ -248,7 +225,7 @@ def propcardsp1():
         eleccompcount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if eleccompcount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
+            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
             buybutton = button(390, 260, 115, 115, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
@@ -276,7 +253,7 @@ def propcardsp1():
         statesavecount = 1
         font = py.font.Font('freesansbold.ttf', 24)
         if statesavecount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
+            buy_text = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             buy_Rect = py.draw.rect(screen, (215, 215, 215), (390, 260, 115, 115))
             buybutton = button(390, 260, 115, 115, (215, 215, 215))
             screen.blit(buy_text, buy_Rect)
@@ -328,7 +305,7 @@ def propcardsp1():
         atlantic_ave = py.image.load("PropertyCards/Atlantic_Avenue.png")
         screen.blit(atlantic_ave, (325, 375))
     elif ((660 < player1.x < 730) and (50 < player1.y < 190) and (turn % 2 == 0) and (end_turn == 1)):
-        ventnor_ave = py.image.load("PropertyCards/Ventnor_Ave.png")
+        ventnor_ave = py.image.load("PropertyCards/Ventnor_Avenue.png")
         screen.blit(ventnor_ave, (325, 375))
     elif ((730 < player1.x < 800) and (50 < player1.y < 190) and (turn % 2 == 0) and (end_turn == 1)):
         water_works = py.image.load("PropertyCards/Water_Works.png")
@@ -359,6 +336,31 @@ def propcardsp2():
     from mnply_board import player2
     from mnply_board import turn
     from mnply_board import end_turn
+    
+    class button():
+        def __init__(self, x, y, width, height, color):
+            self.x = x
+            self.y = y
+            self.width = width
+            self.height = height
+            self.color = color
+            self.rect = (x,y,width,height)
+            self.clicked = False
+
+
+        def draw(self, win):
+            action = False
+            py.draw.rect(win, self.color, self.rect)
+            posx, posy = py.mouse.get_pos()
+            click = py.mouse.get_pressed()
+            if (self.x < posx < self.x+100) and (self.y < posy < self.y+30):
+                if (click[0] == 1) and (self.clicked == False):
+                    self.clicked = True
+                    action = True
+                if click[0] == 0:
+                    self.clicked = False
+            return action
+
     #Mediterranean Avenue
     if ((800 < player2.x < 870) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
         mediterraneanAvenue = py.image.load("PropertyCards/Mediterranean_Ave.png")
@@ -366,9 +368,9 @@ def propcardsp2():
         propownerp2 = 0
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 60
                 propownerp2 = 1
@@ -376,17 +378,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
+            upgradeButton = upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
-        close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
+        closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
@@ -398,10 +400,9 @@ def propcardsp2():
         propownerp2 = 0
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 60
                 propownerp2 = 1
@@ -409,18 +410,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
-        close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
@@ -435,10 +435,9 @@ def propcardsp2():
         propownerp2 = 0
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 100
                 propownerp2 = 1
@@ -446,18 +445,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
-        close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
@@ -470,10 +468,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 100
                 propownerp2 = 1
@@ -481,18 +478,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
-        close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
@@ -505,10 +501,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 120
                 propownerp2 = 1
@@ -516,18 +511,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
-        close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
@@ -540,10 +534,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 140
                 propownerp2 = 1
@@ -551,18 +544,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
-        close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
@@ -579,10 +571,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 140
                 propownerp2 = 1
@@ -590,18 +581,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
-        close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
@@ -614,10 +604,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 160
                 propownerp2 = 1
@@ -625,18 +614,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
-        close = font.render("Close", True, (0, 0, 0), (215, 215, 215))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
@@ -653,10 +641,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 180
                 propownerp2 = 1
@@ -664,19 +651,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-        screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
@@ -688,10 +673,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 180
                 propownerp2 = 1
@@ -699,17 +683,16 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))          
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
@@ -722,10 +705,9 @@ def propcardsp2():
         propownerp2 = 0
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 200
                 propownerp2 = 1
@@ -733,17 +715,16 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))        
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
@@ -757,10 +738,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 220
                 propownerp2 = 1
@@ -768,19 +748,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-        screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
@@ -792,10 +770,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 220
                 propownerp2 = 1
@@ -803,19 +780,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-        screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
@@ -827,10 +802,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 240
                 propownerp2 = 1
@@ -838,19 +812,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-        screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
@@ -866,10 +838,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 260
                 propownerp2 = 1
@@ -877,34 +848,31 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-        screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
     #Ventnor Avenue
     if ((660 < player2.x < 730) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
-        ventnorAvenue = py.image.load("PropertyCards/Ventnor_Ave.png")
+        ventnorAvenue = py.image.load("PropertyCards/Ventnor_Avenue.png")
         screen.blit(ventnorAvenue, (300, 400))
         propownerp2 = 0
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 260
                 propownerp2 = 1
@@ -912,19 +880,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-        screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
@@ -940,10 +906,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 280
                 propownerp2 = 1
@@ -951,19 +916,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-        screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
@@ -975,10 +938,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 300
                 propownerp2 = 1
@@ -986,19 +948,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-        screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
@@ -1010,10 +970,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 300
                 propownerp2 = 1
@@ -1021,19 +980,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-        screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
@@ -1045,10 +1002,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 320
                 propownerp2 = 1
@@ -1056,19 +1012,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-        screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
@@ -1081,10 +1035,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 350
                 propownerp2 = 1
@@ -1092,19 +1045,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-        screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
@@ -1113,10 +1064,9 @@ def propcardsp2():
         
         font = py.font.Font('freesansbold.ttf', 24)
         if propownerp2 == 0:
-            buyButton = button(310, 600, 100, 50, (0, 255, 0))
-            buy_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            buy = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(buy, buy_rect)
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= 400
                 propownerp2 = 1
@@ -1124,19 +1074,17 @@ def propcardsp2():
             screen.blit(buy, buy_rect)
         if propownerp2 != 0:
             house = 0
-            upgradeButton = button(310, 600, 100, 50, (0, 255, 0))
-            upgrade_rect = py.draw.rect(screen, (215, 215, 215), (310, 600, 100, 50))
-            upgrade = font.render("Upgrade", True, (0, 0, 0), (215, 215, 215))
-            screen.blit(upgrade, upgrade_rect)
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= 50
                 house += 1
                 end_turn = 0
             screen.blit(upgrade, upgrade_rect)
-        closeButton = closeButton = button(430, 600, 100, 50, (255, 0, 0))
-        close_rect = py.draw.rect(screen, (215, 215, 215), (430, 600, 100, 50))
+        closeButton = closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-        screen.blit(close, close_rect)
         if closeButton.draw(screen):
             end_turn = 0
         screen.blit(close, close_rect)
