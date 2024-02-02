@@ -332,6 +332,10 @@ while run:
                     player2.jail = 0
                 else:
                     player2.jail += 1
+        print(player1.money)
+        print(player1.jailfree)
+        print(player2.money)
+        print(player2.jailfree)
 
 
     if stamp == True:
