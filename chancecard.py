@@ -22,12 +22,12 @@ def chance1():
         player1.x = 888
         player1.y = 843
         player1.money += 200
-        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
     elif (turn % 2 == 1):
         player2.x = 888
         player2.y = 897
         player2.money += 200
-        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
 
 def chance2():
     from mnply_board import player1
@@ -39,13 +39,13 @@ def chance2():
     if (turn % 2 == 0):
         player1.money -= 100
         player2.money += 100
-        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
-        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
     elif (turn % 2 == 1):
         player2.money -= 100
         player1.money += 100
-        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
-        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
 def chance3():
     from mnply_board import player1
     from mnply_board import player2
@@ -56,13 +56,13 @@ def chance3():
     if (turn % 2 == 0):
         player1.money -= 25
         player2.money += 25
-        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
-        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
     elif (turn % 2 == 1):
         player2.money -= 25
         player1.money += 25
-        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
-        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
 
 def chance4():
     from mnply_board import player1
@@ -79,7 +79,8 @@ def chance4():
         if ((310 < player1.x < 380) and (50 < player1.y < 190)):
             player1.x = 188
             player1.y = 213
-        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player1.orbit -= 210
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
     if (turn % 2 == 1):
         if ((870 < player2.x < 1010) and (540 < player2.y < 610)):
             player2.y -= 210
@@ -88,7 +89,8 @@ def chance4():
         if ((310 < player2.x < 380) and (50 < player2.y < 190)):
             player2.x = 118
             player2.y = 213
-        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player2.orbit -= 210
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
 def chance5():
     from mnply_board import player1
     from mnply_board import player2
@@ -98,12 +100,12 @@ def chance5():
     chancecard = py.image.load("ChanceCards/chancecardfive.png")
     if (turn % 2 == 0):
         player1.money -= 25
-        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
-        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
     elif (turn % 2 == 1):
         player2.money -= 25
-        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
-        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
 def chance6():
     from mnply_board import player1
     from mnply_board import player2
@@ -113,10 +115,10 @@ def chance6():
     chancecard = py.image.load("ChanceCards/chancecardsix.png")
     if (turn % 2 == 0):
         player1.money -= 15
-        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
     elif (turn % 2 == 1):
         player2.money -= 15
-        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
 
 def chance7():
     from mnply_board import player1
@@ -128,13 +130,13 @@ def chance7():
     if (turn % 2 == 0):
         player1.money -= 50
         player2.money += 50
-        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
-        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
     elif (turn % 2 == 1):
         player2.money -= 50
         player1.money += 50
-        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree)
-        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree)
+        player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
+        player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
 
 chancelist = [chance1, chance2, chance3, chance4, chance5, chance6, chance7]
 
