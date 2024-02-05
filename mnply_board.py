@@ -225,6 +225,7 @@ while run:
             else:
                 turn += 1 #next person's turn
         else:
+            player2.orbit += dice_sum * 70
             if (player2.jail == 0):
                 if (188 < player2.x <= 888) and (840 <= player2.y <= 960):#bottom right to bottom left
                     player2.x -= (70*dice_sum)
@@ -282,11 +283,11 @@ while run:
         
         if player1.orbit >= 2800:
             player1.money += 200
-            player1.orbit = 0
+            player1.orbit = (888 - player1.x) + (843 - player1.y)
             player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
         if player2.orbit >= 2800:
             player2.money += 200
-            player2.orbit = 0
+            player2.orbit = (888 - player2.x) + (843 - player2.y)
             player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
             
 
@@ -346,10 +347,8 @@ while run:
                     player2.jail = 0
                 else:
                     player2.jail += 1
-        print(player1.money)
-        print(player1.jailfree)
-        print(player2.money)
-        print(player2.jailfree)
+        print(player1.orbit)
+        print(player2.orbit)
 
 
     if stamp == True:
