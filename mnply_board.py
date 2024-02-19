@@ -289,7 +289,7 @@ while run:
             player2.money += 200
             player2.orbit = (888 - player2.x) + (843 - player2.y)
             player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
-            
+
 
     from communitycard import * 
     comcardp1()
@@ -347,8 +347,8 @@ while run:
                     player2.jail = 0
                 else:
                     player2.jail += 1
-        print(player1.orbit)
-        print(player2.orbit)
+        print(player1.money)
+        print(player2.money)
 
 
     if stamp == True:
