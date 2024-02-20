@@ -31,6 +31,51 @@ class button():
                 self.clicked = False
         return action
 
+medavep1 = 0
+medavep2 = 0
+balavep1 = 0
+balavep2 = 0
+oriavep1 = 0
+oriavep2 = 0
+veravep1 = 0
+veravep2 = 0
+conavep1 = 0
+conavep2 = 0
+chaavep1 = 0
+chaavep2 = 0
+staavep1 = 0
+staavep2 = 0
+viravep1 = 0
+viravep2 = 0
+jamavep1 = 0
+jamavep2 = 0
+tenavep1 = 0
+tenavep2 = 0
+nyavep1 = 0
+nyavep2 = 0
+kenavep1 = 0
+kenavep2 = 0
+indavep1 = 0
+indavep2 = 0
+illavep1 = 0
+illavep2 = 0
+atlavep1 = 0
+atlavep2 = 0
+venavep1 = 0
+venavep2 = 0
+margarp1 = 0
+margarp2 = 0
+pacavep1 = 0
+pacavep2 = 0
+caravep1 = 0
+caravep2 = 0
+penavep1 = 0
+penavep2 = 0
+parplap1 = 0
+parplap2 = 0
+brdwlkp1 = 0
+brdwlkp2 = 0
+
 def propcardsp1():
     from mnply_board import player1
     from mnply_board import player2
@@ -849,20 +894,19 @@ def propcardsp2():
                     self.clicked = False
             return action
 
-    def p2buttons(buynum, upgradenum):
+    def p2buttons(buynum, upgradenum, own):
         font = py.font.Font('freesansbold.ttf', 24)
-        global propownerp2
-        if propownerp2 == 0:
+        if own == 0:
             buyButton = button(400, 800, 100, 30, (0, 255, 0))
             buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
             buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
             if buyButton.draw(screen):
                 player2.money -= buynum
-                propownerp2 = 1
                 global end_turn
                 end_turn = 0
+                own += 1
             screen.blit(buy, buy_rect)
-        if propownerp2 != 0:
+        if own != 0:
             house = 0
             upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
@@ -884,16 +928,13 @@ def propcardsp2():
     if ((800 < player2.x < 870) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
         mediterraneanAvenue = py.image.load("PropertyCards/Mediterranean_Ave.png")
         screen.blit(mediterraneanAvenue, (300, 400))
-        global propownerp2
-        propownerp2 = 0
-        p2buttons(60, 50)
+        p2buttons(60, 50, end_turn, medavep2)
 
     #Baltic Avenue
     if ((660 < player2.x < 730) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
         balticAvenue = py.image.load("PropertyCards/Baltic_Ave.png")
         screen.blit(balticAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(60, 50)
+        p2buttons(60, 50, balavep2)
 
     #Reading Railroad
     if ((520 < player2.x < 590) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
@@ -904,29 +945,25 @@ def propcardsp2():
     if ((450 < player2.x < 520) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
         orientalAvenue = py.image.load("PropertyCards/Oriental_Ave.png")
         screen.blit(orientalAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(100, 50)
+        p2buttons(100, 50, oriavep2)
 
     #Vermont Avenue
     if ((310 < player2.x < 380) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
         vermontAvenue = py.image.load("PropertyCards/Vermont_Ave.png")
         screen.blit(vermontAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(100, 50)
+        p2buttons(100, 50, veravep2)
 
     #Connecticut Avenue
     if ((240 < player2.x < 310) and (820 < player2.y < 960)) and (turn % 2 == 1) and (end_turn == 1):
         connecticutAvenue = py.image.load("PropertyCards/Connecticut_Ave.png")
         screen.blit(connecticutAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(120, 50)
+        p2buttons(120, 50, conavep2)
 
     #St. Charles Place
     if ((100 < player2.x < 240) and (750 < player2.y < 820)) and (turn % 2 == 1) and (end_turn == 1):
         stCharlesPlace = py.image.load("PropertyCards/St. Charles Pl.png")
         screen.blit(stCharlesPlace, (300, 400))
-        propownerp2 = 0
-        p2buttons(140, 50)
+        p2buttons(140, 50, chaavep2)
 
     #Electric Company
     if ((100 < player2.x < 240) and (680 < player2.y < 750)) and (turn % 2 == 1) and (end_turn == 1):
@@ -937,15 +974,13 @@ def propcardsp2():
     if ((100 < player2.x < 240) and (610 < player2.y < 680)) and (turn % 2 == 1) and (end_turn == 1):
         statesAvenue = py.image.load("PropertyCards/States_Ave.png")
         screen.blit(statesAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(140, 50)
+        p2buttons(140, 50, staavep2)
 
     #Virginia Avenue
     if ((100 < player2.x < 240) and (540 < player2.y < 610)) and (turn % 2 == 1) and (end_turn == 1):
         virginiaAvenue = py.image.load("PropertyCards/Virginia_Ave.png")
         screen.blit(virginiaAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(160, 50)
+        p2buttons(160, 50, viravep2)
 
     #Pennsylvania Railroad
     if ((100 < player2.x < 240) and (470 < player2.y < 540)) and (turn % 2 == 1) and (end_turn == 1):
@@ -956,61 +991,54 @@ def propcardsp2():
     if ((100 < player2.x < 240) and (400 < player2.y < 470)) and (turn % 2 == 1) and (end_turn == 1):
         stJamesPlace = py.image.load("PropertyCards/St. James Pl.png")
         screen.blit(stJamesPlace, (300, 400))
-        propownerp2 = 0
-        p2buttons(180, 50)
+        p2buttons(180, 50, jamavep2)
 
     #Tennessee Avenue
     if ((100 < player2.x < 240) and (260 < player2.y < 330)) and (turn % 2 == 1) and (end_turn == 1):
         tennesseeAvenue = py.image.load("PropertyCards/Tennessee_Ave.png")
         screen.blit(tennesseeAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(180, 50)
+        p2buttons(180, 50, tenavep2)
 
     #New York Avenue
     if ((100 < player2.x < 240) and (190 < player2.y < 260)) and (turn % 2 == 1) and (end_turn == 1):
         newYorkAvenue = py.image.load("PropertyCards/New_York_Ave.png")
         screen.blit(newYorkAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(200, 50)
+        p2buttons(200, 50, nyavep2)
 
     #Kentucky Avenue
     if ((240 < player2.x < 310) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         kentuckyAvenue = py.image.load("PropertyCards/Kentucky_Ave.png")
         screen.blit(kentuckyAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(220, 50)
+        p2buttons(220, 50, kenavep2)
 
     #Indiana Avenue
     if ((380 < player2.x < 450) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         indianaAvenue = py.image.load("PropertyCards/Indiana_Ave.png")
         screen.blit(indianaAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(220, 50)
+        p2buttons(220, 50, indavep2)
 
     #Illinois Avenue
     if ((450 < player2.x < 520) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         illinoisAvenue = py.image.load("PropertyCards/Illinois_Ave.png")
         screen.blit(illinoisAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(240, 50)
+        p2buttons(240, 50, illavep2)
 
     #B. & O. Railroad
     if ((520 < player2.x < 590) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         bandoRailroad = py.image.load("PropertyCards/BandO_Railroad.png")
         screen.blit(bandoRailroad, (300, 400))
+
     #Atlantic Avenue
     if ((590 < player2.x < 660) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         atlanticAvenue = py.image.load("PropertyCards/Atlantic_Avenue.png")
         screen.blit(atlanticAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(260, 50)
+        p2buttons(260, 50, atlavep2)
 
     #Ventnor Avenue
     if ((660 < player2.x < 730) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         ventnorAvenue = py.image.load("PropertyCards/Ventnor_Avenue.png")
         screen.blit(ventnorAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(260, 50)
+        p2buttons(260, 50, venavep2)
 
     #Water Works
     if ((730 < player2.x <800) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1021,29 +1049,25 @@ def propcardsp2():
     if ((800 < player2.x < 870) and (50 < player2.y < 190)) and (turn % 2 == 1) and (end_turn == 1):
         marvinGardens = py.image.load("PropertyCards/Marvin_Gardens.png")
         screen.blit(marvinGardens, (300, 400))
-        propownerp2 = 0
-        p2buttons(280, 50)
+        p2buttons(280, 50, margarp2)
 
     #Pacific Avenue
     if ((870 < player2.x < 1010) and (190 < player2.y < 260)) and (turn % 2 == 1) and (end_turn == 1):
         pacificAvenue = py.image.load("PropertyCards/Pacific_Avenue.png")
         screen.blit(pacificAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(300, 50)
+        p2buttons(300, 50, pacavep2)
 
     #North Carolina Avenue
     if ((870 < player2.x < 1010) and (260 < player2.y < 330)) and (turn % 2 == 1) and (end_turn == 1):
         northCarolinaAvenue = py.image.load("PropertyCards/North_Carolina.png")
         screen.blit(northCarolinaAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(300, 50)
+        p2buttons(300, 50, caravep2)
 
     #Pennsylvania Avenue
     if ((870 < player2.x < 1010) and (400 < player2.y < 470)) and (turn % 2 == 1) and (end_turn == 1):
         pennsylvaniaAvenue = py.image.load("PropertyCards/Pennsylvania_Avenue.png")
         screen.blit(pennsylvaniaAvenue, (300, 400))
-        propownerp2 = 0
-        p2buttons(320, 50)
+        p2buttons(320, 50, penavep2)
 
     #Short Line
         
@@ -1051,12 +1075,10 @@ def propcardsp2():
     if ((870 < player2.x < 1010) and (610 < player2.y < 680)) and (turn % 2 == 1) and (end_turn == 1):
         parkPlace = py.image.load("PropertyCards/Park_Place.png")
         screen.blit(parkPlace, (300, 400))
-        propownerp2 = 0
-        p2buttons(350, 50)
+        p2buttons(350, 50, parplap2)
 
     #BoardWalk
     if ((870 < player2.x < 1010) and (680 < player2.y < 750)) and (turn % 2 == 1) and (end_turn == 1):
         boardwalk = py.image.load("PropertyCards/Boardwalk.png")
         screen.blit(boardwalk, (300, 400))
-        propownerp2 = 0
-        p2buttons(400, 50)
+        p2buttons(400, 50, brdwlkp2)
