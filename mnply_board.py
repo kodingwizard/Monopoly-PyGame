@@ -298,6 +298,36 @@ while run:
     chancecardp1()
     chancecardp2()
 
+    def p1buttons(purchase, revamp, control):
+        font = py.font.Font('freesansbold.ttf', 24)
+        if control == 0:
+            buyButton = button(400, 800, 100, 30, (0, 255, 0))
+            buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+            if buyButton.draw(screen):
+                player1.money -= purchase
+                global end_turn
+                end_turn = 2
+                control += 1
+            screen.blit(buy, buy_rect)
+        if control != 0:
+            house = 0
+            upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
+            upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
+            upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
+            if upgradeButton.draw(screen) and (house < 4):
+                player2.money -= revamp
+                house += 1
+                end_turn = 2
+            screen.blit(upgrade, upgrade_rect)
+        closeButton = button(620, 800, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+        screen.blit(close, close_rect)
+        if closeButton.draw(screen):
+            end_turn = 2
+        screen.blit(close, close_rect)
+
     def p2buttons(buynum, upgradenum, own):
         font = py.font.Font('freesansbold.ttf', 24)
         if own == 0:
@@ -307,7 +337,7 @@ while run:
             if buyButton.draw(screen):
                 player2.money -= buynum
                 global end_turn
-                end_turn = 0
+                end_turn = 2
                 own += 1
             screen.blit(buy, buy_rect)
         if own != 0:
@@ -318,14 +348,14 @@ while run:
             if upgradeButton.draw(screen) and (house < 4):
                 player2.money -= upgradenum
                 house += 1
-                end_turn = 0
+                end_turn = 2
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 800, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
         close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         screen.blit(close, close_rect)
         if closeButton.draw(screen):
-            end_turn = 0
+            end_turn = 2
         screen.blit(close, close_rect)
 
     from propertycards import *
