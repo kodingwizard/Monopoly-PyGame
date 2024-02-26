@@ -47,6 +47,8 @@ staavep1 = 0
 staavep2 = 0
 viravep1 = 0
 viravep2 = 0
+pennrailp1 = 0
+pennrailp2 = 0
 jamavep1 = 0
 jamavep2 = 0
 tenavep1 = 0
@@ -196,30 +198,8 @@ def propcardsp1():
     elif ((100 < player1.x < 240) and (470 < player1.y < 540) and (turn % 2 == 0) and (end_turn == 1)):
         penn_railroad = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
         screen.blit(penn_railroad, (325, 375))
-        global pennrailcount
-        pennrailcount = 1 
-        font = py.font.Font('freesansbold.ttf', 24)
-        if pennrailcount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
-            buybutton = button(450, 785, 100, 30, (215, 215, 215))
-            ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
-            ignore_button = button(590, 785, 100, 30, (215, 215, 215))
-            if buybutton.draw(screen):
-                player1.money -= 60
-                pennrailcount = 0
-                turn += 1
-            elif ignore_button.draw(screen):
-                turn += 1
-            screen.blit(buy_text, buy_Rect)
-            screen.blit(ignore_text, ignore_rect)
-        elif pennrailcount != 1:
-            rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 100, 30)))
-            player1.money -= 2
-            player2.money += 2
-            turn += 1
+        p1buttons(160, 50, 60, pennrailp1, viravep2)
+        
     elif ((100 < player1.x < 240) and (400 < player1.y < 470) and (turn % 2 == 0) and (end_turn == 1)):
         stjames = py.image.load("PropertyCards/St. James Pl.png")
         screen.blit(stjames, (325, 375))

@@ -368,6 +368,20 @@ while run:
     propcardsp1()
     propcardsp2()
 
+#win condition
+    if player1.money <= 0:
+        font = py.font.Font('freesansbold.ttf', 24)
+        wintext1_rect = py.draw.rect(screen, (0, 0, 0), (0, 0, 2000, 2000))
+        wintext1 = font.render("Player 2 wins!", True, (255, 255, 255), (0, 0, 0))
+        screen.blit(wintext1, wintext1_rect)
+
+    elif player2.money <= 0:
+        font = py.font.Font('freesansbold.ttf', 24)
+        wintext2_rect = py.draw.rect(screen, (0, 0, 0), (0, 0, 2000, 2000))
+        wintext2 = font.render("Player 1 wins!", True, (255, 255, 255), (0, 0, 0))
+        screen.blit(wintext2, wintext2_rect)
+
+     
 
     if endturn.draw(screen):
         print(end_turn)
