@@ -337,7 +337,7 @@ def propcardsp1():
             player2.money += 2
             turn += 1
 
-    elif ((870 < player1.x < 1010) and (540 < player1.y < 610) and (turn % 2 == 0) and (end_turn == 1)):
+    elif ((870 < player1.x < 1010) and (400 < player1.y < 470) and (turn % 2 == 0) and (end_turn == 1)):
         penn_ave= py.image.load("PropertyCards/Pennsylvania_Avenue.png")
         screen.blit(penn_ave, (325, 375))
         p1buttons(320, 50, 150, penavep1, penavep2)
