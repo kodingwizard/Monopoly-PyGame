@@ -31,6 +31,7 @@ class button():
                 self.clicked = False
         return action
 
+'''
 medavep1 = 0
 medavep2 = 0
 balavep1 = 0
@@ -77,6 +78,7 @@ parplap1 = 0
 parplap2 = 0
 brdwlkp1 = 0
 brdwlkp2 = 0
+'''
 
 def propcardsp1():
     from mnply_board import player1
@@ -88,6 +90,54 @@ def propcardsp1():
     from mnply_board import dice_sum
 
     from mnply_board import p1buttons
+
+    global medavep1, medavep2, balavep1, balavep2, oriavep1, oriavep2, veravep1, veravep2, conavep1, conavep2, chaavep1, chaavep2, staavep1, staavep2, viravep1, viravep2, pennrailp1, pennrailp2, jamavep1, jamavep2, tenavep1, tenavep2, nyavep1, nyavep2, kenavep1, kenavep2, indavep1, indavep2, illavep1, illavep2, atlavep1, atlavep2, venavep1, venavep2, margarp1, margarp2, pacavep1, pacavep2, caravep1, caravep2, penavep1, penavep2, parplap1, parplap2, brdwlkp1, brdwlkp2
+    medavep1 = 0
+    medavep2 = 0
+    balavep1 = 0
+    balavep2 = 0
+    oriavep1 = 0
+    oriavep2 = 0
+    veravep1 = 0
+    veravep2 = 0
+    conavep1 = 0
+    conavep2 = 0
+    chaavep1 = 0
+    chaavep2 = 0
+    staavep1 = 0
+    staavep2 = 0
+    viravep1 = 0
+    viravep2 = 0
+    pennrailp1 = 0
+    pennrailp2 = 0
+    jamavep1 = 0
+    jamavep2 = 0
+    tenavep1 = 0
+    tenavep2 = 0
+    nyavep1 = 0
+    nyavep2 = 0
+    kenavep1 = 0
+    kenavep2 = 0
+    indavep1 = 0
+    indavep2 = 0
+    illavep1 = 0
+    illavep2 = 0
+    atlavep1 = 0
+    atlavep2 = 0
+    venavep1 = 0
+    venavep2 = 0
+    margarp1 = 0
+    margarp2 = 0
+    pacavep1 = 0
+    pacavep2 = 0
+    caravep1 = 0
+    caravep2 = 0
+    penavep1 = 0
+    penavep2 = 0
+    parplap1 = 0
+    parplap2 = 0
+    brdwlkp1 = 0
+    brdwlkp2 = 0
 
     if ((800 < player1.x < 870) and (820 < player1.y < 960) and (turn % 2 == 0) and (end_turn == 1)):
         med_ave = py.image.load("PropertyCards/Mediterranean_Ave.png")
@@ -356,6 +406,7 @@ def propcardsp2():
     from mnply_board import player2
     from mnply_board import turn
     from mnply_board import end_turn
+
 
     class button():
         def __init__(self, x, y, width, height, color):

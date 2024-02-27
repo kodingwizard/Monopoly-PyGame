@@ -301,7 +301,7 @@ while run:
     def p1buttons(purchase, revamp, rent, mecontrol, theycontrol):
         font = py.font.Font('freesansbold.ttf', 24)
         global end_turn
-        if (theycontrol != 0) and end_turn ==1:
+        if (theycontrol != 0) and end_turn ==1 and (turn % 2 == 0):
             player1.money -= rent * theycontrol
             player2.money += rent * theycontrol
             end_turn = 2
@@ -311,18 +311,17 @@ while run:
                 buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
                 buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
                 if buyButton.draw(screen):
-                    py.time.delay(300)
                     player1.money -= purchase
                     end_turn = 2
                     mecontrol += 1
                 screen.blit(buy, buy_rect)
             if mecontrol != 0:
+                py.time.delay(300)
                 upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
                 upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
                 upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
                 if upgradeButton.draw(screen) and (mecontrol < 5):
-                    py.time.delay(300)
-                    player2.money -= revamp
+                    player1.money -= revamp
                     end_turn = 2
                     mecontrol += 1 
                 screen.blit(upgrade, upgrade_rect)
@@ -337,7 +336,7 @@ while run:
     def p2buttons(buynum, upgradenum, tribute, meown, theyown):
         font = py.font.Font('freesansbold.ttf', 24)
         global end_turn
-        if theyown != 0 and end_turn == 1:
+        if theyown != 0 and end_turn == 1 and (turn % 2 == 1):
             player2.money -= tribute * theyown
             player1.money += tribute * theyown
             end_turn  = 2
@@ -347,17 +346,16 @@ while run:
                 buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
                 buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
                 if buyButton.draw(screen):
-                    py.time.delay(300)
                     player2.money -= buynum
                     end_turn = 2
                     meown += 1
                 screen.blit(buy, buy_rect)
             if meown != 0:
+                py.time.delay(300)
                 upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
                 upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
                 upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
                 if upgradeButton.draw(screen) and (meown < 5):
-                    py.time.delay(300)
                     player2.money -= upgradenum
                     end_turn = 2
                     meown += 1
