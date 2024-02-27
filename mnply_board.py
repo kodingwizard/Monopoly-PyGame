@@ -373,20 +373,7 @@ while run:
     propcardsp1()
     propcardsp2()
 
-#win condition
-    if player1.money <= 0:
-        font = py.font.Font('freesansbold.ttf', 24)
-        wintext1_rect = py.draw.rect(screen, (0, 0, 0), (0, 0, 2000, 2000))
-        wintext1 = font.render("Player 2 wins!", True, (255, 255, 255), (0, 0, 0))
-        screen.blit(wintext1, wintext1_rect)
 
-    elif player2.money <= 0:
-        font = py.font.Font('freesansbold.ttf', 24)
-        wintext2_rect = py.draw.rect(screen, (0, 0, 0), (0, 0, 2000, 2000))
-        wintext2 = font.render("Player 1 wins!", True, (255, 255, 255), (0, 0, 0))
-        screen.blit(wintext2, wintext2_rect)
-
-<<<<<<< Updated upstream
     #Jail Free Card
     if (player1.jailfree != 0) and (player1.jail > 0) and (turn % 2 == 0):
         font = py.font.Font('freesansbold.ttf', 32)
@@ -397,9 +384,6 @@ while run:
             player1.jail = 0
             player1.jailfree -= 1
         screen.blit(jailfreetext, jf_Rect)
-=======
-     
->>>>>>> Stashed changes
 
     if (player2.jailfree != 0) and (player1.jail > 0) and (turn % 2 == 1):
         font = py.font.Font('freesansbold.ttf', 32)
@@ -449,7 +433,6 @@ while run:
         print(player1.money)
         print(player2.money)
 
-
     if stamp == True:
         screen.blit(text, textRect)
         screen.blit(text1, textRect1)
@@ -466,6 +449,21 @@ while run:
 
     player1.draw(screen)
     player2.draw(screen)
+
+#win condition
+    if player1.money <= 0:
+        font = py.font.Font('freesansbold.ttf', 24)
+        wintext1_rect = py.draw.rect(screen, (0, 0, 0), (0, 0, 2000, 2000))
+        wintext1 = font.render("Player 2 wins!", True, (255, 255, 255), (0, 0, 0))
+        screen.blit(wintext1, wintext1_rect)
+
+
+    elif player2.money <= 0:
+        font = py.font.Font('freesansbold.ttf', 24)
+        wintext2_rect = py.draw.rect(screen, (0, 0, 0), (0, 0, 2000, 2000))
+        wintext2 = font.render("Player 1 wins!", True, (255, 255, 255), (0, 0, 0))
+        screen.blit(wintext2, wintext2_rect)
+        
     py.display.update()
 
 
