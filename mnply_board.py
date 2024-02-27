@@ -312,6 +312,7 @@ while run:
                     player1.money -= purchase
                     global end_turn
                     end_turn = 2
+                    py.time.delay(100)
                     mecontrol += 1
                 screen.blit(buy, buy_rect)
             if mecontrol != 0:
@@ -320,8 +321,10 @@ while run:
                 upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
                 if upgradeButton.draw(screen) and (mecontrol < 5):
                     player2.money -= revamp
-                    mecontrol += 1
                     end_turn = 2
+                    py.time.delay(100)
+                    mecontrol += 1
+                    
                 screen.blit(upgrade, upgrade_rect)
             closeButton = button(620, 800, 100, 30, (255, 0, 0))
             close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
@@ -345,6 +348,7 @@ while run:
                     player2.money -= buynum
                     global end_turn
                     end_turn = 2
+                    py.time.delay(100)
                     meown += 1
                 screen.blit(buy, buy_rect)
             if meown != 0:
@@ -353,8 +357,9 @@ while run:
                 upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
                 if upgradeButton.draw(screen) and (meown < 5):
                     player2.money -= upgradenum
-                    meown += 1
                     end_turn = 2
+                    py.time.delay(100)
+                    meown += 1
                 screen.blit(upgrade, upgrade_rect)
             closeButton = button(620, 800, 100, 30, (255, 0, 0))
             close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
@@ -368,7 +373,6 @@ while run:
     propcardsp1()
     propcardsp2()
 
-<<<<<<< Updated upstream
 #win condition
     if player1.money <= 0:
         font = py.font.Font('freesansbold.ttf', 24)
@@ -382,8 +386,7 @@ while run:
         wintext2 = font.render("Player 1 wins!", True, (255, 255, 255), (0, 0, 0))
         screen.blit(wintext2, wintext2_rect)
 
-     
-=======
+    #Jail Free Card
     if (player1.jailfree != 0) and (player1.jail > 0) and (turn % 2 == 0):
         font = py.font.Font('freesansbold.ttf', 32)
         jailfreetext = font.render("Use JAILFREECARD", True, (0, 0, 0), (215, 215, 215))
@@ -393,7 +396,6 @@ while run:
             player1.jail = 0
             player1.jailfree -= 1
         screen.blit(jailfreetext, jf_Rect)
->>>>>>> Stashed changes
 
     if (player2.jailfree != 0) and (player1.jail > 0) and (turn % 2 == 1):
         font = py.font.Font('freesansbold.ttf', 32)
