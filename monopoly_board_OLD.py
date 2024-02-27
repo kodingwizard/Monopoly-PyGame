@@ -1,5 +1,6 @@
 import turtle as t
 from random import random
+
 t.speed(0)
 t.up()
 t.goto(-455, -455)
