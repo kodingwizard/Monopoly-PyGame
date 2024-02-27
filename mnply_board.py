@@ -463,7 +463,7 @@ while run:
         wintext2_rect = py.draw.rect(screen, (0, 0, 0), (0, 0, 2000, 2000))
         wintext2 = font.render("Player 1 wins!", True, (255, 255, 255), (0, 0, 0))
         screen.blit(wintext2, wintext2_rect)
-        
+
     py.display.update()
 
 
