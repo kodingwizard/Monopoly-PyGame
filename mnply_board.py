@@ -7,9 +7,7 @@ py.init()
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 1000
 
-
 screen = py.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), py.RESIZABLE)
-
 
 def board():
     '''
@@ -52,7 +50,7 @@ def board():
     '''
     full_board = py.image.load("Streets.png")
     full_board_scale = py.transform.scale(full_board, (full_board.get_width()*1, full_board.get_height()*0.99))
-    screen.blit(full_board_scale, (-88, 50))
+    screen.blit(full_board_scale, (-88, -10))
 
 
 class player():
@@ -106,7 +104,7 @@ def dicetext():
     text1 = font.render(str(A), True, (0, 0, 0), (255, 255, 255))
     textRect1 = py.draw.rect(screen, (255,255,255), (1100, 50, 140, 140))
     text2 = font.render('Total: ' + str(dice_sum), True, (0, 0, 0), (255, 255, 255))
-    textRect2 = py.draw.rect(screen, (255,255,255), (1050, 150, 140, 140))
+    textRect2 = py.draw.rect(screen, (255,255,255), (1050, 130, 140, 140))
     if dice_sum < 10:
         text3 = font.render('yay no taxes', True, (0, 0, 0), (255, 255, 255))
         textRect3 = py.draw.rect(screen, (255,255,255), (1050, 200, 140, 100))
@@ -153,8 +151,8 @@ class button():
                 self.clicked = False
         return action
          
-player1 = player(888, 843, 35, 35, (255, 0, 0), 0, 1500, 0, 0)
-player2 = player(888, 897, 35, 35, (0, 255, 0), 0, 1500, 0, 0)
+player1 = player(888, 783, 35, 35, (255, 0, 0), 0, 1500, 0, 0)
+player2 = player(888, 837, 35, 35, (0, 255, 0), 0, 1500, 0, 0)
 font = py.font.Font('freesansbold.ttf', 32)
 dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
 dbt_Rect = py.draw.rect(screen, (215, 215, 215), (1050, 330, 140, 140))
@@ -172,6 +170,51 @@ p2textRect = py.draw.rect(screen, (255,255,255), (1040, 800, 140, 140))
 p2text1 = font1.render("Player 2's Jail Free Cards: " + str(player2.jailfree), True, (0, 0, 0), (255, 255, 255))
 p2textRect1 = py.draw.rect(screen, (255,255,255), (1040, 850, 140, 140))
 
+#Property Values
+medavep1 = 0
+medavep2 = 0
+balavep1 = 0
+balavep2 = 0
+oriavep1 = 0
+oriavep2 = 0
+veravep1 = 0
+veravep2 = 0
+conavep1 = 0
+conavep2 = 0
+chaavep1 = 0
+chaavep2 = 0
+staavep1 = 0
+staavep2 = 0
+viravep1 = 0
+viravep2 = 0
+jamavep1 = 0
+jamavep2 = 0
+tenavep1 = 0
+tenavep2 = 0
+nyavep1 = 0
+nyavep2 = 0
+kenavep1 = 0
+kenavep2 = 0
+indavep1 = 0
+indavep2 = 0
+illavep1 = 0
+illavep2 = 0
+atlavep1 = 0
+atlavep2 = 0
+venavep1 = 0
+venavep2 = 0
+margarp1 = 0
+margarp2 = 0
+pacavep1 = 0
+pacavep2 = 0
+caravep1 = 0
+caravep2 = 0
+penavep1 = 0
+penavep2 = 0
+parplap1 = 0
+parplap2 = 0
+brdwlkp1 = 0
+brdwlkp2 = 0
 
 turn = 1
 stamp = False
@@ -200,26 +243,26 @@ while run:
         if (turn % 2 == 1):#see if it is player one's turn
             player1.orbit += dice_sum * 70
             if (player1.jail == 0):
-                if (188 < player1.x <= 888) and (player1.y == 843):#bottom right to bottom left
+                if (188 < player1.x <= 888) and (player1.y == 783):#bottom right to bottom left
                     player1.x -= (70*dice_sum)
                     if player1.x < 188:#if going around bottom left corner
                         player1.y -= 188 - player1.x
                         player1.x = 188
-                elif (player1.x == 188) and (143 < player1.y <= 843):#bottom left to top left
+                elif (player1.x == 188) and (83 < player1.y <= 783):#bottom left to top left
                     player1.y -= (70*dice_sum)
-                    if player1.y < 143:#if going around top left corner
+                    if player1.y < 83:#if going around top left corner
                         player1.x += 143 - player1.y
-                        player1.y = 143
-                elif (188 <= player1.x < 888) and (player1.y == 143):#top left to top right
+                        player1.y = 83
+                elif (188 <= player1.x < 888) and (player1.y == 83):#top left to top right
                     player1.x += (70*dice_sum)
                     if player1.x > 888:#if going around top right corner
                         player1.y += player1.x - 888
                         player1.x = 888
-                elif (player1.x == 888) and (143 <= player1.y < 843):#top right to bottom right
+                elif (player1.x == 888) and (83 <= player1.y < 783):#top right to bottom right
                     player1.y += (70*dice_sum)
-                    if player1.y > 843:#if going around bottom right corner
+                    if player1.y > 783:#if going around bottom right corner
                         player1.x -= player1.y - 843
-                        player1.y = 843
+                        player1.y = 783
                 player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
                 turn += 1#making it next person's turn
             else:
@@ -227,67 +270,67 @@ while run:
         else:
             player2.orbit += dice_sum * 70
             if (player2.jail == 0):
-                if (188 < player2.x <= 888) and (840 <= player2.y <= 960):#bottom right to bottom left
+                if (188 < player2.x <= 888) and (780 <= player2.y <= 900):#bottom right to bottom left
                     player2.x -= (70*dice_sum)
                     if player2.x < 188:#if going around bottom left corner
-                        player2.y = 843
+                        player2.y = 783
                         player2.y -= 188 - player2.x
                         player2.x = 118
-                    if (100 <= player2.x <= 240) and (820 <= player2.y <= 960):#if reaching bottom left corner
+                    if (100 <= player2.x <= 240) and (760 <= player2.y <= 900):#if reaching bottom left corner
                         player2.x = 118
-                        player2.y = 843
-                elif (100 <= player2.x <= 240) and (197 < player2.y <= 897):#bottom left to top left
+                        player2.y = 783
+                elif (100 <= player2.x <= 240) and (137 < player2.y <= 837):#bottom left to top left
                     player2.y -= (70*dice_sum)
-                    if player2.y < 143:#if going around top left corner
+                    if player2.y < 83:#if going around top left corner
                         player2.x = 188
                         player2.x += 143 - player2.y
-                        player2.y = 73
-                    if (100 <= player2.x <= 240)and (50 <= player2.y <= 190):#if reaching top left corner
+                        player2.y = 13
+                    if (100 <= player2.x <= 240)and (-10 <= player2.y <= 130):#if reaching top left corner
                         player2.x = 188
-                        player2.y = 73
-                elif (118 <= player2.x < 888) and (50 <= player2.y <= 190):#top left to top right
+                        player2.y = 13
+                elif (118 <= player2.x < 888) and (-10 <= player2.y <= 130):#top left to top right
                     player2.x += (70*dice_sum)
                     if player2.x > 888:#if going around top right corner
-                        player2.y = 143
+                        player2.y = 83
                         player2.y += player2.x - 888
                         player2.x = 958
-                    if (870 <= player2.x <= 1010) and (50 <= player2.y <= 290):#if reaching top right corner
+                    if (870 <= player2.x <= 1010) and (-10 <= player2.y <= 230):#if reaching top right corner
                         player2.x = 958
-                        player2.y = 143
-                elif (870 <= player2.x <= 1010) and (143 <= player2.y < 897):#top right to bottom right
+                        player2.y = 83
+                elif (870 <= player2.x <= 1010) and (83 <= player2.y < 837):#top right to bottom right
                     player2.y += (70*dice_sum)
-                    if player2.y > 843:#if going around bottom right corner
+                    if player2.y > 783:#if going around bottom right corner
                         player2.x = 888
                         player2.x -= player2.y - 843
-                        player2.y = 897
-                    if (870 <= player2.x <= 1010) and (820 <= player2.y <= 960):#if reaching bottom right corner
+                        player2.y = 837
+                    if (870 <= player2.x <= 1010) and (760 <= player2.y <= 900):#if reaching bottom right corner
                         player2.x = 888
-                        player2.y = 897
+                        player2.y = 837
                 player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
                 turn += 1#making it next person's turn
             else:
                 turn += 1#making it next person's turn
 
-            if (870 < player1.x < 1010) and (50< player1.y <190):
+            if (870 < player1.x < 1010) and (-10< player1.y <130):
                 player1.jail = 1
                 player1.x = 188
-                player1.y = 843
+                player1.y = 783
                 player1.orbit = 700
                 player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
-            if (870 < player2.x < 1010) and (50< player2.y <190):
+            if (870 < player2.x < 1010) and (-10< player2.y <160):
                 player2.jail = 1
                 player2.x = 118
-                player2.y = 843
+                player2.y = 783
                 player2.orbit = 700
                 player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
         
         if player1.orbit >= 2800:
             player1.money += 200
-            player1.orbit = (888 - player1.x) + (843 - player1.y)
+            player1.orbit = (888 - player1.x) + (783 - player1.y)
             player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
         if player2.orbit >= 2800:
             player2.money += 200
-            player2.orbit = (888 - player2.x) + (843 - player2.y)
+            player2.orbit = (888 - player2.x) + (783 - player2.y)
             player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
 
 
@@ -298,41 +341,10 @@ while run:
     chancecardp1()
     chancecardp2()
 
-    def p1buttons(purchase, revamp, rent, mecontrol, theycontrol):
-        font = py.font.Font('freesansbold.ttf', 24)
+    def propendturn():
         global end_turn
-        if (theycontrol != 0) and end_turn ==1 and (turn % 2 == 0):
-            player1.money -= rent * theycontrol
-            player2.money += rent * theycontrol
-            end_turn = 2
-        else:
-            if mecontrol == 0:
-                buyButton = button(400, 800, 100, 30, (0, 255, 0))
-                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
-                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
-                if buyButton.draw(screen):
-                    player1.money -= purchase
-                    end_turn = 2
-                    mecontrol += 1
-                screen.blit(buy, buy_rect)
-            if mecontrol != 0:
-                py.time.delay(300)
-                upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
-                upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
-                upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-                if upgradeButton.draw(screen) and (mecontrol < 5):
-                    player1.money -= revamp
-                    end_turn = 2
-                    mecontrol += 1 
-                screen.blit(upgrade, upgrade_rect)
-            closeButton = button(620, 800, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            screen.blit(close, close_rect)
-            if closeButton.draw(screen):
-                end_turn = 2
-            screen.blit(close, close_rect)
-
+        end_turn = 2
+        
     def p2buttons(buynum, upgradenum, tribute, meown, theyown):
         font = py.font.Font('freesansbold.ttf', 24)
         global end_turn
@@ -394,7 +406,7 @@ while run:
         screen.blit(jailfreetext, jf_Rect)
     
     if endturn.draw(screen):
-        print(end_turn)
+    #    print(end_turn)
         end_turn = 0
         if player1.jail != 0:
             if (player1.jail <= 5) and (turn & 2 == 0):
@@ -428,8 +440,13 @@ while run:
                     player2.jail = 0
                 else:
                     player2.jail += 1
-        print(player1.money)
-        print(player2.money)
+        #print(player1.money)
+        #print(player2.money)
+        print(medavep1)
+        print(balavep1)
+        print(oriavep1)
+        print(veravep1)
+        print(conavep1)
 
     if stamp == True:
         screen.blit(text, textRect)
