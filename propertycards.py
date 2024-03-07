@@ -48,6 +48,8 @@ def propcardsp1():
 
     #Mediterranean Avenue
     if ((800 < player1.x < 870) and (820 - 60 < player1.y < -60 + 960) and (turn % 2 == 0) and (end_turn == 1)):
+        meditave = py.image.load("PropertyCards/Mediterranean_Ave.png")
+        screen.blit(meditave, (325, 275))
         global medavep1
         if medavep1 == 0:
             buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -56,20 +58,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 60
                 propendturn()
-                medavep1 += 1
+                medavep1 += 0
             screen.blit(buy, buy_rect)
         if medavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 medavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -86,7 +88,7 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 60
                 propendturn()
-                balavep1 += 1
+                balavep1 += 0
             screen.blit(buy, buy_rect)
         if balavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -99,7 +101,7 @@ def propcardsp1():
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -121,7 +123,7 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 60
                 propendturn()
-                oriavep1 += 1
+                oriavep1 += 0
             screen.blit(buy, buy_rect)
         if oriavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -134,7 +136,7 @@ def propcardsp1():
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -150,7 +152,7 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 60
                 propendturn()
-                veravep1 += 1
+                veravep1 += 0
             screen.blit(buy, buy_rect)
         if veravep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -163,7 +165,7 @@ def propcardsp1():
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -179,20 +181,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 60
                 propendturn()
-                conavep1 += 1
+                conavep1 += 0
             screen.blit(buy, buy_rect)
         if conavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 conavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -208,20 +210,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 140
                 propendturn()
-                chaavep1 += 1
+                chaavep1 += 0
             screen.blit(buy, buy_rect)
         if chaavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 chaavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -267,20 +269,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 140
                 propendturn()
-                staavep1 += 1
+                staavep1 += 0
             screen.blit(buy, buy_rect)
         if staavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 staavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -296,20 +298,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 160
                 propendturn()
-                viravep1 += 1
+                viravep1 += 0
             screen.blit(buy, buy_rect)
         if viravep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 viravep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -330,20 +332,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 180
                 propendturn()
-                jamavep1 += 1
+                jamavep1 += 0
             screen.blit(buy, buy_rect)
         if jamavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 jamavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -359,20 +361,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 180
                 propendturn()
-                tenavep1 += 1
+                tenavep1 += 0
             screen.blit(buy, buy_rect)
         if tenavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 tenavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -388,20 +390,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 200
                 propendturn()
-                nyavep1 += 1
+                nyavep1 += 0
             screen.blit(buy, buy_rect)
         if nyavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 nyavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -417,20 +419,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 220
                 propendturn()
-                kenavep1 += 1
+                kenavep1 += 0
             screen.blit(buy, buy_rect)
         if kenavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 kenavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -446,20 +448,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 220
                 propendturn()
-                indavep1 += 1
+                indavep1 += 0
             screen.blit(buy, buy_rect)
         if indavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 indavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -475,20 +477,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 240
                 propendturn()
-                illavep1 += 1
+                illavep1 += 0
             screen.blit(buy, buy_rect)
         if illavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 illavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -532,20 +534,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 260
                 propendturn()
-                atlavep1 += 1
+                atlavep1 += 0
             screen.blit(buy, buy_rect)
         if atlavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 atlavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -561,20 +563,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 260
                 propendturn()
-                venavep1 += 1
+                venavep1 += 0
             screen.blit(buy, buy_rect)
         if venavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 venavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -618,20 +620,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 300
                 propendturn()
-                margarp1 += 1
+                margarp1 += 0
             screen.blit(buy, buy_rect)
         if margarp1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 margarp1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -647,20 +649,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 300
                 propendturn()
-                pacavep1 += 1
+                pacavep1 += 0
             screen.blit(buy, buy_rect)
         if pacavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 pacavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -676,20 +678,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 300
                 propendturn()
-                caravep1 += 1
+                caravep1 += 0
             screen.blit(buy, buy_rect)
         if caravep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 caravep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -733,20 +735,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 320
                 propendturn()
-                penavep1 += 1
+                penavep1 += 0
             screen.blit(buy, buy_rect)
         if penavep1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 penavep1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -762,20 +764,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 350
                 propendturn()
-                parplap1 += 1
+                parplap1 += 0
             screen.blit(buy, buy_rect)
         if parplap1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 parplap1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
@@ -791,20 +793,20 @@ def propcardsp1():
             if buyButton.draw(screen):
                 player1.money -= 400
                 propendturn()
-                brdwlkp1 += 1
+                brdwlkp1 += 0
             screen.blit(buy, buy_rect)
         if brdwlkp1 >= 0:
             upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
             upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
             upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-            if upgradeButton.draw(screen) and (medavep1 < 5):
+            if upgradeButton.draw(screen):
                 player1.money -= 20
                 propendturn()
                 brdwlkp1 += 1 
             screen.blit(upgrade, upgrade_rect)
         closeButton = button(620, 740, 100, 30, (255, 0, 0))
         close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-        close = font.render("buy", True, (0, 0, 0), (255, 0, 0))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
         if closeButton.draw(screen):
             propendturn()
         screen.blit(close, close_rect)
