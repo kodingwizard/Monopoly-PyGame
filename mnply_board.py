@@ -381,8 +381,7 @@ while run:
             screen.blit(close, close_rect)
 
     from propertycards import *
-    propcardsp1()
-    propcardsp2()
+    propcards()
 
     #Jail Free Card
     if (player1.jailfree != 0) and (player1.jail > 0) and (turn % 2 == 0):
