@@ -152,8 +152,8 @@ class button():
                 self.clicked = False
         return action
          
-player1 = player(888, 783, 35, 35, (255, 0, 0), 0, 1500, 0, 0)
-player2 = player(888, 837, 35, 35, (0, 255, 0), 0, 1500, 0, 0)
+player1 = player(888, 783, 35, 35, (255, 0, 0), 0, 1500, 0, 0, 0)
+player2 = player(888, 837, 35, 35, (0, 255, 0), 0, 1500, 0, 0, 0)
 font = py.font.Font('freesansbold.ttf', 32)
 dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
 dbt_Rect = py.draw.rect(screen, (215, 215, 215), (1050, 330, 140, 140))
@@ -277,7 +277,7 @@ while run:
                     if player1.y > 783:#if going around bottom right corner
                         player1.x -= player1.y - 843
                         player1.y = 783
-                player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
+                player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit, player1.rail)
                 turn += 1#making it next person's turn
             else:
                 turn += 1 #next person's turn
@@ -320,7 +320,7 @@ while run:
                     if (870 <= player2.x <= 1010) and (760 <= player2.y <= 900):#if reaching bottom right corner
                         player2.x = 888
                         player2.y = 837
-                player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
+                player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit, player2.rail)
                 turn += 1#making it next person's turn
             else:
                 turn += 1#making it next person's turn
@@ -330,22 +330,22 @@ while run:
                 player1.x = 188
                 player1.y = 783
                 player1.orbit = 700
-                player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
+                player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit, player1.rail)
             if (870 < player2.x < 1010) and (-10< player2.y <160):
                 player2.jail = 1
                 player2.x = 118
                 player2.y = 783
                 player2.orbit = 700
-                player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
+                player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit, player2.rail)
         
         if player1.orbit >= 2800:
             player1.money += 200
             player1.orbit = (888 - player1.x) + (783 - player1.y)
-            player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit)
+            player1 = player(player1.x, player1.y, 35, 35, (255, 0, 0), player1.jail, player1.money, player1.jailfree, player1.orbit, player1.rail)
         if player2.orbit >= 2800:
             player2.money += 200
             player2.orbit = (888 - player2.x) + (783 - player2.y)
-            player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit)
+            player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit, player2.rail)
 
 
     from communitycard import * 
