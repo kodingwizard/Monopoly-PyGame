@@ -42,8 +42,8 @@ def propcards():
     from mnply_board import end_turn
     from mnply_board import button
     from mnply_board import dice_sum
-    global medavep1,  medavep2, balavep1, balavep2, oriavep1, oriavep2, veravep1, veravep2, conavep1, conavep2, chaavep1, chaavep2, staavep1, staavep2, viravep1, viravep2, jamavep1, jamavep2, tenavep1, tenavep2, nyavep1, nyavep2, kenavep1, kenavep2, indavep1, indavep2, illavep1, illavep2, atlavep1, atlavep2,venavep1,venavep2,margarp1,margarp2,pacavep1,pacavep2,caravep1,caravep2,penavep1,penavep2,parplap1,parplap2,brdwlkp1,brdwlkp2
-    from mnply_board import medavep1,  medavep2, balavep1, balavep2, oriavep1, oriavep2, veravep1, veravep2, conavep1, conavep2, chaavep1, chaavep2, staavep1, staavep2, viravep1, viravep2, jamavep1, jamavep2, tenavep1, tenavep2, nyavep1, nyavep2, kenavep1, kenavep2, indavep1, indavep2, illavep1, illavep2, atlavep1, atlavep2,venavep1,venavep2,margarp1,margarp2,pacavep1,pacavep2,caravep1,caravep2,penavep1,penavep2,parplap1,parplap2,brdwlkp1,brdwlkp2
+    global medavep1,  medavep2, balavep1, balavep2, oriavep1, oriavep2, veravep1, veravep2, conavep1, conavep2, chaavep1, chaavep2, staavep1, staavep2, viravep1, viravep2, jamavep1, jamavep2, tenavep1, tenavep2, nyavep1, nyavep2, kenavep1, kenavep2, indavep1, indavep2, illavep1, illavep2, atlavep1, atlavep2,venavep1,venavep2,margarp1,margarp2,pacavep1,pacavep2,caravep1,caravep2,penavep1,penavep2,parplap1,parplap2,brdwlkp1,brdwlkp2,elecomp1,elecomp2,watworp1,watworp2
+    from mnply_board import medavep1,  medavep2, balavep1, balavep2, oriavep1, oriavep2, veravep1, veravep2, conavep1, conavep2, chaavep1, chaavep2, staavep1, staavep2, viravep1, viravep2, jamavep1, jamavep2, tenavep1, tenavep2, nyavep1, nyavep2, kenavep1, kenavep2, indavep1, indavep2, illavep1, illavep2, atlavep1, atlavep2,venavep1,venavep2,margarp1,margarp2,pacavep1,pacavep2,caravep1,caravep2,penavep1,penavep2,parplap1,parplap2,brdwlkp1,brdwlkp2,elecomp1,elecomp2,watworp1,watworp2
     
     global font
     from mnply_board import propendturn
@@ -257,32 +257,32 @@ def propcards():
     elif (100 < player1.x < 240) and (680 - 60 < player1.y < -60 + 750) and (turn % 2 == 0) and (end_turn == 1):
         elec_comp = py.image.load("PropertyCards/Electric_Company.png")
         screen.blit(elec_comp, (325, 375))
-        global eleccompcount
-        eleccompcount = 1
-        font = py.font.Font('freesansbold.ttf', 24)
-        if eleccompcount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
-            buybutton = button(450, 785, 100, 30, (215, 215, 215))
-            screen.blit(buy_text, buy_Rect)
-            ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
-            ignore_button = button(590, 785, 100, 30, (215, 215, 215))
-            screen.blit(ignore_text, ignore_rect)
-            if buybutton.draw(screen):
-                player1.money -= 150
-                eleccompcount = 0
-                turn += 1
-            elif ignore_button.draw(screen):
-                turn += 1
-            screen.blit(buy_text, buy_Rect)
-            screen.blit(ignore_text, ignore_rect)
-        elif eleccompcount != 1:
-            rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 100, 30)))
-            player1.money -= 4*dice_sum 
-            player2.money += 4*dice_sum
-            turn += 1
+        if elecomp2 != 0:
+            if watworp2 != 0:
+                player1.money -= dice_sum * 10
+                player2.money += dice_sum * 10
+                propendturn()
+            else:
+                player1.money -= dice_sum * 4
+                player2.money += dice_sum * 4
+                propendturn()
+        else:
+            if elecomp1 == 0:
+                buyButton = button(400, 740, 100, 30, (0, 255, 0))
+                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
+                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+                if buyButton.draw(screen):
+                    player1.money -= 150
+                    propendturn()
+                    elecomp1 += 1
+                screen.blit(buy, buy_rect)
+            closeButton = button(620, 740, 100, 30, (255, 0, 0))
+            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+            if closeButton.draw(screen):
+                propendturn()
+            screen.blit(close, close_rect)
+        
     #States Avenue
     elif (100 < player1.x < 240) and (610 - 60 < player1.y < -60 + 680) and (turn % 2 == 0) and (end_turn == 1):
         states_ave = py.image.load("PropertyCards/States_Ave.png")
@@ -650,30 +650,31 @@ def propcards():
     elif ((730 < player1.x < 800) and (50 - 60 < player1.y < -60 + 190) and (turn % 2 == 0) and (end_turn == 1)):
         water_works = py.image.load("PropertyCards/Water_Works.png")
         screen.blit(water_works, (325, 375))
-        global wtrwrkavecount
-        wtrwrkcount = 1
-        font = py.font.Font('freesansbold.ttf', 24)
-        if wtrwrkcount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
-            buybutton = button(450, 785, 100, 30, (215, 215, 215))
-            ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
-            ignore_button = button(590, 785, 100, 30, (215, 215, 215))
-            if buybutton.draw(screen):
-                player1.money -= 60
-                wtrwrkcount = 0
-                turn += 1
-            elif ignore_button.draw(screen):
-                turn += 1
-            screen.blit(buy_text, buy_Rect)
-            screen.blit(ignore_text, ignore_rect)
-        elif wtrwrkcount != 1:
-            rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 100, 30)))
-            player1.money -= 2
-            player2.money += 2
-            turn += 1
+        if watworp2 != 0:
+            if elecomp2 != 0:
+                player1.money -= dice_sum * 10
+                player2.money += dice_sum * 10
+                propendturn()
+            else:
+                player1.money -= dice_sum * 4
+                player2.money += dice_sum * 4
+                propendturn()
+        else:
+            if watworp1 == 0:
+                buyButton = button(400, 740, 100, 30, (0, 255, 0))
+                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
+                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+                if buyButton.draw(screen):
+                    player1.money -= 150
+                    propendturn()
+                    watworp1 += 1
+                screen.blit(buy, buy_rect)
+            closeButton = button(620, 740, 100, 30, (255, 0, 0))
+            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+            if closeButton.draw(screen):
+                propendturn()
+            screen.blit(close, close_rect)
     #Marvin Gardens
     elif ((800 < player1.x < 870) and (50 - 60 < player1.y < -60 + 190) and (turn % 2 == 0) and (end_turn == 1)):
         marv_gardens = py.image.load("PropertyCards/Marvin_Gardens.png")
@@ -1010,33 +1011,32 @@ def propcards():
                 propendturn()
             screen.blit(close, close_rect)
 
-
     #Vermont Avenue
     if ((310 < player2.x < 380) and (820 - 60 < player2.y < -60 + 960)) and (turn % 2 == 1) and (end_turn == 1):
         vermontAvenue = py.image.load("PropertyCards/Vermont_Ave.png")
         screen.blit(vermontAvenue, (300, 400))
-        if conavep1 != 0:
+        if veravep1 != 0:
             player2.money -= 8
             player1.money += 8
             propendturn()
         else:
-            if conavep2 == 0:
+            if veravep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
                 buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= 100
                     propendturn()
-                    conavep2 += 1
+                    veravep2 += 1
                 screen.blit(buy, buy_rect)
-            if conavep2 >= 0:
+            if veravep2 >= 0:
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
                 upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
                     propendturn()
-                    conavep2 += 1 
+                    veravep2 += 1 
                 screen.blit(upgrade, upgrade_rect)
             closeButton = button(620, 740, 100, 30, (255, 0, 0))
             close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
@@ -1117,6 +1117,31 @@ def propcards():
     if ((100 < player2.x < 240) and (680 - 60 < player2.y < -60 + 750)) and (turn % 2 == 1) and (end_turn == 1):
         electricCompany = py.image.load("PropertyCards/Electric_Company.png")
         screen.blit(electricCompany, (300, 400))
+        if elecomp1 != 0:
+            if watworp1 != 0:
+                player2.money -= dice_sum * 10
+                player1.money += dice_sum * 10
+                propendturn()
+            else:
+                player2.money -= dice_sum * 4
+                player1.money += dice_sum * 4
+                propendturn()
+        else:
+            if elecomp2 == 0:
+                buyButton = button(400, 740, 100, 30, (0, 255, 0))
+                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
+                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+                if buyButton.draw(screen):
+                    player2.money -= 150
+                    propendturn()
+                    elecomp2 += 1
+                screen.blit(buy, buy_rect)
+            closeButton = button(620, 740, 100, 30, (255, 0, 0))
+            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+            if closeButton.draw(screen):
+                propendturn()
+            screen.blit(close, close_rect)
 
     #States Avenue
     if ((100 < player2.x < 240) and (610 - 60 < player2.y < -60 + 680)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1468,11 +1493,35 @@ def propcards():
                 propendturn()
             screen.blit(close, close_rect)
 
-
     #Water Works
     if ((730 < player2.x <800) and (50 - 60 < player2.y < -60 + 190)) and (turn % 2 == 1) and (end_turn == 1):
         waterWorks = py.image.load("PropertyCards/Water_Works.png")
         screen.blit(waterWorks, (300, 400))
+        if watworp1 != 0:
+            if elecomp1 != 0:
+                player2.money -= dice_sum * 10
+                player1.money += dice_sum * 10
+                propendturn()
+            else:
+                player2.money -= dice_sum * 4
+                player1.money += dice_sum * 4
+                propendturn()
+        else:
+            if watworp2 == 0:
+                buyButton = button(400, 740, 100, 30, (0, 255, 0))
+                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
+                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+                if buyButton.draw(screen):
+                    player2.money -= 150
+                    propendturn()
+                    watworp2 += 1
+                screen.blit(buy, buy_rect)
+            closeButton = button(620, 740, 100, 30, (255, 0, 0))
+            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+            if closeButton.draw(screen):
+                propendturn()
+            screen.blit(close, close_rect)
 
     #Marvin Gardens
     if ((800 < player2.x < 870) and (50 - 60 < player2.y < -60 + 190)) and (turn % 2 == 1) and (end_turn == 1):

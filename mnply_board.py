@@ -215,6 +215,10 @@ parplap1 = 0
 parplap2 = 0
 brdwlkp1 = 0
 brdwlkp2 = 0
+elecomp1 = 0
+elecomp2 = 0
+watworp1 = 0
+watworp2 = 0
 
 turn = 1
 stamp = False
@@ -344,47 +348,12 @@ while run:
     def propendturn():
         global end_turn
         end_turn = 2
-        
-    def p2buttons(buynum, upgradenum, tribute, meown, theyown):
-        font = py.font.Font('freesansbold.ttf', 24)
-        global end_turn
-        if theyown != 0 and end_turn == 1 and (turn % 2 == 1):
-            player2.money -= tribute * theyown
-            player1.money += tribute * theyown
-            end_turn  = 2
-        else:
-            if meown == 0:
-                buyButton = button(400, 800, 100, 30, (0, 255, 0))
-                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
-                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
-                if buyButton.draw(screen):
-                    player2.money -= buynum
-                    end_turn = 2
-                    meown += 1
-                screen.blit(buy, buy_rect)
-            if meown != 0:
-                py.time.delay(300)
-                upgradeButton = button(400, 800, 100, 30, (0, 255, 0))
-                upgrade_rect = py.draw.rect(screen, (0, 255, 0), (400, 800, 100, 30))
-                upgrade = font.render("Upgrade", True, (0, 0, 0), (0, 255, 0))
-                if upgradeButton.draw(screen) and (meown < 5):
-                    player2.money -= upgradenum
-                    end_turn = 2
-                    meown += 1
-                screen.blit(upgrade, upgrade_rect)
-            closeButton = button(620, 800, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 800, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            screen.blit(close, close_rect)
-            if closeButton.draw(screen):
-                end_turn = 2
-            screen.blit(close, close_rect)
 
     from propertycards import *
     propcards()
 
     #Jail Free Card
-    if (player1.jailfree != 0) and (player1.jail > 0) and (turn % 2 == 0):
+    if (player1.jailfree != 0) and (player1.jail > 0) and ((turn % 2 == 1) and (end_turn == 0)):
         font = py.font.Font('freesansbold.ttf', 32)
         jailfreetext = font.render("Use JAILFREECARD", True, (0, 0, 0), (215, 215, 215))
         jf_Rect = py.draw.rect(screen, (215, 215, 215), (325, 375, 200, 60))
@@ -394,7 +363,7 @@ while run:
             player1.jailfree -= 1
         screen.blit(jailfreetext, jf_Rect)
 
-    if (player2.jailfree != 0) and (player1.jail > 0) and (turn % 2 == 1):
+    if (player2.jailfree != 0) and (player2.jail > 0) and ((turn % 2 == 0) and (end_turn == 0)):
         font = py.font.Font('freesansbold.ttf', 32)
         jailfreetext = font.render("Use JAILFREECARD", True, (0, 0, 0), (215, 215, 215))
         jf_Rect = py.draw.rect(screen, (215, 215, 215), (325, 375, 200, 60))
@@ -442,10 +411,15 @@ while run:
         #print(player1.money)
         #print(player2.money)
         print(medavep1)
+        print(medavep2)
         print(balavep1)
+        print(balavep2)
         print(oriavep1)
+        print(oriavep2)
         print(veravep1)
+        print(veravep2)
         print(conavep1)
+        print(conavep2)
 
     if stamp == True:
         screen.blit(text, textRect)
