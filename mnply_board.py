@@ -216,9 +216,6 @@ parplap1 = 0
 parplap2 = 0
 brdwlkp1 = 0
 brdwlkp2 = 0
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 bo_railp1 = 0
 bo_railp2 = 0
 shortlinep1 = 0
@@ -227,16 +224,11 @@ penn_railp1 = 0
 penn_railp2 = 0
 readingrailp1 = 0
 readingrailp2 = 0
-=======
->>>>>>> Stashed changes
 elecomp1 = 0
 elecomp2 = 0
 watworp1 = 0
 watworp2 = 0
-<<<<<<< Updated upstream
-=======
->>>>>>> 44bee9855e9fa77eb3733c1606fb405bd711e7ab
->>>>>>> Stashed changes
+
 
 turn = 1
 stamp = False
