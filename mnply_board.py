@@ -54,7 +54,7 @@ def board():
 
 
 class player():
-    def __init__(self, x, y, width, height, color, jail, money, jailfree, orbit):
+    def __init__(self, x, y, width, height, color, jail, money, jailfree, orbit, rail):
         self.x = x
         self.y = y
         self.width = width
@@ -65,6 +65,7 @@ class player():
         self.money = money
         self.jailfree = jailfree
         self.orbit = orbit
+        self.rail = rail
 
     def draw(self, win):
         py.draw.rect(win, self.color, self.rect)
@@ -215,10 +216,27 @@ parplap1 = 0
 parplap2 = 0
 brdwlkp1 = 0
 brdwlkp2 = 0
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+bo_railp1 = 0
+bo_railp2 = 0
+shortlinep1 = 0
+shortlinep2 = 0
+penn_railp1 = 0
+penn_railp2 = 0
+readingrailp1 = 0
+readingrailp2 = 0
+=======
+>>>>>>> Stashed changes
 elecomp1 = 0
 elecomp2 = 0
 watworp1 = 0
 watworp2 = 0
+<<<<<<< Updated upstream
+=======
+>>>>>>> 44bee9855e9fa77eb3733c1606fb405bd711e7ab
+>>>>>>> Stashed changes
 
 turn = 1
 stamp = False

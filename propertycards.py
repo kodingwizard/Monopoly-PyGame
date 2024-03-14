@@ -42,8 +42,18 @@ def propcards():
     from mnply_board import end_turn
     from mnply_board import button
     from mnply_board import dice_sum
+<<<<<<< Updated upstream
     global medavep1,  medavep2, balavep1, balavep2, oriavep1, oriavep2, veravep1, veravep2, conavep1, conavep2, chaavep1, chaavep2, staavep1, staavep2, viravep1, viravep2, jamavep1, jamavep2, tenavep1, tenavep2, nyavep1, nyavep2, kenavep1, kenavep2, indavep1, indavep2, illavep1, illavep2, atlavep1, atlavep2,venavep1,venavep2,margarp1,margarp2,pacavep1,pacavep2,caravep1,caravep2,penavep1,penavep2,parplap1,parplap2,brdwlkp1,brdwlkp2,elecomp1,elecomp2,watworp1,watworp2
     from mnply_board import medavep1,  medavep2, balavep1, balavep2, oriavep1, oriavep2, veravep1, veravep2, conavep1, conavep2, chaavep1, chaavep2, staavep1, staavep2, viravep1, viravep2, jamavep1, jamavep2, tenavep1, tenavep2, nyavep1, nyavep2, kenavep1, kenavep2, indavep1, indavep2, illavep1, illavep2, atlavep1, atlavep2,venavep1,venavep2,margarp1,margarp2,pacavep1,pacavep2,caravep1,caravep2,penavep1,penavep2,parplap1,parplap2,brdwlkp1,brdwlkp2,elecomp1,elecomp2,watworp1,watworp2
+=======
+<<<<<<< HEAD
+    global medavep1,  medavep2, balavep1, balavep2, oriavep1, oriavep2, veravep1, veravep2, conavep1, conavep2, chaavep1, chaavep2, staavep1, staavep2, viravep1, viravep2, jamavep1, jamavep2, tenavep1, tenavep2, nyavep1, nyavep2, kenavep1, kenavep2, indavep1, indavep2, illavep1, illavep2, atlavep1, atlavep2,venavep1,venavep2,margarp1,margarp2,pacavep1,pacavep2,caravep1,caravep2,penavep1,penavep2,parplap1,parplap2,brdwlkp1,brdwlkp2, bo_railp1, bo_railp2, shortlinep1, shortlinep2, penn_railp1, penn_railp2, readingrailp1, readingrailp2 
+    from mnply_board import medavep1,  medavep2, balavep1, balavep2, oriavep1, oriavep2, veravep1, veravep2, conavep1, conavep2, chaavep1, chaavep2, staavep1, staavep2, viravep1, viravep2, jamavep1, jamavep2, tenavep1, tenavep2, nyavep1, nyavep2, kenavep1, kenavep2, indavep1, indavep2, illavep1, illavep2, atlavep1, atlavep2,venavep1,venavep2,margarp1,margarp2,pacavep1,pacavep2,caravep1,caravep2,penavep1,penavep2,parplap1,parplap2,brdwlkp1,brdwlkp2, bo_railp1, bo_railp2, shortlinep1, shortlinep2, penn_railp1, penn_railp2, readingrailp1, readingrailp2 
+=======
+    global medavep1,  medavep2, balavep1, balavep2, oriavep1, oriavep2, veravep1, veravep2, conavep1, conavep2, chaavep1, chaavep2, staavep1, staavep2, viravep1, viravep2, jamavep1, jamavep2, tenavep1, tenavep2, nyavep1, nyavep2, kenavep1, kenavep2, indavep1, indavep2, illavep1, illavep2, atlavep1, atlavep2,venavep1,venavep2,margarp1,margarp2,pacavep1,pacavep2,caravep1,caravep2,penavep1,penavep2,parplap1,parplap2,brdwlkp1,brdwlkp2,elecomp1,elecomp2,watworp1,watworp2
+    from mnply_board import medavep1,  medavep2, balavep1, balavep2, oriavep1, oriavep2, veravep1, veravep2, conavep1, conavep2, chaavep1, chaavep2, staavep1, staavep2, viravep1, viravep2, jamavep1, jamavep2, tenavep1, tenavep2, nyavep1, nyavep2, kenavep1, kenavep2, indavep1, indavep2, illavep1, illavep2, atlavep1, atlavep2,venavep1,venavep2,margarp1,margarp2,pacavep1,pacavep2,caravep1,caravep2,penavep1,penavep2,parplap1,parplap2,brdwlkp1,brdwlkp2,elecomp1,elecomp2,watworp1,watworp2
+>>>>>>> 44bee9855e9fa77eb3733c1606fb405bd711e7ab
+>>>>>>> Stashed changes
     
     global font
     from mnply_board import propendturn
@@ -350,9 +360,9 @@ def propcards():
                 propendturn()
             screen.blit(close, close_rect)
 
-    elif ((100 < player1.x < 240) and (470 - 60 < player1.y < -60 + 540) and (turn % 2 == 0) and (end_turn == 1)):
-        penn_railroad = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
-        screen.blit(penn_railroad, (325, 375))
+    #elif ((100 < player1.x < 240) and (470 - 60 < player1.y < -60 + 540) and (turn % 2 == 0) and (end_turn == 1)):
+        #penn_railroad = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
+        #screen.blit(penn_railroad, (325, 375))
         ##p1buttons(160, 50, 60, pennrailp1, viravep2)
     #St. James Places
     elif ((100 < player1.x < 240) and (400 - 60 < player1.y < -60 + 470) and (turn % 2 == 0) and (end_turn == 1)):
@@ -556,30 +566,74 @@ def propcards():
     elif ((520 < player1.x < 590) and (50 - 60 < player1.y < -60 + 190) and (turn % 2 == 0) and (end_turn == 1)):
         bo_railroad = py.image.load("PropertyCards/BandO_Railroad.png")
         screen.blit(bo_railroad, (325, 375))
-        global borailcount
-        borailcount = 1
-        font = py.font.Font('freesansbold.ttf', 24)
-        if borailcount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
-            buybutton = button(450, 785, 100, 30, (215, 215, 215))
-            ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
-            ignore_button = button(590, 785, 100, 30, (215, 215, 215))
-            if buybutton.draw(screen):
-                player1.money -= 60
-                borailcount = 0
-                turn += 1
-            elif ignore_button.draw(screen):
-                turn += 1
-            screen.blit(buy_text, buy_Rect)
-            screen.blit(ignore_text, ignore_rect)
-        elif borailcount != 1:
-            rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 100, 30)))
-            player1.money -= 2
-            player2.money += 2
-            turn += 1
+        if bo_railp1 != 0:
+            player1.money -= 25*player2.rail
+            player2.money += 25*player2.rail
+            propendturn()
+        else:
+            if bo_railp1 == 0:
+                buyButton = button(400, 740, 100, 30, (0, 255, 0))
+                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
+                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+                if buyButton.draw(screen):
+                    player1.money -= -20 + 260
+                    propendturn()
+                    player1.rail += 1
+                screen.blit(buy, buy_rect)
+            closeButton = button(620, 740, 100, 30, (255, 0, 0))
+            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+            if closeButton.draw(screen):
+                propendturn()
+            screen.blit(close, close_rect)
+    #Reading Railroad
+    elif ((520 < player1.x < 590) and (820 < player1.y < 960) and (turn % 2 == 0) and (end_turn == 1)):
+        reading_railroad = py.image.load("PropertyCards/Readin_Railroad.png")
+        screen.blit(reading_railroad, (325, 375))
+        if readingrailp1 != 0:
+            player1.money -= 25*player2.rail
+            player2.money += 25*player2.rail
+            propendturn()
+        else:
+            if readingrailp1 == 0:
+                buyButton = button(400, 740, 100, 30, (0, 255, 0))
+                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
+                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+                if buyButton.draw(screen):
+                    player1.money -= -20 + 260
+                    propendturn()
+                    player1.rail += 1
+                screen.blit(buy, buy_rect)
+            closeButton = button(620, 740, 100, 30, (255, 0, 0))
+            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+            if closeButton.draw(screen):
+                propendturn()
+            screen.blit(close, close_rect)
+    #Pennsylvania Railroad
+    elif ((100 < player1.x < 240) and (470 < player1.y < 540) and (turn % 2 == 0) and (end_turn == 1)):
+        penn_Rail = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
+        screen.blit(penn_Rail, (325, 375))
+        if penn_railp1 != 0:
+            player1.money -= 25*player2.rail
+            player2.money += 25*player2.rail
+            propendturn()
+        else:
+            if penn_railp1 == 0:
+                buyButton = button(400, 740, 100, 30, (0, 255, 0))
+                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
+                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+                if buyButton.draw(screen):
+                    player1.money -= -20 + 260
+                    propendturn()
+                    player1.rail += 1
+                screen.blit(buy, buy_rect)
+            closeButton = button(620, 740, 100, 30, (255, 0, 0))
+            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+            if closeButton.draw(screen):
+                propendturn()
+            screen.blit(close, close_rect)
     #Atlantic Avenue
     elif ((590 < player1.x < 660) and (50 - 60 < player1.y < -60 + 190) and (turn % 2 == 0) and (end_turn == 1)):
         atlantic_ave = py.image.load("PropertyCards/Atlantic_Avenue.png")
@@ -778,30 +832,26 @@ def propcards():
     elif ((870 < player1.x < 1010) and (470 - 60 < player1.y < -60 + 540) and (turn % 2 == 0) and (end_turn == 1)):
         short_line = py.image.load("PropertyCards/Short_Line.png")
         screen.blit(short_line, (325, 375))
-        global shortlncount
-        shortlncount = 1
-        font = py.font.Font('freesansbold.ttf', 24)
-        if shortlncount == 1:
-            buy_text = font.render("Buy", True, (0, 0, 0), (215, 215, 215))
-            buy_Rect = py.draw.rect(screen, (215, 215, 215), (450, 785, 100, 30))
-            buybutton = button(450, 785, 100, 30, (215, 215, 215))
-            ignore_text = font.render("Ignore", True,(0, 0, 0), (215, 215, 215) )
-            ignore_rect = py.draw.rect(screen, (215, 215, 215), (590, 785, 100, 30))
-            ignore_button = button(590, 785, 100, 30, (215, 215, 215))
-            if buybutton.draw(screen):
-                player1.money -= 60
-                shortlncount = 0
-                turn += 1
-            elif ignore_button.draw(screen):
-                turn += 1
-            screen.blit(buy_text, buy_Rect)
-            screen.blit(ignore_text, ignore_rect)
-        elif shortlncount != 1:
-            rent_text = font.render("Pay RENT", True, (0, 0, 0), (215, 215, 215))
-            rent_Rect = py.draw.rect(screen, ((215, 215, 215), (300, 400, 100, 30)))
-            player1.money -= 2
-            player2.money += 2
-            turn += 1
+        if shortlinep1 != 0:
+            player1.money -= 25*player2.rail
+            player2.money += 25*player2.rail
+            propendturn()
+        else:
+            if shortlinep1 == 0:
+                buyButton = button(400, 740, 100, 30, (0, 255, 0))
+                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
+                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+                if buyButton.draw(screen):
+                    player1.money -= -20 + 260
+                    propendturn()
+                    player1.rail += 1
+                screen.blit(buy, buy_rect)
+            closeButton = button(620, 740, 100, 30, (255, 0, 0))
+            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+            if closeButton.draw(screen):
+                propendturn()
+            screen.blit(close, close_rect)
     #Pennsylvania Avenue
     elif ((870 < player1.x < 1010) and (400 - 60 < player1.y < -60 + 470) and (turn % 2 == 0) and (end_turn == 1)):
         penn_ave= py.image.load("PropertyCards/Pennsylvania_Avenue.png")
@@ -976,7 +1026,26 @@ def propcards():
     if ((520 < player2.x < 590) and (820 - 60 < player2.y < -60 + 960)) and (turn % 2 == 1) and (end_turn == 1):
         readingRailroad = py.image.load("PropertyCards/Reading_Railroad.png")
         screen.blit(readingRailroad, (300, 400))
-
+        if readingrailp2 != 0:
+            player2.money -= 25*player1.rail
+            player1.money += 25*player1.rail
+            propendturn()
+        else:
+            if readingrailp2 == 0:
+                buyButton = button(400, 740, 100, 30, (0, 255, 0))
+                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
+                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+                if buyButton.draw(screen):
+                    player2.money -= -20 + 260
+                    propendturn()
+                    player2.rail += 1
+                screen.blit(buy, buy_rect)
+            closeButton = button(620, 740, 100, 30, (255, 0, 0))
+            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+            if closeButton.draw(screen):
+                propendturn()
+            screen.blit(close, close_rect)
     #Oriental Avenue
     if ((450 < player2.x < 520) and (820 - 60 < player2.y < -60 + 960)) and (turn % 2 == 1) and (end_turn == 1):
         orientalAvenue = py.image.load("PropertyCards/Oriental_Ave.png")
@@ -1215,7 +1284,26 @@ def propcards():
     if ((100 < player2.x < 240) and (470 - 60 < player2.y < -60 + 540)) and (turn % 2 == 1) and (end_turn == 1):
         pennsylaniaRailroad = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
         screen.blit(pennsylaniaRailroad, (300, 400))
-
+        if penn_railp2 != 0:
+            player2.money -= 25*player1.rail
+            player1.money += 25*player1.rail
+            propendturn()
+        else:
+            if penn_railp2 == 0:
+                buyButton = button(400, 740, 100, 30, (0, 255, 0))
+                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
+                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+                if buyButton.draw(screen):
+                    player2.money -= -20 + 260
+                    propendturn()
+                    player2.rail += 1
+                screen.blit(buy, buy_rect)
+            closeButton = button(620, 740, 100, 30, (255, 0, 0))
+            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+            if closeButton.draw(screen):
+                propendturn()
+            screen.blit(close, close_rect)
     #St. James Place
     if ((100 < player2.x < 240) and (400 - 60 < player2.y < -60 + 470)) and (turn % 2 == 1) and (end_turn == 1):
         stJamesPlace = py.image.load("PropertyCards/St. James Pl.png")
@@ -1424,6 +1512,26 @@ def propcards():
     if ((520 < player2.x < 590) and (50 - 60 < player2.y < -60 + 190)) and (turn % 2 == 1) and (end_turn == 1):
         bandoRailroad = py.image.load("PropertyCards/BandO_Railroad.png")
         screen.blit(bandoRailroad, (300, 400))
+        if bo_railp2 != 0:
+            player2.money -= 25*player1.rail
+            player1.money += 25*player1.rail
+            propendturn()
+        else:
+            if bo_railp2 == 0:
+                buyButton = button(400, 740, 100, 30, (0, 255, 0))
+                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
+                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+                if buyButton.draw(screen):
+                    player2.money -= -20 + 260
+                    propendturn()
+                    player2.rail += 1
+                screen.blit(buy, buy_rect)
+            closeButton = button(620, 740, 100, 30, (255, 0, 0))
+            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+            if closeButton.draw(screen):
+                propendturn()
+            screen.blit(close, close_rect)
 
     #Atlantic Avenue
     if ((590 < player2.x < 660) and (50 - 60 < player2.y < -60 + 190)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1660,7 +1768,29 @@ def propcards():
             screen.blit(close, close_rect)
 
     #Short Line
-        
+    elif ((870 < player2.x < 1010) and (470 - 60 < player2.y < -60 + 540) and (turn % 2 == 1) and (end_turn == 1)):
+        short_line = py.image.load("PropertyCards/Short_Line.png")
+        screen.blit(short_line, (325, 375))
+        if shortlinep2 != 0:
+            player2.money -= 25*player1.rail
+            player1.money += 25*player1.rail
+            propendturn()
+        else:
+            if shortlinep2 == 0:
+                buyButton = button(400, 740, 100, 30, (0, 255, 0))
+                buy_rect = py.draw.rect(screen, (0, 255, 0), (400, 740, 100, 30))
+                buy = font.render("Buy", True, (0, 0, 0), (0, 255, 0))
+                if buyButton.draw(screen):
+                    player2.money -= -20 + 260
+                    propendturn()
+                    player2.rail += 1
+                screen.blit(buy, buy_rect)
+            closeButton = button(620, 740, 100, 30, (255, 0, 0))
+            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+            if closeButton.draw(screen):
+                propendturn()
+            screen.blit(close, close_rect)
     #Park Place
     if ((870 < player2.x < 1010) and (610 - 60 < player2.y < -60 + 680)) and (turn % 2 == 1) and (end_turn == 1):
         parkPlace = py.image.load("PropertyCards/Park_Place.png")
