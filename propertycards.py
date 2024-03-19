@@ -36,6 +36,12 @@ def propcards():
 
     def closebutton():
         global font
+        closeButton = button(620, 740, 100, 30, (255, 0, 0))
+        close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
+        close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
+        if closeButton.draw(screen):
+            propendturn()
+        screen.blit(close, close_rect)
 
     #Mediterranean Avenue
     if ((800 < player1.x < 870) and (820 - 60 < player1.y < -60 + 960) and (turn % 2 == 0) and (end_turn == 1)):
@@ -60,12 +66,7 @@ def propcards():
                     propendturn()
                     medavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Baltic Avenue
     elif ((660 <player1.x < 730) and (820 - 60 < player1.y < -60 + 960) and (turn % 2 == 0) and (end_turn == 1)):
@@ -90,12 +91,7 @@ def propcards():
                     propendturn()
                     balavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
         
     #elif ((520 < player1.x < 590) and (820 - 60 < player1.y < -60 + 960) and (turn % 2 == 0) and (end_turn == 1)):
@@ -125,12 +121,7 @@ def propcards():
                     propendturn()
                     oriavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Vermont Avenue
     elif ((310 < player1.x < 380) and (820 - 60 < player1.y < -60 + 960) and (turn % 2 == 0) and (end_turn == 1)):
         vermont_ave = py.image.load("PropertyCards/Vermont_Ave.png")
@@ -154,12 +145,7 @@ def propcards():
                     propendturn()
                     veravep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Connecticut Avenue
     elif ((240 < player1.x < 310) and (820 - 60 < player1.y < -60 + 960) and (turn % 2 == 0) and (end_turn == 1)):
         conn_ave = py.image.load("PropertyCards/Connecticut_Ave.png")
@@ -183,12 +169,7 @@ def propcards():
                     propendturn()
                     conavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #St. Charles Place
     elif ((100 < player1.x < 240) and (750 - 60 < player1.y < -60 + 820) and (turn % 2 == 0) and (end_turn == 1)):
         stcharles = py.image.load("PropertyCards/St. Charles Pl.png")
@@ -212,12 +193,7 @@ def propcards():
                     propendturn()
                     chaavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Electric Company
     elif (100 < player1.x < 240) and (680 - 60 < player1.y < -60 + 750) and (turn % 2 == 0) and (end_turn == 1):
         elec_comp = py.image.load("PropertyCards/Electric_Company.png")
@@ -239,12 +215,7 @@ def propcards():
                     propendturn()
                     elecomp1 += 1
                 buytext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
         
     #States Avenue
     elif (100 < player1.x < 240) and (610 - 60 < player1.y < -60 + 680) and (turn % 2 == 0) and (end_turn == 1):
@@ -269,12 +240,7 @@ def propcards():
                     propendturn()
                     staavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Virginia Avenue
     elif(100 < player1.x < 240) and (540 - 60 < player1.y < -60 + 610) and (turn % 2 == 0) and (end_turn == 1):
         virginia_ave = py.image.load("PropertyCards/Virginia_Ave.png")
@@ -298,12 +264,7 @@ def propcards():
                     propendturn()
                     viravep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #elif ((100 < player1.x < 240) and (470 - 60 < player1.y < -60 + 540) and (turn % 2 == 0) and (end_turn == 1)):
         #penn_railroad = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
@@ -332,12 +293,7 @@ def propcards():
                     propendturn()
                     jamavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Tennessee Avenue
     elif ((100 < player1.x < 240) and (260 - 60 < player1.y < -60 + 330) and (turn % 2 == 0) and (end_turn == 1)):
         tenn_ave = py.image.load("PropertyCards/Tennessee_Ave.png")
@@ -361,12 +317,7 @@ def propcards():
                     propendturn()
                     tenavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #New York Avenue
     elif ((100 < player1.x < 240) and (190 - 60 < player1.y < -60 + 260) and (turn % 2 == 0) and (end_turn == 1)):
         ny_ave = py.image.load("PropertyCards/New_York_Ave.png")
@@ -390,12 +341,7 @@ def propcards():
                     propendturn()
                     nyavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Kentucky Avenue
     elif ((240 < player1.x  < 310) and (50 - 60 < player1.y < -60 + 190) and (turn % 2 == 0) and (end_turn == 1)):
         kent_ave = py.image.load("PropertyCards/Kentucky_Ave.png")
@@ -419,12 +365,7 @@ def propcards():
                     propendturn()
                     kenavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Indiana Avenue
     elif ((380 < player1.x < 450) and (50 - 60 < player1.y < -60 + 190) and (turn % 2 == 0) and (end_turn == 1)):
         indi_ave = py.image.load("PropertyCards/Indiana_Ave.png")
@@ -448,12 +389,7 @@ def propcards():
                     propendturn()
                     indavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Illinois Avenue
     elif ((450 < player1.x < 520) and (50 - 60 < player1.y < -60 + 190) and (turn % 2 == 0) and (end_turn == 1)):
         ill_ave = py.image.load("PropertyCards/Illinois_Ave.png")
@@ -477,12 +413,7 @@ def propcards():
                     propendturn()
                     illavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #B & O Railroad
     elif ((520 < player1.x < 590) and (50 - 60 < player1.y < -60 + 190) and (turn % 2 == 0) and (end_turn == 1)):
         bo_railroad = py.image.load("PropertyCards/BandO_Railroad.png")
@@ -499,12 +430,7 @@ def propcards():
                     propendturn()
                     player1.rail += 1
                 buytext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Reading Railroad
     elif ((520 < player1.x < 590) and (820 < player1.y < 960) and (turn % 2 == 0) and (end_turn == 1)):
         reading_railroad = py.image.load("PropertyCards/Readin_Railroad.png")
@@ -521,12 +447,7 @@ def propcards():
                     propendturn()
                     player1.rail += 1
                 buytext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Pennsylvania Railroad
     elif ((100 < player1.x < 240) and (470 < player1.y < 540) and (turn % 2 == 0) and (end_turn == 1)):
         penn_Rail = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
@@ -543,12 +464,7 @@ def propcards():
                     propendturn()
                     player1.rail += 1
                 buytext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Atlantic Avenue
     elif ((590 < player1.x < 660) and (50 - 60 < player1.y < -60 + 190) and (turn % 2 == 0) and (end_turn == 1)):
         atlantic_ave = py.image.load("PropertyCards/Atlantic_Avenue.png")
@@ -572,12 +488,7 @@ def propcards():
                     propendturn()
                     atlavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Ventnor Avenue
     elif ((660 < player1.x < 730) and (50 - 60 < player1.y < -60 + 190) and (turn % 2 == 0) and (end_turn == 1)):
         ventnor_ave = py.image.load("PropertyCards/Ventnor_Avenue.png")
@@ -601,12 +512,7 @@ def propcards():
                     propendturn()
                     venavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Water Works
     elif ((730 < player1.x < 800) and (50 - 60 < player1.y < -60 + 190) and (turn % 2 == 0) and (end_turn == 1)):
         water_works = py.image.load("PropertyCards/Water_Works.png")
@@ -628,12 +534,7 @@ def propcards():
                     propendturn()
                     watworp1 += 1
                 buytext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Marvin Gardens
     elif ((800 < player1.x < 870) and (50 - 60 < player1.y < -60 + 190) and (turn % 2 == 0) and (end_turn == 1)):
         marv_gardens = py.image.load("PropertyCards/Marvin_Gardens.png")
@@ -657,12 +558,7 @@ def propcards():
                     propendturn()
                     margarp1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Pacific Avenue
     elif ((870 < player1.x < 1010) and (190 - 60 < player1.y < -60 + 260) and (turn % 2 == 0) and (end_turn == 1)):
         pacific_ave = py.image.load("PropertyCards/Pacific_Avenue.png")
@@ -686,12 +582,7 @@ def propcards():
                     propendturn()
                     pacavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #North Carolina Avenue
     elif ((870 < player1.x < 1010) and (260 - 60 < player1.y < -60 + 330) and (turn % 2 == 0) and (end_turn == 1)):
         nc_ave= py.image.load("PropertyCards/North_Carolina.png")
@@ -715,12 +606,7 @@ def propcards():
                     propendturn()
                     caravep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Short Line
     elif ((870 < player1.x < 1010) and (470 - 60 < player1.y < -60 + 540) and (turn % 2 == 0) and (end_turn == 1)):
         short_line = py.image.load("PropertyCards/Short_Line.png")
@@ -737,12 +623,7 @@ def propcards():
                     propendturn()
                     player1.rail += 1
                 buytext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Pennsylvania Avenue
     elif ((870 < player1.x < 1010) and (400 - 60 < player1.y < -60 + 470) and (turn % 2 == 0) and (end_turn == 1)):
         penn_ave= py.image.load("PropertyCards/Pennsylvania_Avenue.png")
@@ -766,12 +647,7 @@ def propcards():
                     propendturn()
                     penavep1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Park Place
     elif ((870 < player1.x < 1010) and (610 - 60 < player1.y < -60 + 680) and (turn % 2 == 0) and (end_turn == 1)):
         park_place = py.image.load("PropertyCards/Park_Place.png")
@@ -795,12 +671,7 @@ def propcards():
                     propendturn()
                     parplap1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Boardwalk
     elif ((870 < player1.x < 1010) and (750 - 60 < player1.y < -60 + 820) and (turn % 2 == 0) and (end_turn == 1)):
         boardwalk = py.image.load("PropertyCards/Boardwalk.png")
@@ -824,12 +695,7 @@ def propcards():
                     propendturn()
                     brdwlkp1 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
 
 #PLAYER 2-------------------------------------------------------------------------------------------------------------------------
@@ -856,12 +722,7 @@ def propcards():
                     propendturn()
                     medavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Baltic Avenue
     if ((660 < player2.x < 730) and (820 - 60 < player2.y < -60 + 960)) and (turn % 2 == 1) and (end_turn == 1):
@@ -886,12 +747,7 @@ def propcards():
                     propendturn()
                     balavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Reading Railroad
     if ((520 < player2.x < 590) and (820 - 60 < player2.y < -60 + 960)) and (turn % 2 == 1) and (end_turn == 1):
@@ -909,12 +765,7 @@ def propcards():
                     propendturn()
                     player2.rail += 1
                 buytext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Oriental Avenue
     if ((450 < player2.x < 520) and (820 - 60 < player2.y < -60 + 960)) and (turn % 2 == 1) and (end_turn == 1):
         orientalAvenue = py.image.load("PropertyCards/Oriental_Ave.png")
@@ -938,12 +789,7 @@ def propcards():
                     propendturn()
                     oriavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Vermont Avenue
     if ((310 < player2.x < 380) and (820 - 60 < player2.y < -60 + 960)) and (turn % 2 == 1) and (end_turn == 1):
@@ -968,12 +814,7 @@ def propcards():
                     propendturn()
                     veravep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Connecticut Avenue
     if ((240 < player2.x < 310) and (820 - 60 < player2.y < -60 + 960)) and (turn % 2 == 1) and (end_turn == 1):
@@ -998,12 +839,7 @@ def propcards():
                     propendturn()
                     conavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #St. Charles Place
     if ((100 < player2.x < 240) and (750 - 60 < player2.y < -60 + 820)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1028,12 +864,7 @@ def propcards():
                     propendturn()
                     chaavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Electric Company
     if ((100 < player2.x < 240) and (680 - 60 < player2.y < -60 + 750)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1056,12 +887,7 @@ def propcards():
                     propendturn()
                     elecomp2 += 1
                 buytext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #States Avenue
     if ((100 < player2.x < 240) and (610 - 60 < player2.y < -60 + 680)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1086,12 +912,7 @@ def propcards():
                     propendturn()
                     staavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Virginia Avenue
     if ((100 < player2.x < 240) and (540 - 60 < player2.y < -60 + 610)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1116,12 +937,7 @@ def propcards():
                     propendturn()
                     viravep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Pennsylvania Railroad
     if ((100 < player2.x < 240) and (470 - 60 < player2.y < -60 + 540)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1139,12 +955,7 @@ def propcards():
                     propendturn()
                     player2.rail += 1
                 buytext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #St. James Place
     if ((100 < player2.x < 240) and (400 - 60 < player2.y < -60 + 470)) and (turn % 2 == 1) and (end_turn == 1):
         stJamesPlace = py.image.load("PropertyCards/St. James Pl.png")
@@ -1168,12 +979,7 @@ def propcards():
                     propendturn()
                     jamavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Tennessee Avenue
     if ((100 < player2.x < 240) and (260 - 60 < player2.y < -60 + 330)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1198,12 +1004,7 @@ def propcards():
                     propendturn()
                     tenavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #New York Avenue
     if ((100 < player2.x < 240) and (190 - 60 < player2.y < -60 + 260)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1228,12 +1029,7 @@ def propcards():
                     propendturn()
                     nyavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Kentucky Avenue
     if ((240 < player2.x < 310) and (50 - 60 < player2.y < -60 + 190)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1258,12 +1054,7 @@ def propcards():
                     propendturn()
                     kenavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Indiana Avenue
     if ((380 < player2.x < 450) and (50 - 60 < player2.y < -60 + 190)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1288,12 +1079,7 @@ def propcards():
                     propendturn()
                     indavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Illinois Avenue
     if ((450 < player2.x < 520) and (50 - 60 < player2.y < -60 + 190)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1318,12 +1104,7 @@ def propcards():
                     propendturn()
                     illavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #B. & O. Railroad
     if ((520 < player2.x < 590) and (50 - 60 < player2.y < -60 + 190)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1341,12 +1122,7 @@ def propcards():
                     propendturn()
                     player2.rail += 1
                 buytext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Atlantic Avenue
     if ((590 < player2.x < 660) and (50 - 60 < player2.y < -60 + 190)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1371,12 +1147,7 @@ def propcards():
                     propendturn()
                     atlavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Ventnor Avenue
     if ((660 < player2.x < 730) and (50 - 60 < player2.y < -60 + 190)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1401,12 +1172,7 @@ def propcards():
                     propendturn()
                     venavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Water Works
     if ((730 < player2.x <800) and (50 - 60 < player2.y < -60 + 190)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1429,12 +1195,7 @@ def propcards():
                     propendturn()
                     watworp2 += 1
                 buytext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Marvin Gardens
     if ((800 < player2.x < 870) and (50 - 60 < player2.y < -60 + 190)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1459,12 +1220,7 @@ def propcards():
                     propendturn()
                     margarp2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Pacific Avenue
     if ((870 < player2.x < 1010) and (190 - 60 < player2.y < -60 + 260)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1489,12 +1245,7 @@ def propcards():
                     propendturn()
                     pacavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #North Carolina Avenue
     if ((870 < player2.x < 1010) and (260 - 60 < player2.y < -60 + 330)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1519,12 +1270,7 @@ def propcards():
                     propendturn()
                     caravep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Pennsylvania Avenue
     if ((870 < player2.x < 1010) and (400 - 60 < player2.y < -60 + 470)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1549,12 +1295,7 @@ def propcards():
                     propendturn()
                     penavep2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #Short Line
     elif ((870 < player2.x < 1010) and (470 - 60 < player2.y < -60 + 540) and (turn % 2 == 1) and (end_turn == 1)):
@@ -1572,12 +1313,7 @@ def propcards():
                     propendturn()
                     player2.rail += 1
                 buytext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
     #Park Place
     if ((870 < player2.x < 1010) and (610 - 60 < player2.y < -60 + 680)) and (turn % 2 == 1) and (end_turn == 1):
         parkPlace = py.image.load("PropertyCards/Park_Place.png")
@@ -1601,12 +1337,7 @@ def propcards():
                     propendturn()
                     parplap2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
 
     #BoardWalk
     if ((870 < player2.x < 1010) and (680 - 60 < player2.y < -60 + 750)) and (turn % 2 == 1) and (end_turn == 1):
@@ -1631,9 +1362,4 @@ def propcards():
                     propendturn()
                     brdwlkp2 += 1 
                 upgradetext()
-            closeButton = button(620, 740, 100, 30, (255, 0, 0))
-            close_rect = py.draw.rect(screen, (0, 255, 0), (620, 740, 100, 30))
-            close = font.render("Close", True, (0, 0, 0), (255, 0, 0))
-            if closeButton.draw(screen):
-                propendturn()
-            screen.blit(close, close_rect)
+            closebutton()
