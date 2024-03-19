@@ -104,11 +104,6 @@ def propcards():
                     balavep1 += 1 
                 upgradetext()
             closebutton()
-
-        
-    #elif ((520 < player1.x < 590) and (820 - 60 < player1.y < -60 + 960) and (turn % 2 == 0) and (end_turn == 1)):
-    #   reading_railroad = py.image.load("PropertyCards/Reading_Railroad.png")
-    #   screen.blit(reading_railroad, (325, 375))
         
     #Oriental Avenue
     elif ((450 < player1.x < 520) and (820 - 60 < player1.y < -60 + 960) and (turn % 2 == 0) and (end_turn == 1)):
@@ -297,10 +292,6 @@ def propcards():
                 upgradetext()
             closebutton()
 
-    #elif ((100 < player1.x < 240) and (470 - 60 < player1.y < -60 + 540) and (turn % 2 == 0) and (end_turn == 1)):
-        #penn_railroad = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
-        #screen.blit(penn_railroad, (325, 375))
-        ##p1buttons(160, 50, 60, pennrailp1, viravep2)
     #St. James Places
     elif ((100 < player1.x < 240) and (400 - 60 < player1.y < -60 + 470) and (turn % 2 == 0) and (end_turn == 1)):
         stjames = py.image.load("PropertyCards/St. James Pl.png")
