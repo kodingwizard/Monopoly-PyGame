@@ -43,14 +43,23 @@ def propcards():
             propendturn()
         screen.blit(close, close_rect)
 
+    def rentdeduction():
+        global font
+        rent_text = font.render("You must pay your rent.", True, (0, 0, 0), (255, 255, 255))
+        rent_box = py.draw.rect(screen, (255, 255, 255), (350, 700, 500, 30))
+        screen.blit(rent_text, rent_box)
+
     #Mediterranean Avenue
     if ((800 < player1.x < 870) and (820 - 60 < player1.y < -60 + 960) and (turn % 2 == 0) and (end_turn == 1)):
         meditave = py.image.load("PropertyCards/Mediterranean_Ave.png")
         screen.blit(meditave, (325, 275))
         if medavep2 != 0:
-            player1.money -= 2
-            player2.money += 2
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 2
+                player2.money += 2
+                propendturn()
+            rentdeduction()
         else:
             if medavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -73,9 +82,12 @@ def propcards():
         baltic_ave = py.image.load("PropertyCards/Baltic_Ave.png")
         screen.blit(baltic_ave, (325, 375))
         if balavep2 != 0:
-            player1.money -= 4
-            player2.money += 4
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 4
+                player2.money += 4
+                propendturn()
+            rentdeduction()
         else:
             if balavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -103,9 +115,12 @@ def propcards():
         oriental_ave = py.image.load("PropertyCards/Oriental_Ave.png")
         screen.blit(oriental_ave, (325, 375))
         if oriavep2 != 0:
-            player1.money -= 6
-            player2.money += 6
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 6
+                player2.money += 6
+                propendturn()
+            rentdeduction()
         else:
             if oriavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -127,9 +142,12 @@ def propcards():
         vermont_ave = py.image.load("PropertyCards/Vermont_Ave.png")
         screen.blit(vermont_ave, (325, 375))
         if veravep2 != 0:
-            player1.money -= 6
-            player2.money += 6
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 6
+                player2.money += 6
+                propendturn()
+            rentdeduction()
         else:
             if veravep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -151,9 +169,12 @@ def propcards():
         conn_ave = py.image.load("PropertyCards/Connecticut_Ave.png")
         screen.blit(conn_ave, (325, 375))
         if conavep2 != 0:
-            player1.money -= 8
-            player2.money += 8
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 8
+                player2.money += 8
+                propendturn()
+            rentdeduction()
         else:
             if conavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -175,9 +196,12 @@ def propcards():
         stcharles = py.image.load("PropertyCards/St. Charles Pl.png")
         screen.blit(stcharles, (325, 375))
         if chaavep2 != 0:
-            player1.money -= 10
-            player2.money += 10
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 10
+                player2.money += 10
+                propendturn()
+            rentdeduction()
         else:
             if chaavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -207,6 +231,7 @@ def propcards():
                 player1.money -= dice_sum * 4
                 player2.money += dice_sum * 4
                 propendturn()
+            rentdeduction()
         else:
             if elecomp1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -222,9 +247,12 @@ def propcards():
         states_ave = py.image.load("PropertyCards/States_Ave.png")
         screen.blit(states_ave, (325, 375))
         if staavep2 != 0:
-            player1.money -= 10
-            player2.money += 10
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 10
+                player2.money += 10
+                propendturn()
+            rentdeduction()
         else:
             if staavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -246,9 +274,12 @@ def propcards():
         virginia_ave = py.image.load("PropertyCards/Virginia_Ave.png")
         screen.blit(virginia_ave, (325, 375))
         if viravep2 != 0:
-            player1.money -= 12
-            player2.money += 12
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 12
+                player2.money += 12
+                propendturn()
+            rentdeduction()
         else:
             if viravep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -275,9 +306,12 @@ def propcards():
         stjames = py.image.load("PropertyCards/St. James Pl.png")
         screen.blit(stjames, (325, 375))
         if jamavep2 != 0:
-            player1.money -= 14
-            player2.money += 14
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 14
+                player2.money += 14
+                propendturn()
+            rentdeduction()
         else:
             if jamavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -299,9 +333,12 @@ def propcards():
         tenn_ave = py.image.load("PropertyCards/Tennessee_Ave.png")
         screen.blit(tenn_ave, (325, 375))
         if tenavep2 != 0:
-            player1.money -= 14
-            player2.money += 14
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 14
+                player2.money += 14
+                propendturn()
+            rentdeduction()
         else:
             if tenavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -323,9 +360,12 @@ def propcards():
         ny_ave = py.image.load("PropertyCards/New_York_Ave.png")
         screen.blit(ny_ave, (325, 375))
         if nyavep2 != 0:
-            player1.money -= 16
-            player2.money += 16
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 16
+                player2.money += 16
+                propendturn()
+            rentdeduction()
         else:
             if nyavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -347,9 +387,12 @@ def propcards():
         kent_ave = py.image.load("PropertyCards/Kentucky_Ave.png")
         screen.blit(kent_ave, (325, 375))
         if kenavep2 != 0:
-            player1.money -= 18
-            player2.money += 18
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 18
+                player2.money += 18
+                propendturn()
+            rentdeduction()
         else:
             if kenavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -371,9 +414,12 @@ def propcards():
         indi_ave = py.image.load("PropertyCards/Indiana_Ave.png")
         screen.blit(indi_ave, (325, 375))
         if indavep2 != 0:
-            player1.money -= 18
-            player2.money += 18
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 18
+                player2.money += 18
+                propendturn()
+            rentdeduction()
         else:
             if indavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -395,9 +441,12 @@ def propcards():
         ill_ave = py.image.load("PropertyCards/Illinois_Ave.png")
         screen.blit(ill_ave, (325, 375))
         if illavep2 != 0:
-            player1.money -= 20
-            player2.money += 20
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 20
+                player2.money += 20
+                propendturn()
+            rentdeduction()
         else:
             if illavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -419,9 +468,12 @@ def propcards():
         bo_railroad = py.image.load("PropertyCards/BandO_Railroad.png")
         screen.blit(bo_railroad, (325, 375))
         if bo_railp1 != 0:
-            player1.money -= 25*player2.rail
-            player2.money += 25*player2.rail
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 25*player2.rail
+                player2.money += 25*player2.rail
+                propendturn()
+            rentdeduction()
         else:
             if bo_railp1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -436,9 +488,12 @@ def propcards():
         reading_railroad = py.image.load("PropertyCards/Readin_Railroad.png")
         screen.blit(reading_railroad, (325, 375))
         if readingrailp1 != 0:
-            player1.money -= 25*player2.rail
-            player2.money += 25*player2.rail
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 25*player2.rail
+                player2.money += 25*player2.rail
+                propendturn()
+            rentdeduction()
         else:
             if readingrailp1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -453,9 +508,12 @@ def propcards():
         penn_Rail = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
         screen.blit(penn_Rail, (325, 375))
         if penn_railp1 != 0:
-            player1.money -= 25*player2.rail
-            player2.money += 25*player2.rail
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 25*player2.rail
+                player2.money += 25*player2.rail
+                propendturn()
+            rentdeduction()
         else:
             if penn_railp1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -470,9 +528,12 @@ def propcards():
         atlantic_ave = py.image.load("PropertyCards/Atlantic_Avenue.png")
         screen.blit(atlantic_ave, (325, 375))
         if atlavep2 != 0:
-            player1.money -= 22
-            player2.money += 22
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 22
+                player2.money += 22
+                propendturn()
+            rentdeduction()
         else:
             if atlavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -494,9 +555,12 @@ def propcards():
         ventnor_ave = py.image.load("PropertyCards/Ventnor_Avenue.png")
         screen.blit(ventnor_ave, (325, 375))
         if venavep2 != 0:
-            player1.money -= 22
-            player2.money += 22
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 22
+                player2.money += 22
+                propendturn()
+            rentdeduction()
         else:
             if venavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -526,6 +590,7 @@ def propcards():
                 player1.money -= dice_sum * 4
                 player2.money += dice_sum * 4
                 propendturn()
+            rentdeduction()
         else:
             if watworp1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -540,9 +605,12 @@ def propcards():
         marv_gardens = py.image.load("PropertyCards/Marvin_Gardens.png")
         screen.blit(marv_gardens, (325, 375))
         if margarp2 != 0:
-            player1.money -= 24
-            player2.money += 24
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 24
+                player2.money += 24
+                propendturn()
+            rentdeduction()
         else:
             if margarp1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -564,9 +632,12 @@ def propcards():
         pacific_ave = py.image.load("PropertyCards/Pacific_Avenue.png")
         screen.blit(pacific_ave, (325, 375))
         if pacavep2 != 0:
-            player1.money -= 26
-            player2.money += 26
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 26
+                player2.money += 26
+                propendturn()
+            rentdeduction()
         else:
             if pacavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -588,9 +659,12 @@ def propcards():
         nc_ave= py.image.load("PropertyCards/North_Carolina.png")
         screen.blit(nc_ave, (325, 375))
         if caravep2 != 0:
-            player1.money -= 26
-            player2.money += 26
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 26
+                player2.money += 26
+                propendturn()
+            rentdeduction()
         else:
             if caravep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -612,9 +686,12 @@ def propcards():
         short_line = py.image.load("PropertyCards/Short_Line.png")
         screen.blit(short_line, (325, 375))
         if shortlinep1 != 0:
-            player1.money -= 25*player2.rail
-            player2.money += 25*player2.rail
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 25*player2.rail
+                player2.money += 25*player2.rail
+                propendturn()
+            rentdeduction()
         else:
             if shortlinep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -629,9 +706,12 @@ def propcards():
         penn_ave= py.image.load("PropertyCards/Pennsylvania_Avenue.png")
         screen.blit(penn_ave, (325, 375))
         if penavep2 != 0:
-            player1.money -= 28
-            player2.money += 28
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 28
+                player2.money += 28
+                propendturn()
+            rentdeduction()
         else:
             if penavep1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -653,9 +733,12 @@ def propcards():
         park_place = py.image.load("PropertyCards/Park_Place.png")
         screen.blit(park_place, (325, 375))
         if parplap2 != 0:
-            player1.money -= 35
-            player2.money += 35
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 35
+                player2.money += 35
+                propendturn()
+            rentdeduction()
         else:
             if parplap1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -677,9 +760,12 @@ def propcards():
         boardwalk = py.image.load("PropertyCards/Boardwalk.png")
         screen.blit(boardwalk, (325, 375))
         if brdwlkp2 != 0:
-            player1.money -= 50
-            player2.money += 50
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player1.money -= 50
+                player2.money += 50
+                propendturn()
+            rentdeduction()
         else:
             if brdwlkp1 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -704,9 +790,12 @@ def propcards():
         mediterraneanAvenue = py.image.load("PropertyCards/Mediterranean_Ave.png")
         screen.blit(mediterraneanAvenue, (300, 400))
         if medavep1 != 0:
-            player2.money -= 2
-            player1.money += 2
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 2
+                player1.money += 2
+                propendturn()
+            rentdeduction()
         else:
             if medavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -729,9 +818,12 @@ def propcards():
         balticAvenue = py.image.load("PropertyCards/Baltic_Ave.png")
         screen.blit(balticAvenue, (300, 400))
         if balavep1 != 0:
-            player2.money -= 4
-            player1.money += 4
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 4
+                player1.money += 4
+                propendturn()
+            rentdeduction()
         else:
             if balavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -754,9 +846,12 @@ def propcards():
         readingRailroad = py.image.load("PropertyCards/Reading_Railroad.png")
         screen.blit(readingRailroad, (300, 400))
         if readingrailp2 != 0:
-            player2.money -= 25*player1.rail
-            player1.money += 25*player1.rail
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 25*player1.rail
+                player1.money += 25*player1.rail
+                propendturn()
+            rentdeduction()
         else:
             if readingrailp2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -771,9 +866,12 @@ def propcards():
         orientalAvenue = py.image.load("PropertyCards/Oriental_Ave.png")
         screen.blit(orientalAvenue, (300, 400))
         if oriavep1 != 0:
-            player2.money -= 6
-            player1.money += 6
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 6
+                player1.money += 6
+                propendturn()
+            rentdeduction()
         else:
             if oriavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -796,9 +894,12 @@ def propcards():
         vermontAvenue = py.image.load("PropertyCards/Vermont_Ave.png")
         screen.blit(vermontAvenue, (300, 400))
         if veravep1 != 0:
-            player2.money -= 8
-            player1.money += 8
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 8
+                player1.money += 8
+                propendturn()
+            rentdeduction()
         else:
             if veravep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -821,9 +922,12 @@ def propcards():
         connecticutAvenue = py.image.load("PropertyCards/Connecticut_Ave.png")
         screen.blit(connecticutAvenue, (300, 400))
         if conavep1 != 0:
-            player2.money -= 8
-            player1.money += 8
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 8
+                player1.money += 8
+                propendturn()
+            rentdeduction()
         else:
             if conavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -846,9 +950,12 @@ def propcards():
         stCharlesPlace = py.image.load("PropertyCards/St. Charles Pl.png")
         screen.blit(stCharlesPlace, (300, 400))
         if chaavep1 != 0:
-            player2.money -= 10
-            player1.money += 10
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 10
+                player1.money += 10
+                propendturn()
+            rentdeduction()
         else:
             if chaavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -879,6 +986,7 @@ def propcards():
                 player2.money -= dice_sum * 4
                 player1.money += dice_sum * 4
                 propendturn()
+            rentdeduction()
         else:
             if elecomp2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -894,9 +1002,12 @@ def propcards():
         statesAvenue = py.image.load("PropertyCards/States_Ave.png")
         screen.blit(statesAvenue, (300, 400))
         if staavep1 != 0:
-            player2.money -= 10
-            player1.money += 10
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 10
+                player1.money += 10
+                propendturn()
+            rentdeduction()
         else:
             if staavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -919,9 +1030,12 @@ def propcards():
         virginiaAvenue = py.image.load("PropertyCards/Virginia_Ave.png")
         screen.blit(virginiaAvenue, (300, 400))
         if viravep1 != 0:
-            player2.money -= 12
-            player1.money += 12
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 12
+                player1.money += 12
+                propendturn()
+            rentdeduction()
         else:
             if viravep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -944,9 +1058,12 @@ def propcards():
         pennsylaniaRailroad = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
         screen.blit(pennsylaniaRailroad, (300, 400))
         if penn_railp2 != 0:
-            player2.money -= 25*player1.rail
-            player1.money += 25*player1.rail
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 25*player1.rail
+                player1.money += 25*player1.rail
+                propendturn()
+            rentdeduction()
         else:
             if penn_railp2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -961,9 +1078,12 @@ def propcards():
         stJamesPlace = py.image.load("PropertyCards/St. James Pl.png")
         screen.blit(stJamesPlace, (300, 400))
         if jamavep1 != 0:
-            player2.money -= 14
-            player1.money += 14
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 14
+                player1.money += 14
+                propendturn()
+            rentdeduction()
         else:
             if jamavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -986,9 +1106,12 @@ def propcards():
         tennesseeAvenue = py.image.load("PropertyCards/Tennessee_Ave.png")
         screen.blit(tennesseeAvenue, (300, 400))
         if tenavep1 != 0:
-            player2.money -= 14
-            player1.money += 14
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 14
+                player1.money += 14
+                propendturn()
+            rentdeduction()
         else:
             if tenavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1011,9 +1134,12 @@ def propcards():
         newYorkAvenue = py.image.load("PropertyCards/New_York_Ave.png")
         screen.blit(newYorkAvenue, (300, 400))
         if nyavep1 != 0:
-            player2.money -= 16
-            player1.money += 16
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 16
+                player1.money += 16
+                propendturn()
+            rentdeduction()
         else:
             if nyavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1036,9 +1162,12 @@ def propcards():
         kentuckyAvenue = py.image.load("PropertyCards/Kentucky_Ave.png")
         screen.blit(kentuckyAvenue, (300, 400))
         if kenavep1 != 0:
-            player2.money -= 18
-            player1.money += 18
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 18
+                player1.money += 18
+                propendturn()
+            rentdeduction()
         else:
             if kenavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1061,9 +1190,12 @@ def propcards():
         indianaAvenue = py.image.load("PropertyCards/Indiana_Ave.png")
         screen.blit(indianaAvenue, (300, 400))
         if indavep1 != 0:
-            player2.money -= 18
-            player1.money += 18
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 18
+                player1.money += 18
+                propendturn()
+            rentdeduction()
         else:
             if indavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1086,9 +1218,12 @@ def propcards():
         illinoisAvenue = py.image.load("PropertyCards/Illinois_Ave.png")
         screen.blit(illinoisAvenue, (300, 400))
         if illavep1 != 0:
-            player2.money -= 20
-            player1.money += 20
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 20
+                player1.money += 20
+                propendturn()
+            rentdeduction()
         else:
             if illavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1111,9 +1246,12 @@ def propcards():
         bandoRailroad = py.image.load("PropertyCards/BandO_Railroad.png")
         screen.blit(bandoRailroad, (300, 400))
         if bo_railp2 != 0:
-            player2.money -= 25*player1.rail
-            player1.money += 25*player1.rail
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 25*player1.rail
+                player1.money += 25*player1.rail
+                propendturn()
+            rentdeduction()
         else:
             if bo_railp2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1129,9 +1267,12 @@ def propcards():
         atlanticAvenue = py.image.load("PropertyCards/Atlantic_Avenue.png")
         screen.blit(atlanticAvenue, (300, 400))
         if atlavep1 != 0:
-            player2.money -= 22
-            player1.money += 22
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 22
+                player1.money += 22
+                propendturn()
+            rentdeduction()
         else:
             if atlavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1154,9 +1295,12 @@ def propcards():
         ventnorAvenue = py.image.load("PropertyCards/Ventnor_Avenue.png")
         screen.blit(ventnorAvenue, (300, 400))
         if venavep1 != 0:
-            player2.money -= 22
-            player1.money += 22
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 22
+                player1.money += 22
+                propendturn()
+            rentdeduction()
         else:
             if venavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1187,6 +1331,7 @@ def propcards():
                 player2.money -= dice_sum * 4
                 player1.money += dice_sum * 4
                 propendturn()
+            rentdeduction()
         else:
             if watworp2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1202,9 +1347,12 @@ def propcards():
         marvinGardens = py.image.load("PropertyCards/Marvin_Gardens.png")
         screen.blit(marvinGardens, (300, 400))
         if margarp1 != 0:
-            player2.money -= 24
-            player1.money += 24
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 24
+                player1.money += 24
+                propendturn()
+            rentdeduction()
         else:
             if margarp2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1227,9 +1375,12 @@ def propcards():
         pacificAvenue = py.image.load("PropertyCards/Pacific_Avenue.png")
         screen.blit(pacificAvenue, (300, 400))
         if pacavep1 != 0:
-            player2.money -= 26
-            player1.money += 26
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 26
+                player1.money += 26
+                propendturn()
+            rentdeduction()
         else:
             if pacavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1252,9 +1403,12 @@ def propcards():
         northCarolinaAvenue = py.image.load("PropertyCards/North_Carolina.png")
         screen.blit(northCarolinaAvenue, (300, 400))
         if caravep1 != 0:
-            player2.money -= 26
-            player1.money += 26
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 26
+                player1.money += 26
+                propendturn()
+            rentdeduction()
         else:
             if caravep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1277,9 +1431,12 @@ def propcards():
         pennsylvaniaAvenue = py.image.load("PropertyCards/Pennsylvania_Avenue.png")
         screen.blit(pennsylvaniaAvenue, (300, 400))
         if penavep1 != 0:
-            player2.money -= 28
-            player1.money += 28
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 28
+                player1.money += 28
+                propendturn()
+            rentdeduction()
         else:
             if penavep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1302,9 +1459,12 @@ def propcards():
         short_line = py.image.load("PropertyCards/Short_Line.png")
         screen.blit(short_line, (325, 375))
         if shortlinep2 != 0:
-            player2.money -= 25*player1.rail
-            player1.money += 25*player1.rail
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 25*player1.rail
+                player1.money += 25*player1.rail
+                propendturn()
+            rentdeduction()
         else:
             if shortlinep2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1319,9 +1479,12 @@ def propcards():
         parkPlace = py.image.load("PropertyCards/Park_Place.png")
         screen.blit(parkPlace, (300, 400))
         if parplap1 != 0:
-            player2.money -= 35
-            player1.money += 35
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 35
+                player1.money += 35
+                propendturn()
+            rentdeduction()
         else:
             if parplap2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
@@ -1344,9 +1507,12 @@ def propcards():
         boardwalk = py.image.load("PropertyCards/Boardwalk.png")
         screen.blit(boardwalk, (300, 400))
         if brdwlkp1 != 0:
-            player2.money -= 50
-            player1.money += 50
-            propendturn()
+            rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
+            if rent_collect.draw(screen):
+                player2.money -= 50
+                player1.money += 50
+                propendturn()
+            rentdeduction()
         else:
             if brdwlkp2 == 0:
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
