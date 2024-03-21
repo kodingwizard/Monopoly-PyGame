@@ -347,6 +347,14 @@ while run:
             player2.orbit = (888 - player2.x) + (783 - player2.y)
             player2 = player(player2.x, player2.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit, player2.rail)
 
+    if (player2.x > 1010):
+        if (-10 < player2.y < 130):
+            player2.x = 958
+            player2.y = 83
+            player2 = player(player1.x, player1.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit, player2.rail)
+        if ( 130 < player2.y < 760):
+            player2.x = 958
+            player2 = player(player1.x, player1.y, 35, 35, (0, 255, 0), player2.jail, player2.money, player2.jailfree, player2.orbit, player2.rail)
 
     from communitycard import * 
     comcardp1()

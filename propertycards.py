@@ -61,14 +61,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if medavep1 == 0:
+            if (medavep1 == 0) and (player1.money > 60):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= 40
                     propendturn()
                     medavep1 += 1
                 buytext()
-            if medavep1 >= 0:
+            if (medavep1 >= 0) and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -89,14 +89,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if balavep1 == 0:
+            if balavep1 == 0 and (player1.money > 60):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= 40
                     propendturn()
                     balavep1 += 1
                 buytext()
-            if balavep1 >= 0:
+            if balavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen) and (balavep1 < 5):
                     player1.money -= 20
@@ -117,14 +117,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if oriavep1 == 0:
+            if oriavep1 == 0 and (player1.money > 80):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= 80
                     propendturn()
                     oriavep1 += 1
                 buytext()
-            if oriavep1 >= 0:
+            if oriavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen) and (oriavep1 < 5):
                     player1.money -= 20
@@ -144,14 +144,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if veravep1 == 0:
+            if veravep1 == 0 and (player1.money > 60):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 80
                     propendturn()
                     veravep1 += 1
                 buytext()
-            if veravep1 >= 0:
+            if veravep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen) and (veravep1 < 5):
                     player1.money -= 20
@@ -171,14 +171,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if conavep1 == 0:
+            if conavep1 == 0 and (player1.money > 120):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= 100
                     propendturn()
                     conavep1 += 1
                 buytext()
-            if conavep1 >= 0:
+            if conavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -198,14 +198,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if chaavep1 == 0:
+            if chaavep1 == 0 and (player1.money > 140):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= 120
                     propendturn()
                     chaavep1 += 1
                 buytext()
-            if chaavep1 >= 0:
+            if chaavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -228,7 +228,7 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if elecomp1 == 0:
+            if elecomp1 == 0 and (player1.money > 60):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= 150
@@ -249,14 +249,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if staavep1 == 0:
+            if staavep1 == 0 and (player1.money > 140):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= 120
                     propendturn()
                     staavep1 += 1
                 buytext()
-            if staavep1 >= 0:
+            if staavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -276,14 +276,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if viravep1 == 0:
+            if viravep1 == 0 and (player1.money > 160):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= 140
                     propendturn()
                     viravep1 += 1
                 buytext()
-            if viravep1 >= 0:
+            if viravep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -304,14 +304,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if jamavep1 == 0:
+            if jamavep1 == 0 and (player1.money > 160):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 160
                     propendturn()
                     jamavep1 += 1
                 buytext()
-            if jamavep1 >= 0:
+            if jamavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -331,14 +331,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if tenavep1 == 0:
+            if tenavep1 == 0 and (player1.money > 180):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 180
                     propendturn()
                     tenavep1 += 1
                 buytext()
-            if tenavep1 >= 0:
+            if tenavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -358,14 +358,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if nyavep1 == 0:
+            if nyavep1 == 0 and (player1.money > 200):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 200
                     propendturn()
                     nyavep1 += 1
                 buytext()
-            if nyavep1 >= 0:
+            if nyavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -385,14 +385,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if kenavep1 == 0:
+            if kenavep1 == 0 and (player1.money >220):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 220
                     propendturn()
                     kenavep1 += 1
                 buytext()
-            if kenavep1 >= 0:
+            if kenavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -412,14 +412,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if indavep1 == 0:
+            if indavep1 == 0 and (player1.money > 220):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 220
                     propendturn()
                     indavep1 += 1
                 buytext()
-            if indavep1 >= 0:
+            if indavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -439,14 +439,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if illavep1 == 0:
+            if illavep1 == 0 and (player1.money > 240):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 240
                     propendturn()
                     illavep1 += 1
                 buytext()
-            if illavep1 >= 0:
+            if illavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -466,7 +466,7 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if bo_railp1 == 0:
+            if bo_railp1 == 0 and (player1.money > 260):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 260
@@ -475,8 +475,8 @@ def propcards():
                 buytext()
             closebutton()
     #Reading Railroad
-    elif ((520 < player1.x < 590) and (820 < player1.y < 960) and (turn % 2 == 0) and (end_turn == 1)):
-        reading_railroad = py.image.load("PropertyCards/Readin_Railroad.png")
+    elif ((520 < player1.x < 590) and (760 < player1.y < 900) and (turn % 2 == 0) and (end_turn == 1)):
+        reading_railroad = py.image.load("PropertyCards/Reading_Railroad.png")
         screen.blit(reading_railroad, (325, 375))
         if readingrailp1 != 0:
             rent_collect = button(510, 740, 100, 30, (255, 0 , 0))
@@ -486,7 +486,7 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if readingrailp1 == 0:
+            if readingrailp1 == 0 and (player1.money > 60):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 260
@@ -495,7 +495,7 @@ def propcards():
                 buytext()
             closebutton()
     #Pennsylvania Railroad
-    elif ((100 < player1.x < 240) and (470 < player1.y < 540) and (turn % 2 == 0) and (end_turn == 1)):
+    elif ((100 < player1.x < 240) and (410 < player1.y < 480) and (turn % 2 == 0) and (end_turn == 1)):
         penn_Rail = py.image.load("PropertyCards/Pennsylvania_Railroad.png")
         screen.blit(penn_Rail, (325, 375))
         if penn_railp1 != 0:
@@ -506,7 +506,7 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if penn_railp1 == 0:
+            if penn_railp1 == 0 and (player1.money > 260):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 260
@@ -526,14 +526,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if atlavep1 == 0:
+            if atlavep1 == 0 and (player1.money > 260):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 260
                     propendturn()
                     atlavep1 += 1
                 buytext()
-            if atlavep1 >= 0:
+            if atlavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -553,14 +553,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if venavep1 == 0:
+            if venavep1 == 0 and (player1.money > 260):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 260
                     propendturn()
                     venavep1 += 1
                 buytext()
-            if venavep1 >= 0:
+            if venavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -583,7 +583,7 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if watworp1 == 0:
+            if watworp1 == 0 and (player1.money > 150):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= 150
@@ -603,14 +603,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if margarp1 == 0:
+            if margarp1 == 0 and (player1.money > 300):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 300
                     propendturn()
                     margarp1 += 1
                 buytext()
-            if margarp1 >= 0:
+            if margarp1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -630,14 +630,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if pacavep1 == 0:
+            if pacavep1 == 0 and (player1.money > 300):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 300
                     propendturn()
                     pacavep1 += 1
                 buytext()
-            if pacavep1 >= 0:
+            if pacavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -657,14 +657,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if caravep1 == 0:
+            if caravep1 == 0 and (player1.money > 300):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 300
                     propendturn()
                     caravep1 += 1
                 buytext()
-            if caravep1 >= 0:
+            if caravep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -684,7 +684,7 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if shortlinep1 == 0:
+            if shortlinep1 == 0 and (player1.money > 260):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 260
@@ -704,14 +704,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if penavep1 == 0:
+            if penavep1 == 0 and (player1.money > 320):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 320
                     propendturn()
                     penavep1 += 1
                 buytext()
-            if penavep1 >= 0:
+            if penavep1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -731,14 +731,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if parplap1 == 0:
+            if parplap1 == 0 and (player1.money > 350):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 350
                     propendturn()
                     parplap1 += 1
                 buytext()
-            if parplap1 >= 0:
+            if parplap1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -758,14 +758,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if brdwlkp1 == 0:
+            if brdwlkp1 == 0 and (player1.money > 400):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player1.money -= -20 + 400
                     propendturn()
                     brdwlkp1 += 1
                 buytext()
-            if brdwlkp1 >= 0:
+            if brdwlkp1 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -773,7 +773,14 @@ def propcards():
                     brdwlkp1 += 1 
                 upgradetext()
             closebutton()
-
+    #Income Tax
+    elif ((590 < player1.x < 660) and (760 < player1.y < 900) and (turn % 2 == 0) and (end_turn == 1)):
+        player1.money -= 200
+        propendturn()
+    #Luxury Tax
+    elif ((870 < player1.x < 1010) and (620 < player1.y < 690) and (turn % 2 == 0) and (end_turn == 1)):
+        player1.money -= 100
+        propendturn()
 
 #PLAYER 2-------------------------------------------------------------------------------------------------------------------------
     #Mediterranean Avenue
@@ -788,14 +795,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if medavep2 == 0:
+            if medavep2 == 0 and (player2.money > 60):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= 40
                     propendturn()
                     medavep2 += 1
                 buytext()
-            if medavep2 >= 0:
+            if medavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -816,14 +823,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if balavep2 == 0:
+            if balavep2 == 0 and (player2.money > 60):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= 40
                     propendturn()
                     balavep2 += 1
                 buytext()
-            if balavep2 >= 0:
+            if balavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen) and (balavep2 < 5):
                     player2.money -= 20
@@ -844,7 +851,7 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if readingrailp2 == 0:
+            if readingrailp2 == 0 and (player2.money > 260):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 260
@@ -864,14 +871,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if oriavep2 == 0:
+            if oriavep2 == 0 and (player2.money > 100):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= 80
                     propendturn()
                     oriavep2 += 1
                 buytext()
-            if oriavep2 >= 0:
+            if oriavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen) and (oriavep1 < 5):
                     player2.money -= 20
@@ -892,14 +899,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if veravep2 == 0:
+            if veravep2 == 0 and (player2.money > 120):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= 100
                     propendturn()
                     veravep2 += 1
                 buytext()
-            if veravep2 >= 0:
+            if veravep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -920,14 +927,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if conavep2 == 0:
+            if conavep2 == 0 and (player2.money > 120):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= 100
                     propendturn()
                     conavep2 += 1
                 buytext()
-            if conavep2 >= 0:
+            if conavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -948,14 +955,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if chaavep2 == 0:
+            if chaavep2 == 0 and (player2.money > 140):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= 120
                     propendturn()
                     chaavep2 += 1
                 buytext()
-            if chaavep2 >= 0:
+            if chaavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -979,7 +986,7 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if elecomp2 == 0:
+            if elecomp2 == 0 and (player2.money > 150):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= 150
@@ -1000,14 +1007,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if staavep2 == 0:
+            if staavep2 == 0 and (player2.money > 140):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= 120
                     propendturn()
                     staavep2 += 1
                 buytext()
-            if staavep2 >= 0:
+            if staavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1028,14 +1035,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if viravep2 == 0:
+            if viravep2 == 0 and (player2.money > 160):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= 140
                     propendturn()
                     viravep2 += 1
                 buytext()
-            if viravep2 >= 0:
+            if viravep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1056,7 +1063,7 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if penn_railp2 == 0:
+            if penn_railp2 == 0 and (player2.money > 260):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 260
@@ -1076,14 +1083,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if jamavep2 == 0:
+            if jamavep2 == 0 and (player2.money > 160):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 160
                     propendturn()
                     jamavep2 += 1
                 buytext()
-            if jamavep2 >= 0:
+            if jamavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1104,14 +1111,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if tenavep2 == 0:
+            if tenavep2 == 0 and (player2.money > 180):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 180
                     propendturn()
                     tenavep2 += 1
                 buytext()
-            if tenavep2 >= 0:
+            if tenavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1132,14 +1139,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if nyavep2 == 0:
+            if nyavep2 == 0 and (player2.money > 200):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 200
                     propendturn()
                     nyavep2 += 1
                 buytext()
-            if nyavep2 >= 0:
+            if nyavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1160,14 +1167,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if kenavep2 == 0:
+            if kenavep2 == 0 and (player2.money > 220):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 220
                     propendturn()
                     kenavep2 += 1
                 buytext()
-            if kenavep2 >= 0:
+            if kenavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1188,14 +1195,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if indavep2 == 0:
+            if indavep2 == 0 and (player2.money > 220):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 220
                     propendturn()
                     indavep2 += 1
                 buytext()
-            if indavep2 >= 0:
+            if indavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1216,14 +1223,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if illavep2 == 0:
+            if illavep2 == 0 and (player2.money > 240):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 240
                     propendturn()
                     illavep2 += 1
                 buytext()
-            if illavep2 >= 0:
+            if illavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1244,7 +1251,7 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if bo_railp2 == 0:
+            if bo_railp2 == 0 and (player2.money > 260):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 260
@@ -1265,14 +1272,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if atlavep2 == 0:
+            if atlavep2 == 0 and (player2.money > 260):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 260
                     propendturn()
                     atlavep2 += 1
                 buytext()
-            if atlavep2 >= 0:
+            if atlavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1293,14 +1300,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if venavep2 == 0:
+            if venavep2 == 0 and (player2.money > 260):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 260
                     propendturn()
                     venavep2 += 1
                 buytext()
-            if venavep2 >= 0:
+            if venavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1324,7 +1331,7 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if watworp2 == 0:
+            if watworp2 == 0 and (player2.money > 150):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= 150
@@ -1345,14 +1352,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if margarp2 == 0:
+            if margarp2 == 0 and (player2.money > 300):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 300
                     propendturn()
                     margarp2 += 1
                 buytext()
-            if margarp2 >= 0:
+            if margarp2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1373,14 +1380,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if pacavep2 == 0:
+            if pacavep2 == 0 and (player2.money > 300):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 300
                     propendturn()
                     pacavep2 += 1
                 buytext()
-            if pacavep2 >= 0:
+            if pacavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1401,14 +1408,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if caravep2 == 0:
+            if caravep2 == 0 and (player2.money > 300):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 300
                     propendturn()
                     caravep2 += 1
                 buytext()
-            if caravep2 >= 0:
+            if caravep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1429,14 +1436,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if penavep2 == 0:
+            if penavep2 == 0 and (player2.money > 320):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 320
                     propendturn()
                     penavep2 += 1
                 buytext()
-            if penavep2 >= 0:
+            if penavep2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1457,7 +1464,7 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if shortlinep2 == 0:
+            if shortlinep2 == 0 and (player2.money > 260):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 260
@@ -1477,14 +1484,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if parplap2 == 0:
+            if parplap2 == 0 and (player2.money > 350):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 350
                     propendturn()
                     parplap2 += 1
                 buytext()
-            if parplap2 >= 0:
+            if parplap2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1494,7 +1501,7 @@ def propcards():
             closebutton()
 
     #BoardWalk
-    if ((870 < player2.x < 1010) and (680 - 60 < player2.y < -60 + 750)) and (turn % 2 == 1) and (end_turn == 1):
+    if ((870 < player2.x < 1010) and (750 - 60 < player2.y < -60 + 820)) and (turn % 2 == 1) and (end_turn == 1):
         boardwalk = py.image.load("PropertyCards/Boardwalk.png")
         screen.blit(boardwalk, (300, 400))
         if brdwlkp1 != 0:
@@ -1505,14 +1512,14 @@ def propcards():
                 propendturn()
             rentdeduction()
         else:
-            if brdwlkp2 == 0:
+            if brdwlkp2 == 0 and (player2.money > 400):
                 buyButton = button(400, 740, 100, 30, (0, 255, 0))
                 if buyButton.draw(screen):
                     player2.money -= -20 + 400
                     propendturn()
                     brdwlkp2 += 1
                 buytext()
-            if brdwlkp2 >= 0:
+            if brdwlkp2 >= 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1520,3 +1527,11 @@ def propcards():
                     brdwlkp2 += 1 
                 upgradetext()
             closebutton()
+    #Income Tax
+    elif ((590 < player2.x < 660) and (760 < player2.y < 900) and (turn % 2 == 1) and (end_turn == 1)):
+        player2.money -= 200
+        propendturn()
+    #Luxury Tax
+    elif ((870 < player2.x < 1010) and (620 < player2.y < 690) and (turn % 2 == 1) and (end_turn == 1)):
+        player2.money -= 100
+        propendturn()
