@@ -1,3 +1,4 @@
+#Archit Das
 import pygame as py
 
 py.init()
@@ -49,6 +50,8 @@ def propcards():
         rent_box = py.draw.rect(screen, (255, 255, 255), (350, 700, 500, 30))
         screen.blit(rent_text, rent_box)
 
+#Nandini Dharwadkar
+#Player 1 
     #Mediterranean Avenue
     if ((800 < player1.x < 870) and (820 - 60 < player1.y < -60 + 960) and (turn % 2 == 0) and (end_turn == 1)):
         meditave = py.image.load("PropertyCards/Mediterranean_Ave.png")
@@ -782,6 +785,7 @@ def propcards():
         player1.money -= 100
         propendturn()
 
+#Archit Das
 #PLAYER 2-------------------------------------------------------------------------------------------------------------------------
     #Mediterranean Avenue
     if ((800 < player2.x < 870) and (820 - 60 < player2.y < -60 + 960)) and (turn % 2 == 1) and (end_turn == 1):

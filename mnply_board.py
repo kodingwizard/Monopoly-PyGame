@@ -14,7 +14,7 @@ def board():
     full_board_scale = py.transform.scale(full_board, (full_board.get_width()*1, full_board.get_height()*0.99))
     screen.blit(full_board_scale, (-88, -10))
 
-
+#Archit Das
 class player():
     def __init__(self, x, y, width, height, color, jail, money, jailfree, orbit, rail):
         self.x = x
@@ -32,7 +32,7 @@ class player():
     def draw(self, win):
         py.draw.rect(win, self.color, self.rect)
 
-
+#Nandini Dharwadkar
 def diceroll():
 
 
@@ -52,7 +52,7 @@ def diceroll():
     print("Total: %s" %dice_sum)
 diceroll()
 
-
+#Nandini Dharwadkar
 def dicetext():      
     global font, text, textRect, text1, textRect1, text2, textRect2, text3, textRect3
     font = py.font.Font('freesansbold.ttf', 32)
@@ -67,18 +67,22 @@ def dicetext():
 def playerinfo():
     global font1, p1text, p1textRect, p1text1, p1textRect1, p2text, p2textRect, p2text1, p2textRect1
     font1 = py.font.Font('freesansbold.ttf', 16)
+    #Archit Das
     p1text = font1.render("Player 1's Money: " + str(player1.money), True, (0, 0, 0), (255, 255, 255))
     p1textRect = py.draw.rect(screen, (255,255,255), (1040, 700, 140, 140))
+    #Nandini Dharwadkar
     p1text1 = font1.render("Player 1's Jail Free Cards: " + str(player1.jailfree), True, (0, 0, 0), (255, 255, 255))
     p1textRect1 = py.draw.rect(screen, (255,255,255), (1040, 750, 140, 140))
+    #Archit Das
     p2text = font1.render("Player 2's Money: " + str(player2.money), True, (0, 0, 0), (255, 255, 255))
     p2textRect = py.draw.rect(screen, (255,255,255), (1040, 800, 140, 140))
+    #Nandini Dharwadkar
     p2text1 = font1.render("Player 2's Jail Free Cards: " + str(player2.jailfree), True, (0, 0, 0), (255, 255, 255))
     p2textRect1 = py.draw.rect(screen, (255,255,255), (1040, 850, 140, 140))
     
 
 
-
+#Archit Das
 class button():
     def __init__(self, x, y, width, height, color):
         self.x = x
@@ -102,27 +106,28 @@ class button():
             if click[0] == 0:
                 self.clicked = False
         return action
-         
+#Archit Das        
 player1 = player(888, 783, 35, 35, (255, 0, 0), 0, 1500, 0, 0, 0)
 player2 = player(888, 837, 35, 35, (0, 255, 0), 0, 1500, 0, 0, 0)
 font = py.font.Font('freesansbold.ttf', 32)
-dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
-dbt_Rect = py.draw.rect(screen, (215, 215, 215), (1050, 330, 140, 140))
-dicebutton = button(1050, 300, 200, 100, (215, 215, 215))
+p2text = font1.render("Player 2's Money: " + str(player2.money), True, (0, 0, 0), (255, 255, 255))
+p2textRect = py.draw.rect(screen, (255,255,255), (1040, 800, 140, 140))
 endturn = button(1050, 500, 200, 100, (215, 215, 215))
 etb_rect = py.draw.rect(screen, (215, 215, 215), (1050, 530, 140, 140))
 etb_text = font.render("End Turn", True, (0, 0, 0), (215, 215, 215))
 font1 = py.font.Font('freesansbold.ttf', 16)
 p1text = font1.render("Player 1's Money: " + str(player1.money), True, (0, 0, 0), (255, 255, 255))
+#Nandini Dharwadkar
+dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
+dbt_Rect = py.draw.rect(screen, (215, 215, 215), (1050, 330, 140, 140))
+dicebutton = button(1050, 300, 200, 100, (215, 215, 215))
 p1textRect = py.draw.rect(screen, (255,255,255), (1040, 700, 140, 140))
 p1text1 = font1.render("Player 1's Jail Free Cards: " + str(player1.jailfree), True, (0, 0, 0), (255, 255, 255))
 p1textRect1 = py.draw.rect(screen, (255,255,255), (1040, 750, 140, 140))
-p2text = font1.render("Player 2's Money: " + str(player2.money), True, (0, 0, 0), (255, 255, 255))
-p2textRect = py.draw.rect(screen, (255,255,255), (1040, 800, 140, 140))
 p2text1 = font1.render("Player 2's Jail Free Cards: " + str(player2.jailfree), True, (0, 0, 0), (255, 255, 255))
 p2textRect1 = py.draw.rect(screen, (255,255,255), (1040, 850, 140, 140))
 
-#Property Values
+#Property Values - Archit Das
 medavep1 = 0
 medavep2 = 0
 balavep1 = 0
@@ -321,6 +326,7 @@ while run:
     from propertycards import *
     propcards()
 
+#Nandini Dharwadkar
     #Jail Free Card
     if (player1.jailfree != 0) and (player1.jail > 0) and ((turn % 2 == 1) and (end_turn == 0)):
         font = py.font.Font('freesansbold.ttf', 32)
@@ -377,18 +383,6 @@ while run:
                     player2.jail = 0
                 else:
                     player2.jail += 1
-        #print(player1.money)
-        #print(player2.money)
-        print(medavep1)
-        print(medavep2)
-        print(balavep1)
-        print(balavep2)
-        print(oriavep1)
-        print(oriavep2)
-        print(veravep1)
-        print(veravep2)
-        print(conavep1)
-        print(conavep2)
 
     if stamp == True:
         screen.blit(text, textRect)
