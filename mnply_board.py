@@ -88,12 +88,6 @@ def diceroll():
     global dice_sum
     dice_sum = N + A
     print("Total: %s" %dice_sum)
-    if dice_sum < 10:
-        print("yay no taxes")
-
-
-    else:
-        print("rip taxes")
 diceroll()
 
 
@@ -106,12 +100,7 @@ def dicetext():
     textRect1 = py.draw.rect(screen, (255,255,255), (1100, 50, 140, 140))
     text2 = font.render('Total: ' + str(dice_sum), True, (0, 0, 0), (255, 255, 255))
     textRect2 = py.draw.rect(screen, (255,255,255), (1050, 130, 140, 140))
-    if dice_sum < 10:
-        text3 = font.render('yay no taxes', True, (0, 0, 0), (255, 255, 255))
-        textRect3 = py.draw.rect(screen, (255,255,255), (1050, 200, 140, 100))
-    else:
-        text3 = font.render('rip taxes', True, (0, 0, 0), (255, 255, 255))
-        textRect3 = py.draw.rect(screen, (255,255,255), (1050, 200, 140, 100))
+   
 
 def playerinfo():
     global font1, p1text, p1textRect, p1text1, p1textRect1, p2text, p2textRect, p2text1, p2textRect1
@@ -443,7 +432,7 @@ while run:
         screen.blit(text, textRect)
         screen.blit(text1, textRect1)
         screen.blit(text2, textRect2)
-        screen.blit(text3, textRect3)
+        
     screen.blit(dice_button_text, dbt_Rect)
     screen.blit(etb_text, etb_rect)
     playerinfo()
