@@ -110,12 +110,12 @@ class button():
 player1 = player(888, 783, 35, 35, (255, 0, 0), 0, 1500, 0, 0, 0)
 player2 = player(888, 837, 35, 35, (0, 255, 0), 0, 1500, 0, 0, 0)
 font = py.font.Font('freesansbold.ttf', 32)
+font1 = py.font.Font('freesansbold.ttf', 16)
 p2text = font1.render("Player 2's Money: " + str(player2.money), True, (0, 0, 0), (255, 255, 255))
 p2textRect = py.draw.rect(screen, (255,255,255), (1040, 800, 140, 140))
 endturn = button(1050, 500, 200, 100, (215, 215, 215))
 etb_rect = py.draw.rect(screen, (215, 215, 215), (1050, 530, 140, 140))
 etb_text = font.render("End Turn", True, (0, 0, 0), (215, 215, 215))
-font1 = py.font.Font('freesansbold.ttf', 16)
 p1text = font1.render("Player 1's Money: " + str(player1.money), True, (0, 0, 0), (255, 255, 255))
 #Nandini Dharwadkar
 dice_button_text = font.render("Roll the Dice", True, (0, 0, 0), (215, 215, 215))
