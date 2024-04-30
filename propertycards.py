@@ -1,3 +1,4 @@
+#Archit Das
 import pygame as py
 
 py.init()
@@ -49,6 +50,8 @@ def propcards():
         rent_box = py.draw.rect(screen, (255, 255, 255), (350, 700, 500, 30))
         screen.blit(rent_text, rent_box)
 
+#Nandini Dharwadkar
+#Player 1 
     #Mediterranean Avenue
     if ((800 < player1.x < 870) and (820 - 60 < player1.y < -60 + 960) and (turn % 2 == 0) and (end_turn == 1)):
         meditave = py.image.load("PropertyCards/Mediterranean_Ave.png")
@@ -96,7 +99,7 @@ def propcards():
                     propendturn()
                     balavep1 += 1
                 buytext()
-            if balavep1 >= 0 and (player1.money > 20):
+            if balavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen) and (balavep1 < 5):
                     player1.money -= 20
@@ -124,7 +127,7 @@ def propcards():
                     propendturn()
                     oriavep1 += 1
                 buytext()
-            if oriavep1 >= 0 and (player1.money > 20):
+            if oriavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen) and (oriavep1 < 5):
                     player1.money -= 20
@@ -151,7 +154,7 @@ def propcards():
                     propendturn()
                     veravep1 += 1
                 buytext()
-            if veravep1 >= 0 and (player1.money > 20):
+            if veravep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen) and (veravep1 < 5):
                     player1.money -= 20
@@ -178,7 +181,7 @@ def propcards():
                     propendturn()
                     conavep1 += 1
                 buytext()
-            if conavep1 >= 0 and (player1.money > 20):
+            if conavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -205,7 +208,7 @@ def propcards():
                     propendturn()
                     chaavep1 += 1
                 buytext()
-            if chaavep1 >= 0 and (player1.money > 20):
+            if chaavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -256,7 +259,7 @@ def propcards():
                     propendturn()
                     staavep1 += 1
                 buytext()
-            if staavep1 >= 0 and (player1.money > 20):
+            if staavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -283,7 +286,7 @@ def propcards():
                     propendturn()
                     viravep1 += 1
                 buytext()
-            if viravep1 >= 0 and (player1.money > 20):
+            if viravep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -311,7 +314,7 @@ def propcards():
                     propendturn()
                     jamavep1 += 1
                 buytext()
-            if jamavep1 >= 0 and (player1.money > 20):
+            if jamavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -338,7 +341,7 @@ def propcards():
                     propendturn()
                     tenavep1 += 1
                 buytext()
-            if tenavep1 >= 0 and (player1.money > 20):
+            if tenavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -365,7 +368,7 @@ def propcards():
                     propendturn()
                     nyavep1 += 1
                 buytext()
-            if nyavep1 >= 0 and (player1.money > 20):
+            if nyavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -392,7 +395,7 @@ def propcards():
                     propendturn()
                     kenavep1 += 1
                 buytext()
-            if kenavep1 >= 0 and (player1.money > 20):
+            if kenavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -419,7 +422,7 @@ def propcards():
                     propendturn()
                     indavep1 += 1
                 buytext()
-            if indavep1 >= 0 and (player1.money > 20):
+            if indavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -446,7 +449,7 @@ def propcards():
                     propendturn()
                     illavep1 += 1
                 buytext()
-            if illavep1 >= 0 and (player1.money > 20):
+            if illavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -533,7 +536,7 @@ def propcards():
                     propendturn()
                     atlavep1 += 1
                 buytext()
-            if atlavep1 >= 0 and (player1.money > 20):
+            if atlavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -560,7 +563,7 @@ def propcards():
                     propendturn()
                     venavep1 += 1
                 buytext()
-            if venavep1 >= 0 and (player1.money > 20):
+            if venavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -610,7 +613,7 @@ def propcards():
                     propendturn()
                     margarp1 += 1
                 buytext()
-            if margarp1 >= 0 and (player1.money > 20):
+            if margarp1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -637,7 +640,7 @@ def propcards():
                     propendturn()
                     pacavep1 += 1
                 buytext()
-            if pacavep1 >= 0 and (player1.money > 20):
+            if pacavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -664,7 +667,7 @@ def propcards():
                     propendturn()
                     caravep1 += 1
                 buytext()
-            if caravep1 >= 0 and (player1.money > 20):
+            if caravep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -711,7 +714,7 @@ def propcards():
                     propendturn()
                     penavep1 += 1
                 buytext()
-            if penavep1 >= 0 and (player1.money > 20):
+            if penavep1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -738,7 +741,7 @@ def propcards():
                     propendturn()
                     parplap1 += 1
                 buytext()
-            if parplap1 >= 0 and (player1.money > 20):
+            if parplap1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -765,7 +768,7 @@ def propcards():
                     propendturn()
                     brdwlkp1 += 1
                 buytext()
-            if brdwlkp1 >= 0 and (player1.money > 20):
+            if brdwlkp1 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
@@ -782,6 +785,7 @@ def propcards():
         player1.money -= 100
         propendturn()
 
+#Archit Das
 #PLAYER 2-------------------------------------------------------------------------------------------------------------------------
     #Mediterranean Avenue
     if ((800 < player2.x < 870) and (820 - 60 < player2.y < -60 + 960)) and (turn % 2 == 1) and (end_turn == 1):
@@ -802,7 +806,7 @@ def propcards():
                     propendturn()
                     medavep2 += 1
                 buytext()
-            if medavep2 >= 0 and (player1.money > 20):
+            if medavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -830,7 +834,7 @@ def propcards():
                     propendturn()
                     balavep2 += 1
                 buytext()
-            if balavep2 >= 0 and (player1.money > 20):
+            if balavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen) and (balavep2 < 5):
                     player2.money -= 20
@@ -878,7 +882,7 @@ def propcards():
                     propendturn()
                     oriavep2 += 1
                 buytext()
-            if oriavep2 >= 0 and (player1.money > 20):
+            if oriavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen) and (oriavep1 < 5):
                     player2.money -= 20
@@ -906,7 +910,7 @@ def propcards():
                     propendturn()
                     veravep2 += 1
                 buytext()
-            if veravep2 >= 0 and (player1.money > 20):
+            if veravep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -934,7 +938,7 @@ def propcards():
                     propendturn()
                     conavep2 += 1
                 buytext()
-            if conavep2 >= 0 and (player1.money > 20):
+            if conavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -962,7 +966,7 @@ def propcards():
                     propendturn()
                     chaavep2 += 1
                 buytext()
-            if chaavep2 >= 0 and (player1.money > 20):
+            if chaavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1014,7 +1018,7 @@ def propcards():
                     propendturn()
                     staavep2 += 1
                 buytext()
-            if staavep2 >= 0 and (player1.money > 20):
+            if staavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1042,7 +1046,7 @@ def propcards():
                     propendturn()
                     viravep2 += 1
                 buytext()
-            if viravep2 >= 0 and (player1.money > 20):
+            if viravep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1090,7 +1094,7 @@ def propcards():
                     propendturn()
                     jamavep2 += 1
                 buytext()
-            if jamavep2 >= 0 and (player1.money > 20):
+            if jamavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1118,7 +1122,7 @@ def propcards():
                     propendturn()
                     tenavep2 += 1
                 buytext()
-            if tenavep2 >= 0 and (player1.money > 20):
+            if tenavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1146,7 +1150,7 @@ def propcards():
                     propendturn()
                     nyavep2 += 1
                 buytext()
-            if nyavep2 >= 0 and (player1.money > 20):
+            if nyavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1174,7 +1178,7 @@ def propcards():
                     propendturn()
                     kenavep2 += 1
                 buytext()
-            if kenavep2 >= 0 and (player1.money > 20):
+            if kenavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1202,7 +1206,7 @@ def propcards():
                     propendturn()
                     indavep2 += 1
                 buytext()
-            if indavep2 >= 0 and (player1.money > 20):
+            if indavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1230,7 +1234,7 @@ def propcards():
                     propendturn()
                     illavep2 += 1
                 buytext()
-            if illavep2 >= 0 and (player1.money > 20):
+            if illavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1279,7 +1283,7 @@ def propcards():
                     propendturn()
                     atlavep2 += 1
                 buytext()
-            if atlavep2 >= 0 and (player1.money > 20):
+            if atlavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1307,7 +1311,7 @@ def propcards():
                     propendturn()
                     venavep2 += 1
                 buytext()
-            if venavep2 >= 0 and (player1.money > 20):
+            if venavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1359,7 +1363,7 @@ def propcards():
                     propendturn()
                     margarp2 += 1
                 buytext()
-            if margarp2 >= 0 and (player1.money > 20):
+            if margarp2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1387,7 +1391,7 @@ def propcards():
                     propendturn()
                     pacavep2 += 1
                 buytext()
-            if pacavep2 >= 0 and (player1.money > 20):
+            if pacavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1415,7 +1419,7 @@ def propcards():
                     propendturn()
                     caravep2 += 1
                 buytext()
-            if caravep2 >= 0 and (player1.money > 20):
+            if caravep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1443,7 +1447,7 @@ def propcards():
                     propendturn()
                     penavep2 += 1
                 buytext()
-            if penavep2 >= 0 and (player1.money > 20):
+            if penavep2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1491,7 +1495,7 @@ def propcards():
                     propendturn()
                     parplap2 += 1
                 buytext()
-            if parplap2 >= 0 and (player1.money > 20):
+            if parplap2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
@@ -1519,7 +1523,7 @@ def propcards():
                     propendturn()
                     brdwlkp2 += 1
                 buytext()
-            if brdwlkp2 >= 0 and (player1.money > 20):
+            if brdwlkp2 > 0 and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player2.money -= 20
