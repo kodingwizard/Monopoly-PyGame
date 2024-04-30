@@ -68,7 +68,7 @@ def propcards():
                     propendturn()
                     medavep1 += 1
                 buytext()
-            if (medavep1 >= 0) and (player1.money > 20):
+            if (medavep1 > 0) and (player1.money > 20):
                 upgradeButton = button(400, 740, 100, 30, (0, 255, 0))
                 if upgradeButton.draw(screen):
                     player1.money -= 20
